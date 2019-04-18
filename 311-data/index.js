@@ -3,8 +3,7 @@ import axios from 'axios';
 import PromisePool from 'es6-promise-pool';
 import models from './models';
 
-// TODO: Revert.
-const limit = 1;
+const limit = 2000;
 const type = 'Food%20Provider';
 const requestUrl = 'https://www1.nyc.gov//apps/311utils/facilityFinder.htm';
 
@@ -129,7 +128,6 @@ function parsePhone(phoneStr) {
   return { extension, number };
 }
 
-// TODO: Check if already in DB.
 async function loadIntoDb(facility) {
   const name = cleanString(facility.name);
   const description = cleanString(facility.description);
