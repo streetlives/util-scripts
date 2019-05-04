@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 import axios from 'axios';
-import PromisePool from 'es6-promise-pool';
 import models from './models';
+
+import storedPositions from './stored_positions';
 
 const limit = 2000;
 const type = 'Food%20Provider';
@@ -10,6 +11,22 @@ const requestUrl = 'https://www1.nyc.gov//apps/311utils/facilityFinder.htm';
 const geocodingUrl = 'https://maps.googleapis.com/maps/api/geocode/json';
 
 const country = 'US';
+
+const alreadyExistingFacilities = [
+  'Abraham House',
+  'BOOM Health',
+  'Chinese-American Planning Council',
+  'Community Health Action of Staten Island',
+  'Coalition for the Homeless',
+  'Make the Road New York',
+  'Part of the Solution (POTS)',
+  'Project Hospitality, Inc',
+  'Bailey House Food Pantry',
+  'Elmcor Youth and Adult Activities',
+  'Gay Men\'s Health Crisis',
+];
+
+let createdFacilities;
 
 function cleanString(str) {
   let clean = str.trim();
@@ -26,6 +43,14 @@ async function getPosition({
   zipCode,
 }) {
   const addressString = `${address}, ${city}, ${state} ${zipCode}, USA`;
+
+  const storedPosition = storedPositions[addressString];
+  if (storedPosition) {
+    return {
+      type: 'Point',
+      coordinates: [storedPosition.lng, storedPosition.lat],
+    };
+  }
 
   const geocodingRes = await axios.get(geocodingUrl, {
     params: { address: addressString, key: process.env.GOOGLE_API_KEY },
@@ -45,16 +70,24 @@ async function getPosition({
   };
 }
 
+const knownTaxonomies = {};
 function getTaxonomy(features) {
+  const featuresId = JSON.stringify(features);
+  if (knownTaxonomies[featuresId]) {
+    return knownTaxonomies[featuresId];
+  }
+
+  let result;
   if (features.includes('Food Pantry')) {
-    return models.Taxonomy.findOne({ where: { name: 'Food Pantry' } });
+    result = models.Taxonomy.findOne({ where: { name: 'Food Pantry' } });
+  } else if (features.includes('Soup Kitchen')) {
+    result = models.Taxonomy.findOne({ where: { name: 'Soup kitchen' } });
+  } else {
+    throw new Error('No recognized taxonomy');
   }
 
-  if (features.includes('Soup Kitchen')) {
-    return models.Taxonomy.findOne({ where: { name: 'Soup kitchen' } });
-  }
-
-  throw new Error('No recognized taxonomy');
+  knownTaxonomies[featuresId] = result;
+  return result;
 }
 
 function parseHours(hoursString) {
@@ -89,11 +122,22 @@ function parseHours(hoursString) {
     return individualDays;
   };
 
+  const ensureDaySeparatorsAreSemicolons = str => weekdays.reduce(
+    (replaced, weekday) => replaced.replace(`M, ${weekday}`, `M; ${weekday}`),
+    str,
+  );
+
+  const isValidTime = time => time.replace(/[\s\d:]|AM|PM/g, '').length === 0;
+  const ensureMinutesSpecified = time => time.replace(
+    /^([\d]+)([^:\d])/,
+    (_, hour, next) => `${hour}:00${next}`,
+  );
+
   const flatten = arrs => arrs.reduce((flatArr, arr) => [...flatArr, ...arr], []);
 
-  let cleanHours = cleanString(hoursString);
+  const cleanHours = ensureDaySeparatorsAreSemicolons(cleanString(hoursString));
   if (cleanHours.includes('.')) {
-    cleanHours = cleanString.substring(cleanHours.indexOf('.') + 1).trim();
+    throw new Error('Hours description seems to contain some caveats');
   }
 
   const parts = cleanHours.split(';').map(part => part.trim());
@@ -103,13 +147,21 @@ function parseHours(hoursString) {
     const days = flatten(dayRanges.map(getDaysInRange));
 
     const timesString = part.split(': ')[1].trim();
-    const openingHour = timesString.split(/[-–]/)[0].trim();
-    const closingHour = timesString.split(/[-–]/)[1].trim();
+    const timeRanges = timesString.split(', ');
 
-    return days.map(day => ({
-      weekday: day,
-      opens_at: openingHour,
-      closes_at: closingHour,
+    return flatten(timeRanges.map((timeRange) => {
+      const openingHour = ensureMinutesSpecified(timeRange.split(/[-–]/)[0].trim());
+      const closingHour = ensureMinutesSpecified(timeRange.split(/[-–]/)[1].trim());
+
+      if (!isValidTime(openingHour) || !isValidTime(closingHour)) {
+        throw new Error(`Invalid opening/closing time: ${openingHour}, ${closingHour}`);
+      }
+
+      return days.map(day => ({
+        weekday: day,
+        opens_at: openingHour,
+        closes_at: closingHour,
+      }));
     }));
   }));
 }
@@ -128,7 +180,80 @@ function parsePhone(phoneStr) {
   return { extension, number };
 }
 
+async function createOrganization({ name, description }) {
+  const createdOrganizationData = createdFacilities[name];
+  if (createdOrganizationData) {
+    return createdOrganizationData.organization;
+  }
+
+  const organization = await models.Organization.create({ name, description });
+
+  createdFacilities[name] = { organization };
+  return organization;
+}
+
+async function createLocation({
+  organizationName,
+  organization,
+  position,
+  phone,
+  address,
+  city,
+  state,
+  zipCode,
+}) {
+  const createdLocationData = createdFacilities[organizationName][address];
+
+  if (createdLocationData) {
+    return createdLocationData.location;
+  }
+
+  const location = await organization.createLocation({ position });
+
+  await location.createPhysicalAddress({
+    address_1: address,
+    postal_code: zipCode,
+    state_province: state,
+    city,
+    country,
+  });
+
+  await location.createPhone(parsePhone(phone));
+
+  createdFacilities[organizationName][address] = { location };
+  return location;
+}
+
+async function createService({
+  organizationName,
+  locationAddress,
+  organization,
+  location,
+  taxonomy,
+  hours,
+}) {
+  const createdServiceData = createdFacilities[organizationName][locationAddress][taxonomy.name];
+  if (createdServiceData) {
+    return createdServiceData.service;
+  }
+
+  const service = await organization.createService({ name: taxonomy.name });
+
+  await Promise.all([
+    location.addService(service),
+    service.addTaxonomy(taxonomy),
+  ]);
+
+  createdFacilities[organizationName][locationAddress][taxonomy.name] = { service };
+  return service;
+}
+
 async function loadIntoDb(facility) {
+  if (alreadyExistingFacilities.includes(facility.name)) {
+    console.log('Ignoring facility that already exists:', facility.name);
+    return;
+  }
+
   const name = cleanString(facility.name);
   const description = cleanString(facility.description);
   const address = cleanString(facility.address);
@@ -166,30 +291,40 @@ async function loadIntoDb(facility) {
     console.error(`${name} - Failed to parse hours "${hours}": ${err}`);
   }
 
-  const organization = await models.Organization.create({ name, description });
-  const location = await organization.createLocation({ position });
-
-  await location.createPhysicalAddress({
-    address_1: address,
-    postal_code: zipCode,
-    state_province: state,
+  const organization = await createOrganization({ name, description });
+  const location = await createLocation({
+    organizationName: name,
+    organization,
+    position,
+    phone,
+    address,
     city,
-    country,
+    state,
+    zipCode,
   });
 
-  await location.createPhone(parsePhone(phone));
-
   if (taxonomy) {
-    const service = await organization.createService({ name: taxonomy.name });
-
-    await Promise.all([
-      location.addService(service),
-      service.addTaxonomy(taxonomy),
-    ]);
+    const service = await createService({
+      organizationName: name,
+      locationAddress: address,
+      organization,
+      location,
+      taxonomy,
+    });
 
     if (schedule) {
       await Promise.all(schedule.map(day => service.createRegularSchedule(day)));
     }
+  }
+}
+
+async function importFacilities(facilities) {
+  createdFacilities = {};
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const facility of facilities) {
+    // eslint-disable-next-line no-await-in-loop
+    await loadIntoDb(facility, createdFacilities);
   }
 }
 
@@ -205,21 +340,7 @@ axios.get(requestUrl, { params: { limit, type } })
     const { facilities } = data;
     console.log(`Got data with ${facilities.length} records.`);
 
-    let i = 0;
-    const promiseProducer = () => {
-      if (i >= facilities.length) {
-        return null;
-      }
-
-      const facility = facilities[i];
-      i += 1;
-      return loadIntoDb(facility);
-    };
-
-    const concurrentFacilitiesHandled = 20;
-    const promisePool = new PromisePool(promiseProducer, concurrentFacilitiesHandled);
-
-    return promisePool.start();
+    return importFacilities(facilities);
   })
   .catch((err) => {
     console.log('Error loading data:', err);

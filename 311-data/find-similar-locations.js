@@ -15,7 +15,7 @@ async function findSimilar(facility) {
   const similarOrgs = await sequelize.query(
     `SELECT *
     FROM organizations
-    WHERE levenshtein_less_equal(name, CAST (:name AS TEXT), :distance) <= :distance`,
+    WHERE levenshtein_less_equal(LOWER(name), LOWER(:name), :distance) <= :distance`,
     {
       replacements: {
         name: facility.name,
