@@ -1,14 +1,14 @@
 /* eslint-disable camelcase */
 import models from './models';
-// TODO: This shouldn't be needed, as it's about AirTable structures. Move into "extract" file?
 import { splitIntoArray } from './utils';
 
 const state = 'NY';
 const country = 'US';
 
-let eligibilityParamIds;
-let taxonomyIds;
-let languageIds;
+const eligibilityParamIds = [];
+const attributeIds = [];
+const taxonomyIds = [];
+const languageIds = [];
 
 const fetchDbIds = async () => {
   const fetchNameToIdMapping = async (model) => {
@@ -19,38 +19,40 @@ const fetchDbIds = async () => {
     }), {});
   };
 
-  [
-    eligibilityParamIds,
-    taxonomyIds,
-    languageIds,
-  ] = await Promise.all([
+  const mappings = await Promise.all([
     fetchNameToIdMapping(models.EligibilityParameter),
+    fetchNameToIdMapping(models.TaxonomySpecificAttribute),
     fetchNameToIdMapping(models.Taxonomy),
     fetchNameToIdMapping(models.Language),
   ]);
+  eligibilityParamIds.push(...mappings[0]);
+  attributeIds.push(...mappings[1]);
+  taxonomyIds.push(...mappings[2]);
+  languageIds.push(...mappings[3]);
 };
 
-// TODO: Include the "adult cllothing" attribute for all clothing services.
-
-const getEligibilityParamId = eligibilityParam => eligibilityParamIds[eligibilityParam];
-const getTaxonomyId = taxonomyName => taxonomyIds[taxonomyName];
-const getLanguageId = languageName => languageIds[languageName];
+const getIdByNameFactory = mapping => (table, name) => {
+  if (!mapping[name]) {
+    console.error(`Couldn't find ${table} with name ${name} in DB`);
+    return null;
+  }
+  return mapping[name];
+};
+const getEligibilityParamId = getIdByNameFactory('eligibility param', eligibilityParamIds);
+const getAttributeId = getIdByNameFactory('taxonomy-specific attribute', attributeIds);
+const getTaxonomyId = getIdByNameFactory('taxonomy', taxonomyIds);
+const getLanguageId = getIdByNameFactory('language', languageIds);
 
 const getPosition = async (addressData) => {
   // TODO: Use Google Geolocation API (copy from other scripts).
 };
 
-// TODO: Having the word "Airtable" in this supposedly reusable step is obviously problematic...
-
-const transformEligibilityValues = (airtableValues) => {
-  // TODO: Figure out how to properly map the values.
-  // TODO: See if this really needs to be a separate function.
-};
-
-const transformTaxonomySpecificAttributeValues = (airtableValues) => {
-  // TODO: Figure out how to properly map the values.
-  // TODO: See if this really needs to be a separate function.
-};
+const transformEligibilityValues = sourceValues => sourceValues.map(
+  value => (value === 'yes' ? true : value),
+);
+const transformTaxonomySpecificAttributeValues = sourceValues => sourceValues.map(
+  value => (value === 'yes' ? true : value),
+);
 
 const createRegularSchedule = ({
   weekday,
@@ -69,7 +71,7 @@ const createRegularSchedule = ({
   });
 }));
 
-const createEligibility = async (eligibility, service) => {
+const createEligibility = (eligibility, service) => {
   const eligibilityByParam = eligibility.reduce((grouped, { parameter, values }) => ({
     ...grouped,
     [parameter]: {
@@ -88,7 +90,7 @@ const createEligibility = async (eligibility, service) => {
   })));
 };
 
-const createTaxonomySpecificAttributes = async (taxonomySpecificAttributes, service) => {
+const createTaxonomySpecificAttributes = (taxonomySpecificAttributes, taxonomy, service) => {
   const valuesByAttribute = taxonomySpecificAttributes.reduce((grouped, { attribute, value }) => ({
     ...grouped,
     [attribute]: {
@@ -97,41 +99,63 @@ const createTaxonomySpecificAttributes = async (taxonomySpecificAttributes, serv
     },
   }), {});
 
+  if (taxonomy === 'Clothing') {
+    const age = valuesByAttribute['wearer age'];
+    if (!age) {
+      valuesByAttribute['wearer age'] = ['adults'];
+    } else if (!age.includes('adults')) {
+      valuesByAttribute['wearer age'] = [...age, 'adults'];
+    }
+  }
+
   return Promise.all(Object.values(valuesByAttribute).map(({
     attribute,
     values,
   }) => models.ServiceTaxonomySpecificAttribute.create({
     service_id: service.id,
-    attribute_id: getEligibilityParamId(attribute),
+    attribute_id: getAttributeId(attribute),
     values: transformTaxonomySpecificAttributeValues(values),
   })));
 };
 
-const createRequiredDocument = async ({ name }, service) => service.createRequiredDocument({
+const createRequiredDocument = ({ name }, service) => service.createRequiredDocument({
   document: name,
 });
 
-const createServiceArea = async ({ postal_codes }, service) => service.createServiceArea({
-  // TODO: This should happen before we get to the loading stage.
+const createServiceArea = ({ postal_codes }, service) => service.createServiceArea({
   postal_codes: splitIntoArray(postal_codes),
 });
 
-const createServiceLanguage = async ({ language }, service) => models.ServiceLanguage.create({
+const createServiceLanguage = ({ language }, service) => models.ServiceLanguage.create({
   language_id: getLanguageId(language),
   service_id: service.id,
 });
 
-const createServiceTaxonomy = async ({ taxonomy }, service) => models.ServiceTaxonomy.create({
+const createServiceTaxonomy = ({ taxonomy }, service) => models.ServiceTaxonomy.create({
   taxonomy_id: getTaxonomyId(taxonomy),
   service_id: service.id,
 });
 
-const createDocumentsInfo = async ({
+const createDocumentsInfo = ({
   recertification_time,
   grace_period,
 }, service) => service.createDocumentsInfo({
   recertification_time,
   grace_period,
+});
+
+const createPhone = ({
+  number,
+  extension,
+  language,
+  type,
+  description,
+}, owner) => owner.createPhone({
+  number,
+  extension,
+  type,
+  language,
+  description,
 });
 
 const createService = async ({
@@ -147,8 +171,10 @@ const createService = async ({
   serviceAreas,
   languages,
   taxonomy,
+  phones,
 }, organization, location) => {
   const service = await models.Service.create({
+    organization_id: organization.id,
     name,
     description,
     email,
@@ -159,8 +185,9 @@ const createService = async ({
     ...requiredDocuments.map(documentData => createRequiredDocument(documentData, service)),
     ...serviceAreas.map(serviceAreaData => createServiceArea(serviceAreaData, service)),
     ...languages.map(languageData => createServiceLanguage(languageData, service)),
+    ...phones.map(phoneData => createPhone(phoneData, service)),
     createEligibility(eligibility, service),
-    createTaxonomySpecificAttributes(taxonomySpecificAttributes, service),
+    createTaxonomySpecificAttributes(taxonomySpecificAttributes, taxonomy, service),
     createServiceTaxonomy(taxonomy, service),
     createDocumentsInfo({ recertification_time, grace_period }, service),
   ]);
@@ -172,9 +199,7 @@ const createAddress = async ({
   city,
   address_type,
 }, location) => {
-  // TODO: What about types like the mobile stops?
-  // TODO: And should this be part of loading the tables?
-  if (address_type !== 'physical_address') {
+  if (address_type !== 'physical_address' && address_type !== 'mobile_service_stop') {
     return;
   }
 
@@ -187,7 +212,7 @@ const createAddress = async ({
   });
 };
 
-const createAccessibilityForDisabilities = async ({
+const createAccessibilityForDisabilities = ({
   accessibility,
   details,
 }, location) => location.createAccessibilityForDisabilities({
@@ -199,6 +224,7 @@ const createLocation = async ({
   name,
   address,
   services,
+  phones,
   accessibilityForDisabilities,
 }, organization) => {
   const location = await organization.createLocation({
@@ -208,6 +234,7 @@ const createLocation = async ({
 
   await Promise.all([
     ...services.map(serviceData => createService(serviceData, organization, location)),
+    ...phones.map(phoneData => createPhone(phoneData, location)),
     createAddress(address, location),
     createAccessibilityForDisabilities(accessibilityForDisabilities, location),
   ]);
@@ -218,10 +245,9 @@ export const createOrganization = async ({
   description,
   email,
   url,
+  phones,
   locations,
 }, existingOrganizations) => {
-  // TODO: What to do about phones? Right now they're for locations and/or services and/or orgs...
-
   if (existingOrganizations.includes(name)) {
     return;
   }
@@ -233,7 +259,10 @@ export const createOrganization = async ({
     url,
   });
 
-  await Promise.all(locations.map(locationData => createLocation(locationData, organization)));
+  await Promise.all([
+    ...locations.map(locationData => createLocation(locationData, organization)),
+    ...phones.map(phoneData => createPhone(phoneData, organization)),
+  ]);
 };
 
 export const initialize = fetchDbIds;

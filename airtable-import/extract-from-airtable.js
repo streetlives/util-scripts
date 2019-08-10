@@ -99,30 +99,5 @@ export const resolveAssociations = (records, tableName, allTableRecords) => {
       ),
   );
 };
-// TODO: If above logic works, remove this.
-// organizations.map(organization => ({
-//   ...organization,
-//   locations: organization.locations
-//     .map(locationId => locations[locationId])
-//     .map(location => ({
-//       ...location,
-//       address: addresses[location.address],
-//       accessibilityForDisabilities:
-//         accessibilityForDisabilities[location.accessibility_for_disabilities],
-//       services: location.services
-//         .map(serviceId => services[serviceId])
-//         .map(service => ({
-//           ...service,
-//           regularSchedules:
-//             service.regular_schedules.map(scheduleId => regularSchedules[scheduleId]),
-//           eligibility: service.eligibility.map(eligibilityName => eligibility[eligibilityName]),
-//           requiredDocuments:
-//             service.required_documents.map(documentName => requiredDocuments[documentName]),
-//           serviceAreas: serviceAreas[service.service_area],
-//           taxonomy: service.taxonomy.map(taxonomyName => taxonomy[taxonomyName]),
-//         })),
-//     })),
-//   // TODO: And also phones, wherever they need to be.
-// }));
 
 export default { loadTables, resolveAssociations };
