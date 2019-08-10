@@ -21,6 +21,7 @@ export default {
     arrays: [
       'phones',
       'regular_schedule',
+      'service_area',
       'eligibility',
       'taxonomy_specific_attributes',
       'languages',

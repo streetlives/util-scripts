@@ -1,5 +1,8 @@
 export const splitIntoArray = (value) => {
-  // TODO: Handle quoted strings.
+  if (value.startsWith('"') && value.endsWith('"')) {
+    return [value.substring(1, value.length - 1)];
+  }
+
   return value.length ? value.split(',') : [];
 };
 

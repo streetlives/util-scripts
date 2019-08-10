@@ -20,15 +20,10 @@ const loadTable = async (table) => {
     }
 
     const fieldValue = record[field];
-    const splitValue = splitIntoArray(fieldValue);
 
     if (arrays.includes(field)) {
+      const splitValue = splitIntoArray(fieldValue);
       return { ...mappedFields, [field]: splitValue };
-    }
-
-    if (splitValue.length > 1) {
-      console.error(`Skipping ${tableName} record with multiple ${field}: ${record[primaryField]}`);
-      return mappedFields;
     }
 
     if (fieldValue == null || fieldValue === '') {
@@ -36,7 +31,7 @@ const loadTable = async (table) => {
       return mappedFields;
     }
 
-    return { ...mappedFields, [field]: splitValue[0] };
+    return { ...mappedFields, [field]: fieldValue };
   }, {});
 
   return records.reduce((mappedRecords, record) => {
@@ -68,30 +63,40 @@ export const resolveAssociations = (records, tableName, allTableRecords) => {
     const associatedTableKey = Object.keys(tables).find(
       tableKey => tables[tableKey].tableName === field,
     );
+
     const associatedTableRecords = allTableRecords[associatedTableKey];
+    const getAssociation = (key) => {
+      if (associatedTableRecords[key] == null) {
+        console.error(`Missing ${field} association with key ${key} in ${tableName}`);
+        return null;
+      }
+      return associatedTableRecords[key];
+    };
 
     const associationValue = record[field];
 
     let associatedRecords;
     if (arrays.includes(field)) {
-      associatedRecords = associationValue.map(key => associatedTableRecords[key]);
+      associatedRecords = associationValue.map(key => getAssociation(key));
     } else {
-      associatedRecords = [associatedTableRecords[associationValue]];
+      associatedRecords = [getAssociation(associationValue)];
     }
 
-    const resolvedRecords = resolveAssociations(associatedRecords, field, allTableRecords);
+    const foundAssociations = associatedRecords.filter(associated => associated != null);
+    const resolvedRecords = resolveAssociations(foundAssociations, field, allTableRecords);
     return resolvedRecords.length ? resolvedRecords : resolvedRecords[0];
   };
 
-  return records.map(record => associations
-    .filter(field => record[field] != null)
-    .reduce(
-      (resolvedFields, field) => ({
-        ...resolvedFields,
-        [field]: resolveField(record, field),
-      }),
-      record,
-    ));
+  return records.map(record =>
+    associations
+      .filter(field => record[field] != null)
+      .reduce(
+        (resolvedFields, field) => ({
+          ...resolvedFields,
+          [field]: resolveField(record, field),
+        }),
+        record,
+      ));
 };
 // TODO: If above logic works, remove this.
 // organizations.map(organization => ({
