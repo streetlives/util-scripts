@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import models from './models';
-import { splitIntoArray } from './utils';
+import { splitIntoArray, getPosition } from './utils';
 
 const state = 'NY';
 const country = 'US';
@@ -42,10 +42,6 @@ const getEligibilityParamId = getIdByNameFactory('eligibility param', eligibilit
 const getAttributeId = getIdByNameFactory('taxonomy-specific attribute', attributeIds);
 const getTaxonomyId = getIdByNameFactory('taxonomy', taxonomyIds);
 const getLanguageId = getIdByNameFactory('language', languageIds);
-
-const getPosition = async (addressData) => {
-  // TODO: Use Google Geolocation API (copy from other scripts).
-};
 
 const transformEligibilityValues = sourceValues => sourceValues.map(
   value => (value === 'yes' ? true : value),
@@ -227,9 +223,22 @@ const createLocation = async ({
   phones,
   accessibilityForDisabilities,
 }, organization) => {
+  let position;
+  try {
+    position = await getPosition({
+      address: address.address_1,
+      city: address.city,
+      state,
+      zipCode: address.postal_code,
+    });
+  } catch (err) {
+    console.error(`Skipping location with position error: ${err}`);
+    return;
+  }
+
   const location = await organization.createLocation({
     name,
-    position: getPosition(address),
+    position,
   });
 
   await Promise.all([
