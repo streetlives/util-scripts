@@ -87,8 +87,8 @@ export const resolveAssociations = (records, tableName, allTableRecords) => {
     return resolvedRecords.length ? resolvedRecords : resolvedRecords[0];
   };
 
-  return records.map(record =>
-    associations
+  return records.map(
+    record => associations
       .filter(field => record[field] != null)
       .reduce(
         (resolvedFields, field) => ({
@@ -96,7 +96,8 @@ export const resolveAssociations = (records, tableName, allTableRecords) => {
           [field]: resolveField(record, field),
         }),
         record,
-      ));
+      ),
+  );
 };
 // TODO: If above logic works, remove this.
 // organizations.map(organization => ({
