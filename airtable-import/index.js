@@ -1,9 +1,12 @@
+import PromisePool from 'es6-promise-pool';
 import { initialize, createOrganization } from './load-into-db';
 import { loadTables, resolveAssociations } from './extract-from-airtable';
 
 const existingOrganizations = [
   // TODO: Find and hard-code these.
 ];
+
+const concurrentOrganizations = 10;
 
 const importData = async () => {
   const [loadedTables] = await Promise.all([
@@ -17,7 +20,16 @@ const importData = async () => {
     loadedTables,
   );
 
-  return Promise.all(organizations.map(org => createOrganization(org, existingOrganizations)));
+  const generatePromises = function* generatePromises() {
+    for (let i = 0; i < organizations.length; i += 1) {
+      yield createOrganization(organizations[i], existingOrganizations);
+    }
+
+    return null;
+  };
+
+  const pool = new PromisePool(generatePromises, concurrentOrganizations);
+  return pool.start();
 };
 
 importData()

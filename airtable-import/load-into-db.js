@@ -5,14 +5,14 @@ import { splitIntoArray, getPosition } from './utils';
 const state = 'NY';
 const country = 'US';
 
-const eligibilityParamIds = [];
-const attributeIds = [];
-const taxonomyIds = [];
-const languageIds = [];
+const eligibilityParamIds = {};
+const attributeIds = {};
+const taxonomyIds = {};
+const languageIds = {};
 
 const fetchDbIds = async () => {
   const fetchNameToIdMapping = async (model) => {
-    const eligibilityParams = await model.find({});
+    const eligibilityParams = await model.findAll({});
     return eligibilityParams.reduce((mapping, { name, id }) => ({
       ...mapping,
       [name]: id,
@@ -25,10 +25,10 @@ const fetchDbIds = async () => {
     fetchNameToIdMapping(models.Taxonomy),
     fetchNameToIdMapping(models.Language),
   ]);
-  eligibilityParamIds.push(...mappings[0]);
-  attributeIds.push(...mappings[1]);
-  taxonomyIds.push(...mappings[2]);
-  languageIds.push(...mappings[3]);
+  Object.assign(eligibilityParamIds, mappings[0]);
+  Object.assign(attributeIds, mappings[1]);
+  Object.assign(taxonomyIds, mappings[2]);
+  Object.assign(languageIds, mappings[3]);
 };
 
 const getIdByNameFactory = mapping => (table, name) => {
