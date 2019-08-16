@@ -26,7 +26,7 @@ export const getPosition = async ({
 
   const { status, results } = geocodingRes.data;
   if (status !== 'OK' || results.length !== 1) {
-    throw new Error(`Geocoding request failed for ${addressString}`);
+    throw new Error(`Geocoding request failed for ${addressString} with status ${status}`);
   }
 
   const { lat, lng } = results[0].geometry.location;

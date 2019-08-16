@@ -9,26 +9,33 @@ const eligibilityParamIds = {};
 const attributeIds = {};
 const taxonomyIds = {};
 const languageIds = {};
+const languageCodes = {};
 
-const fetchDbIds = async () => {
-  const fetchNameToIdMapping = async (model) => {
-    const eligibilityParams = await model.findAll({});
-    return eligibilityParams.reduce((mapping, { name, id }) => ({
-      ...mapping,
-      [name]: id,
-    }), {});
+const fetchDbMappings = async () => {
+  const fetchMapping = async (model, { keyField = 'name', valueField = 'id' } = {}) => {
+    const dbRecords = await model.findAll({});
+    return dbRecords.reduce((mapping, record) => {
+      const key = record[keyField];
+      const value = record[valueField];
+      return {
+        ...mapping,
+        [key]: value,
+      };
+    }, {});
   };
 
   const mappings = await Promise.all([
-    fetchNameToIdMapping(models.EligibilityParameter),
-    fetchNameToIdMapping(models.TaxonomySpecificAttribute),
-    fetchNameToIdMapping(models.Taxonomy),
-    fetchNameToIdMapping(models.Language),
+    fetchMapping(models.EligibilityParameter),
+    fetchMapping(models.TaxonomySpecificAttribute),
+    fetchMapping(models.Taxonomy),
+    fetchMapping(models.Language),
+    fetchMapping(models.Language, { valueField: 'language' }),
   ]);
   Object.assign(eligibilityParamIds, mappings[0]);
   Object.assign(attributeIds, mappings[1]);
   Object.assign(taxonomyIds, mappings[2]);
   Object.assign(languageIds, mappings[3]);
+  Object.assign(languageCodes, mappings[4]);
 };
 
 const getIdByNameFactory = mapping => (table, name) => {
@@ -49,6 +56,7 @@ const transformEligibilityValues = sourceValues => sourceValues.map(
 const transformTaxonomySpecificAttributeValues = sourceValues => sourceValues.map(
   value => (value === 'yes' ? true : value),
 );
+const transformLanguageToCode = languageName => languageCodes[languageName];
 
 const createRegularSchedule = ({
   weekday,
@@ -146,13 +154,16 @@ const createPhone = ({
   language,
   type,
   description,
-}, owner) => owner.createPhone({
-  number,
-  extension,
-  type,
-  language,
-  description,
-});
+}, owner) => {
+  const commaSeparatedLanguages = language.map(transformLanguageToCode).join(',');
+  return owner.createPhone({
+    number,
+    extension,
+    type,
+    language: commaSeparatedLanguages,
+    description,
+  });
+};
 
 const createService = async ({
   name,
@@ -223,6 +234,11 @@ const createLocation = async ({
   phones,
   accessibilityForDisabilities,
 }, organization) => {
+  if (address == null) {
+    console.error(`Skipping location with missing address (location ${name})`);
+    return;
+  }
+
   let position;
   try {
     position = await getPosition({
@@ -232,7 +248,7 @@ const createLocation = async ({
       zipCode: address.postal_code,
     });
   } catch (err) {
-    console.error(`Skipping location with position error: ${err}`);
+    console.error(`Skipping location with position error: ${err} (location ${name})`);
     return;
   }
 
@@ -274,6 +290,6 @@ export const createOrganization = async ({
   ]);
 };
 
-export const initialize = fetchDbIds;
+export const initialize = fetchDbMappings;
 
 export default { initialize, createOrganization };

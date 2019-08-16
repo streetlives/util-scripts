@@ -75,16 +75,15 @@ export const resolveAssociations = (records, tableName, allTableRecords) => {
 
     const associationValue = record[field];
 
-    let associatedRecords;
     if (arrays.includes(field)) {
-      associatedRecords = associationValue.map(key => getAssociation(key));
-    } else {
-      associatedRecords = [getAssociation(associationValue)];
+      const associatedRecords = associationValue
+        .map(key => getAssociation(key))
+        .filter(associated => associated != null);
+      return resolveAssociations(associatedRecords, field, allTableRecords);
     }
 
-    const foundAssociations = associatedRecords.filter(associated => associated != null);
-    const resolvedRecords = resolveAssociations(foundAssociations, field, allTableRecords);
-    return resolvedRecords.length ? resolvedRecords : resolvedRecords[0];
+    const associatedRecord = getAssociation(associationValue);
+    return resolveAssociations([associatedRecord], field, allTableRecords)[0];
   };
 
   return records.map(
