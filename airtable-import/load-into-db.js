@@ -15,6 +15,11 @@ const sourceToDbTaxonomies = {
   Legal: 'Advocates / Legal Aid',
 };
 
+const similarButDifferentOrganizations = {
+  GMHC: ['CAMBA', 'Whedco', 'FEDCAP', 'CASES', 'None'],
+  'St. Luke\'s Lutheran Church': ['St Paul\'s Lutheran Church'],
+};
+
 const eligibilityParamIds = {};
 const attributeIds = {};
 const taxonomyIds = {};
@@ -64,6 +69,26 @@ const getLanguageCode = getByNameFactory('language', languageCodes);
 const getTaxonomyId = (taxonomy) => {
   const transformedTaxonomy = sourceToDbTaxonomies[taxonomy] || taxonomy;
   return getTransformedTaxonomyId(transformedTaxonomy);
+};
+
+const findExistingOrganizations = async (name) => {
+  const maxDistance = 5;
+
+  const { sequelize } = models;
+  const similarOrgs = await sequelize.query(
+    `SELECT *
+    FROM organizations
+    WHERE levenshtein_less_equal(LOWER(name), LOWER(:name), :distance) <= :distance`,
+    {
+      replacements: { name, distance: maxDistance },
+      type: sequelize.QueryTypes.SELECT,
+    },
+  );
+
+  const similarButDifferent = similarButDifferentOrganizations[name] || [];
+  const actualDuplicates = similarOrgs.filter((org => !similarButDifferent.includes(org.name)));
+
+  return actualDuplicates;
 };
 
 const transformEligibilityValues = sourceValues => sourceValues.map(
@@ -292,7 +317,11 @@ export const createOrganization = async ({
   phones,
   locations,
 }, existingOrganizations) => {
-  if (existingOrganizations.includes(name)) {
+  const existingOrgs = await findExistingOrganizations(name);
+  if (existingOrgs.length) {
+    console.log(
+      `Skipping org ${name} similar to existing: ${existingOrgs.map(org => org.name).join(',')}`,
+    );
     return;
   }
 
