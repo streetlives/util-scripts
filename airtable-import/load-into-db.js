@@ -1,9 +1,19 @@
 /* eslint-disable camelcase */
+// Note: At the moment this file actually takes care of both the Transform and Load parts of ETL,
+// not just Load as the name would imply.
 import models from './models';
 import { splitIntoArray, getPosition } from './utils';
 
+const defaultCity = 'New York';
 const state = 'NY';
 const country = 'US';
+
+const sourceToDbTaxonomies = {
+  'Soup Kitchen': 'Soup kitchen',
+  'Other services': 'Other service',
+  Pantry: 'Food Pantry',
+  Legal: 'Advocates / Legal Aid',
+};
 
 const eligibilityParamIds = {};
 const attributeIds = {};
@@ -38,17 +48,23 @@ const fetchDbMappings = async () => {
   Object.assign(languageCodes, mappings[4]);
 };
 
-const getIdByNameFactory = mapping => (table, name) => {
+const getByNameFactory = (table, mapping) => (name) => {
   if (!mapping[name]) {
     console.error(`Couldn't find ${table} with name ${name} in DB`);
     return null;
   }
   return mapping[name];
 };
-const getEligibilityParamId = getIdByNameFactory('eligibility param', eligibilityParamIds);
-const getAttributeId = getIdByNameFactory('taxonomy-specific attribute', attributeIds);
-const getTaxonomyId = getIdByNameFactory('taxonomy', taxonomyIds);
-const getLanguageId = getIdByNameFactory('language', languageIds);
+const getEligibilityParamId = getByNameFactory('eligibility param', eligibilityParamIds);
+const getAttributeId = getByNameFactory('taxonomy-specific attribute', attributeIds);
+const getTransformedTaxonomyId = getByNameFactory('taxonomy', taxonomyIds);
+const getLanguageId = getByNameFactory('language', languageIds);
+const getLanguageCode = getByNameFactory('language', languageCodes);
+
+const getTaxonomyId = (taxonomy) => {
+  const transformedTaxonomy = sourceToDbTaxonomies[taxonomy] || taxonomy;
+  return getTransformedTaxonomyId(transformedTaxonomy);
+};
 
 const transformEligibilityValues = sourceValues => sourceValues.map(
   value => (value === 'yes' ? true : value),
@@ -56,70 +72,67 @@ const transformEligibilityValues = sourceValues => sourceValues.map(
 const transformTaxonomySpecificAttributeValues = sourceValues => sourceValues.map(
   value => (value === 'yes' ? true : value),
 );
-const transformLanguageToCode = languageName => languageCodes[languageName];
 
 const createRegularSchedule = ({
   weekday,
   opens_at,
   closes_at,
 }, service) => Promise.all(weekday.map(async (day) => {
-  if (Number.isNaN(day)) {
-    console.error('Skipping invalid weekday:', day);
+  if (!/^[1234567]{1}$/.test(day)) {
+    console.error(`Skipping invalid weekday: "${day}"`);
+    return;
+  }
+  if (!opens_at || !closes_at) {
+    console.error(`Skipping invalid schedule: opens at "${opens_at}", closes at "${closes_at}"`);
     return;
   }
 
+  const formatTime = time => time.replace('.', ':');
+
   await service.createRegularSchedule({
     weekday: day,
-    opens_at,
-    closes_at,
+    opens_at: formatTime(opens_at),
+    closes_at: formatTime(closes_at),
   });
 }));
 
 const createEligibility = (eligibility, service) => {
   const eligibilityByParam = eligibility.reduce((grouped, { parameter, values }) => ({
     ...grouped,
-    [parameter]: {
-      parameter,
-      values: [...(grouped[parameter] || []), values],
-    },
+    [parameter]: [...(grouped[parameter] || []), values],
   }), {});
 
-  return Promise.all(Object.values(eligibilityByParam).map(({
-    parameter,
-    values,
-  }) => models.Eligibility.create({
-    service_id: service.id,
-    parameter_id: getEligibilityParamId(parameter),
-    eligible_values: transformEligibilityValues(values),
-  })));
+  return Promise.all(
+    Object.keys(eligibilityByParam).map(parameter => models.Eligibility.create({
+      service_id: service.id,
+      parameter_id: getEligibilityParamId(parameter),
+      eligible_values: transformEligibilityValues(eligibilityByParam[parameter]),
+    })),
+  );
 };
 
 const createTaxonomySpecificAttributes = (taxonomySpecificAttributes, taxonomy, service) => {
   const valuesByAttribute = taxonomySpecificAttributes.reduce((grouped, { attribute, value }) => ({
     ...grouped,
-    [attribute]: {
-      attribute,
-      values: [...(grouped[attribute] || []), value],
-    },
+    [attribute]: [...(grouped[attribute] || []), value],
   }), {});
 
   if (taxonomy === 'Clothing') {
-    const age = valuesByAttribute['wearer age'];
+    const age = valuesByAttribute.wearerAge;
     if (!age) {
-      valuesByAttribute['wearer age'] = ['adults'];
+      valuesByAttribute.wearerAge = ['adults'];
     } else if (!age.includes('adults')) {
-      valuesByAttribute['wearer age'] = [...age, 'adults'];
+      valuesByAttribute.wearerAge = [...age, 'adults'];
     }
   }
 
-  return Promise.all(Object.values(valuesByAttribute).map(({
-    attribute,
-    values,
-  }) => models.ServiceTaxonomySpecificAttribute.create({
-    service_id: service.id,
-    attribute_id: getAttributeId(attribute),
-    values: transformTaxonomySpecificAttributeValues(values),
-  })));
+  return Promise.all(
+    Object.keys(valuesByAttribute).map(attribute => models.ServiceTaxonomySpecificAttribute.create({
+      service_id: service.id,
+      attribute_id: getAttributeId(attribute),
+      values: transformTaxonomySpecificAttributeValues(valuesByAttribute[attribute]),
+    })),
+  );
 };
 
 const createRequiredDocument = ({ name }, service) => service.createRequiredDocument({
@@ -130,15 +143,12 @@ const createServiceArea = ({ postal_codes }, service) => service.createServiceAr
   postal_codes: splitIntoArray(postal_codes),
 });
 
-const createServiceLanguage = ({ language }, service) => models.ServiceLanguage.create({
-  language_id: getLanguageId(language),
-  service_id: service.id,
-});
+const createServiceLanguages = (
+  languages,
+  service,
+) => service.setLanguages(languages.map(getLanguageId));
 
-const createServiceTaxonomy = ({ taxonomy }, service) => models.ServiceTaxonomy.create({
-  taxonomy_id: getTaxonomyId(taxonomy),
-  service_id: service.id,
-});
+const createServiceTaxonomy = (taxonomy, service) => service.setTaxonomies(getTaxonomyId(taxonomy));
 
 const createDocumentsInfo = ({
   recertification_time,
@@ -155,7 +165,7 @@ const createPhone = ({
   type,
   description,
 }, owner) => {
-  const commaSeparatedLanguages = language.map(transformLanguageToCode).join(',');
+  const commaSeparatedLanguages = language.map(getLanguageCode).join(',');
   return owner.createPhone({
     number,
     extension,
@@ -171,30 +181,35 @@ const createService = async ({
   email,
   recertification_time,
   grace_period,
-  regularSchedules,
+  regular_schedule,
   eligibility,
-  taxonomySpecificAttributes,
-  requiredDocuments,
-  serviceAreas,
+  taxonomy_specific_attributes,
+  required_documents,
+  service_area,
   languages,
   taxonomy,
   phones,
 }, organization, location) => {
-  const service = await models.Service.create({
-    organization_id: organization.id,
+  if (!taxonomy) {
+    console.error(`Skipping service with missing taxonomy (org ${organization.name})`);
+    return;
+  }
+
+  const service = await location.createService({
+    OrganizationId: organization.id,
     name,
     description,
     email,
   });
 
   await Promise.all([
-    ...regularSchedules.map(scheduleData => createRegularSchedule(scheduleData, service)),
-    ...requiredDocuments.map(documentData => createRequiredDocument(documentData, service)),
-    ...serviceAreas.map(serviceAreaData => createServiceArea(serviceAreaData, service)),
-    ...languages.map(languageData => createServiceLanguage(languageData, service)),
+    ...regular_schedule.map(scheduleData => createRegularSchedule(scheduleData, service)),
+    ...required_documents.map(documentData => createRequiredDocument(documentData, service)),
+    ...service_area.map(serviceAreaData => createServiceArea(serviceAreaData, service)),
     ...phones.map(phoneData => createPhone(phoneData, service)),
+    createServiceLanguages(languages, service),
     createEligibility(eligibility, service),
-    createTaxonomySpecificAttributes(taxonomySpecificAttributes, taxonomy, service),
+    createTaxonomySpecificAttributes(taxonomy_specific_attributes, taxonomy, service),
     createServiceTaxonomy(taxonomy, service),
     createDocumentsInfo({ recertification_time, grace_period }, service),
   ]);
@@ -222,7 +237,7 @@ const createAddress = async ({
 const createAccessibilityForDisabilities = ({
   accessibility,
   details,
-}, location) => location.createAccessibilityForDisabilities({
+}, location) => location.createAccessibilityForDisability({
   accessibility,
   details,
 });
@@ -232,23 +247,25 @@ const createLocation = async ({
   address,
   services,
   phones,
-  accessibilityForDisabilities,
+  accessibility_for_disabilities,
 }, organization) => {
   if (address == null) {
-    console.error(`Skipping location with missing address (location ${name})`);
+    console.error(`Skipping location with missing address (org ${organization.name})`);
     return;
   }
+
+  const city = address.city || defaultCity;
 
   let position;
   try {
     position = await getPosition({
       address: address.address_1,
-      city: address.city,
-      state,
       zipCode: address.postal_code,
+      city,
+      state,
     });
   } catch (err) {
-    console.error(`Skipping location with position error: ${err} (location ${name})`);
+    console.error(`Skipping location with position error: ${err} (org ${organization.name})`);
     return;
   }
 
@@ -260,8 +277,10 @@ const createLocation = async ({
   await Promise.all([
     ...services.map(serviceData => createService(serviceData, organization, location)),
     ...phones.map(phoneData => createPhone(phoneData, location)),
-    createAddress(address, location),
-    createAccessibilityForDisabilities(accessibilityForDisabilities, location),
+    createAddress({ ...address, city }, location),
+    ...(accessibility_for_disabilities
+      ? [createAccessibilityForDisabilities(accessibility_for_disabilities, location)]
+      : []),
   ]);
 };
 
