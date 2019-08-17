@@ -316,7 +316,7 @@ export const createOrganization = async ({
   url,
   phones,
   locations,
-}, existingOrganizations) => {
+}) => {
   const existingOrgs = await findExistingOrganizations(name);
   if (existingOrgs.length) {
     console.log(

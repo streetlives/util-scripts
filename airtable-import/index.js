@@ -2,10 +2,6 @@ import PromisePool from 'es6-promise-pool';
 import { initialize, createOrganization } from './load-into-db';
 import { loadTables, resolveAssociations } from './extract-from-airtable';
 
-const existingOrganizations = [
-  // TODO: Find and hard-code these.
-];
-
 const concurrentOrganizations = 10;
 
 const importData = async () => {
@@ -22,7 +18,7 @@ const importData = async () => {
 
   const generatePromises = function* generatePromises() {
     for (let i = 0; i < organizations.length; i += 1) {
-      yield createOrganization(organizations[i], existingOrganizations);
+      yield createOrganization(organizations[i]);
     }
 
     return null;
