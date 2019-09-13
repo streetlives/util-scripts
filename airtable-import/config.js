@@ -9,7 +9,7 @@ export default {
       dialect: 'postgres',
       logging: false,
       pool: {
-        max: 80,
+        max: 40,
         min: 0,
         idle: 10000,
       },

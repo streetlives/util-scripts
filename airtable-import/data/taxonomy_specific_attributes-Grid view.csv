@@ -1,5 +1,6 @@
 ﻿name,attribute,value,services
-clothing wearer - children,wearerAge,children,"recl0R2gjw8kt5VZw,recERweeCBVaT3Ngl"
-attire_type-prof,clothingOccasion,interview,recPpJf2oxmURWd9k
-attire_type-casual,clothingOccasion,everyday,recPpJf2oxmURWd9k
-hiv+nutrition,hasHivNutrition,yes,rectyBYcKCIgQDtmx
+clothing_wearer-children,wearerAge,children,"recl0R2gjw8kt5VZw,recERweeCBVaT3Ngl"
+attire_type-prof,clothingOccasion,interview,"recPpJf2oxmURWd9k,recbMzQqyfyDNfYvk,recRrytLYblehq7vf,recehFjubnVFpkrJM,recw0V7nYxr2vZmV7"
+attire_type-casual,clothingOccasion,everyday,"recPpJf2oxmURWd9k,recbMzQqyfyDNfYvk,recRrytLYblehq7vf,recehFjubnVFpkrJM,recL0HraT0ZQM7GHW,recw0V7nYxr2vZmV7,rec3RHchOMG2pw4Cr,recxMOiLMB8zMEf95,recD9W1M3e6ToBAgX,recisZAAsTujMUeeN,recLTigGMaBhlVYgG,recJYNtgJ8ys910oc,recPoKBzqw1onX8C5,recx4IFcHKFeMGT3R,recKqP18PkRpXe0SI,recEgWS3jrX8FCdGG,recn2z2w3pC3vF4mz"
+hiv+nutrition,hasHivNutrition,yes,"rectyBYcKCIgQDtmx,recBo7GNseySE6NYM"
+attire_type-winter,clothingSeason,winter,rec5uv9eXeFTzWxKC

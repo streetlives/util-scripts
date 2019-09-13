@@ -142,7 +142,7 @@ const createTaxonomySpecificAttributes = (taxonomySpecificAttributes, taxonomy, 
     [attribute]: [...(grouped[attribute] || []), value],
   }), {});
 
-  if (taxonomy === 'Clothing') {
+  if (taxonomy === 'Clothing pantry') {
     const age = valuesByAttribute.wearerAge;
     if (!age) {
       valuesByAttribute.wearerAge = ['adults'];

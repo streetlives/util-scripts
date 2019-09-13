@@ -62,5 +62,15 @@
   "33 East 12th St, New York, NY 10003, USA": { "lat": 40.73389299999999, "lng": -73.9922596 },
   "543-545 E 11th S, New York, NY 10009, USA": { "lat": 40.7278177, "lng": -73.9798923 },
   "301 Grove St, Brooklyn, NY 11237, USA": { "lat": 40.6984613, "lng": -73.9158432 },
-  "999 Greene Ave, Brooklyn, NY 11221, USA": { "lat": 40.6914345, "lng": -73.9271176  }
+  "999 Greene Ave, Brooklyn, NY 11221, USA": { "lat": 40.6914345, "lng": -73.9271176  },
+  "46 W 16th St, New York, NY 10011, USA": { "lat": 40.73819330000001, "lng": -73.99511509999999 },
+  "55 West 15th St, New York, NY 10011, USA": { "lat": 40.73788529999999, "lng": -73.995525 },
+  "921 Madison Avenue, New York, NY 10021, USA": { "lat": 40.7725016, "lng": -73.9645065 },
+  "115 W 31st St, New York, NY 10001, USA": { "lat": 40.7483748, "lng": -73.98975209999999 },
+  "115 W 31st St, New York, NY 10001, USA": { "lat": 40.7483748, "lng": -73.98975209999999 },
+  "137 East 2nd St, New York, NY 10009, USA": { "lat": 40.7230138, "lng": -73.9863775 },
+  "344 E 146th St, The Bronx, NY 10451, USA": { "lat": 40.815059, "lng": -73.92125899999999 },
+  "540 Lenox Ave, New York, NY 10037, USA": { "lat": 40.815423, "lng": -73.9393346 },
+  "145 E 125th St, New York, NY 10035, USA": { "lat": 40.8045365, "lng": -73.93709439999999 },
+  "108 E 51st St, New York, NY 10022, USA": { "lat": 40.7573397, "lng": -73.9727561 }
 }
