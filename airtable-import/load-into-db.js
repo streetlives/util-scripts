@@ -92,10 +92,10 @@ const findExistingOrganizations = async (name) => {
 };
 
 const transformEligibilityValues = sourceValues => sourceValues.map(
-  value => (value === 'yes' ? true : value),
+  value => (value === 'yes' ? 'true' : value),
 );
 const transformTaxonomySpecificAttributeValues = sourceValues => sourceValues.map(
-  value => (value === 'yes' ? true : value),
+  value => (value === 'yes' ? 'true' : value),
 );
 
 const createRegularSchedule = ({
