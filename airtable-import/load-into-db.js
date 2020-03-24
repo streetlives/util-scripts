@@ -16,8 +16,9 @@ const sourceToDbTaxonomies = {
 };
 
 const similarButDifferentOrganizations = {
-  GMHC: ['CAMBA', 'Whedco', 'FEDCAP', 'CASES', 'None'],
+  GMHC: ['CAMBA', 'Whedco', 'FEDCAP', 'CASES', 'None', 'FIERCE'],
   'St. Luke\'s Lutheran Church': ['St Paul\'s Lutheran Church'],
+  FIERCE: ['GMHC'],
 };
 
 const eligibilityParamIds = {};

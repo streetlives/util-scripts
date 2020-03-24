@@ -72,5 +72,7 @@
   "344 E 146th St, The Bronx, NY 10451, USA": { "lat": 40.815059, "lng": -73.92125899999999 },
   "540 Lenox Ave, New York, NY 10037, USA": { "lat": 40.815423, "lng": -73.9393346 },
   "145 E 125th St, New York, NY 10035, USA": { "lat": 40.8045365, "lng": -73.93709439999999 },
-  "108 E 51st St, New York, NY 10022, USA": { "lat": 40.7573397, "lng": -73.9727561 }
+  "108 E 51st St, New York, NY 10022, USA": { "lat": 40.7573397, "lng": -73.9727561 },
+  "110 Schermerhorn Street, Brooklyn, NY 11201, USA": { "lat": 40.6900152, "lng": -73.9894875 },
+  "75 Broadway, New York, NY 10006, USA": { "lat": 40.7080624, "lng": -74.0121849 }
 }
