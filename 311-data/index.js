@@ -24,6 +24,12 @@ const alreadyExistingFacilities = [
   'Bailey House Food Pantry',
   'Elmcor Youth and Adult Activities',
   'Gay Men\'s Health Crisis',
+  'Crossroads Community Services',
+  'Crossroads Community Services Inc',
+  'Holy Apostles Soup Kitchen',
+  'Neighbors Together',
+  'University Community Social Services, Inc',
+  'Xavier Mission Inc',
 ];
 
 let createdFacilities;
@@ -71,7 +77,7 @@ async function getPosition({
 }
 
 const knownTaxonomies = {};
-function getTaxonomy(features) {
+async function getTaxonomy(features) {
   const featuresId = JSON.stringify(features);
   if (knownTaxonomies[featuresId]) {
     return knownTaxonomies[featuresId];
@@ -79,15 +85,36 @@ function getTaxonomy(features) {
 
   let result;
   if (features.includes('Food Pantry')) {
-    result = models.Taxonomy.findOne({ where: { name: 'Food Pantry' } });
+    result = await models.Taxonomy.findOne({ where: { name: 'Food Pantry' } });
   } else if (features.includes('Soup Kitchen')) {
-    result = models.Taxonomy.findOne({ where: { name: 'Soup kitchen' } });
+    result = await models.Taxonomy.findOne({ where: { name: 'Soup kitchen' } });
   } else {
     throw new Error('No recognized taxonomy');
   }
 
   knownTaxonomies[featuresId] = result;
   return result;
+}
+
+const knownAttributes = {};
+async function getTaxonomySpecificAttribute(features) {
+  const hivDietFeature = 'HIV/AIDS Diet';
+
+  if (!features.includes(hivDietFeature)) {
+    return null;
+  }
+
+  let attribute;
+  if (knownAttributes[hivDietFeature]) {
+    attribute = knownAttributes[hivDietFeature];
+  } else {
+    attribute = await models.TaxonomySpecificAttribute.findOne({
+      where: { name: 'hasHivNutrition' },
+    });
+    knownAttributes[hivDietFeature] = attribute;
+  }
+
+  return { attribute_id: attribute.id, values: ['true'] };
 }
 
 function parseHours(hoursString) {
@@ -304,6 +331,8 @@ async function loadIntoDb(facility) {
   });
 
   if (taxonomy) {
+    const taxonomySpecificAttribute = await getTaxonomySpecificAttribute(features);
+
     const service = await createService({
       organizationName: name,
       locationAddress: address,
@@ -311,6 +340,10 @@ async function loadIntoDb(facility) {
       location,
       taxonomy,
     });
+
+    if (taxonomySpecificAttribute) {
+      await service.createServiceTaxonomySpecificAttribute(taxonomySpecificAttribute);
+    }
 
     if (schedule) {
       await Promise.all(schedule.map(day => service.createRegularSchedule(day)));
