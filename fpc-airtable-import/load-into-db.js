@@ -6,7 +6,7 @@ class Loader {
 
   async createLocation(locationData) {
     // TODO: Implement.
-    return {};
+    return { Organization: {} };
   }
 
   async createService(location, serviceData) {
@@ -25,19 +25,19 @@ class Loader {
     let {
       location,
       service,
-    } = this.existingDataMatcher.getExistingRecords(serviceData);
+    } = await this.existingDataMatcher.getExistingRecords(serviceData);
 
     if (!location) {
-      location = this.createLocation(locationData);
+      location = await this.createLocation(locationData);
     }
 
     if (!service) {
-      service = this.createService(location, serviceData);
+      service = await this.createService(location, serviceData);
     } else {
-      this.updateService(service, serviceData);
+      await this.updateService(service, serviceData);
     }
 
-    await this.updateKnownServiceData(fpcId, { location, service });
+    await this.existingDataMatcher.updateKnownServiceData(fpcId, { location, service });
   }
 }
 

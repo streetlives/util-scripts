@@ -1,34 +1,37 @@
 import axios from 'axios';
 import config from './config';
 
-const { baseApi } = config.streetives;
+const { baseApi } = config.streetlives;
 
-export function getLocations({ position, radius }) {
-  const params = {
-    longitude: position.coordinates[0],
-    latitude: position.coordinates[1],
-    radius,
-  };
+class Api {
+  constructor() {
+    this.client = axios.create();
+  }
 
-  return axios
-    .request({
-      url: `${baseApi}/locations`,
-      method: 'get',
-      params,
-    })
-    .then(result => result.data);
+  getLocations({ position, radius }) {
+    const params = {
+      longitude: position.longitude,
+      latitude: position.latitude,
+      radius,
+    };
+
+    return this.client
+      .request({
+        url: `${baseApi}/locations`,
+        method: 'get',
+        params,
+      })
+      .then(result => result.data);
+  }
+
+  getLocation(id) {
+    return this.client
+      .request({
+        url: `${baseApi}/locations/${id}`,
+        method: 'get',
+      })
+      .then(result => result.data);
+  }
 }
 
-export async function getLocation(id) {
-  return axios
-    .request({
-      url: `${baseApi}/locations/${id}`,
-      method: 'get',
-    })
-    .then(result => result.data);
-}
-
-export default {
-  getLocations,
-  getLocation,
-};
+export default Api;

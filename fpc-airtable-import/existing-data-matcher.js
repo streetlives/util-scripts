@@ -1,5 +1,5 @@
 import fs from 'fs';
-import promisify from 'util';
+import { promisify } from 'util';
 import inquirer from 'inquirer';
 
 const matchingDataFilePath = './data/matching_data.json';
@@ -9,6 +9,13 @@ const matchRadius = 30;
 async function askUserIfExistingLocation(locationData, potentialMatches) {
   const { organizationName } = locationData;
 
+  const formatLocationOption = (location) => {
+    const orgName = location.Organization.name;
+    const locationName = location.name;
+    const address = location.PhysicalAddresses[0] && location.PhysicalAddresses[0].address_1;
+    return `${orgName}${locationName ? ` - ${locationName}` : ''} @ ${address}`;
+  };
+
   const { matchingLocation } = await inquirer.prompt([{
     type: 'list',
     name: 'matchingLocation',
@@ -16,9 +23,9 @@ async function askUserIfExistingLocation(locationData, potentialMatches) {
     choices: [
       ...potentialMatches.map(location => ({
         value: location,
-        name: `${location.Organization.name} - ${location.name} @ ${location.address}`,
+        name: formatLocationOption(location),
       })),
-      inquirer.Separator(),
+      new inquirer.Separator(),
       {
         name: 'None',
         value: null,
@@ -44,7 +51,7 @@ async function askUserIfExistingService(serviceData, potentialMatches) {
         value: service,
         name: service.name,
       })),
-      inquirer.Separator(),
+      new inquirer.Separator(),
       {
         name: 'None',
         value: null,
@@ -62,11 +69,14 @@ class Matcher {
     if (fs.existsSync(matchingDataFilePath)) {
       this.knownServices = JSON.parse(fs.readFileSync(matchingDataFilePath));
     } else {
-      this.knownServices = [];
+      this.knownServices = {};
     }
   }
 
   async updateKnownServiceData(fpcId, { location, service, nearbyButDifferentOrgs }) {
+    if (!this.knownServices[fpcId]) {
+      this.knownServices[fpcId] = {};
+    }
     const knownServiceData = this.knownServices[fpcId];
 
     if (location) {
@@ -84,19 +94,18 @@ class Matcher {
     }
 
     if (nearbyButDifferentOrgs) {
-      knownServiceData.nearbyButDifferentOrgs = [
-        ...(knownServiceData.nearbyButDifferentOrgs || []),
-        ...nearbyButDifferentOrgs,
-      ];
+      knownServiceData.nearbyButDifferentOrgs = nearbyButDifferentOrgs;
     }
 
-    return promisify(fs.writeFile)(matchingDataFilePath, JSON.stringify(this.knownServices));
+    return promisify(fs.writeFile)(
+      matchingDataFilePath, JSON.stringify(this.knownServices, null, 2),
+    );
   }
 
   async getMatchingLocation(serviceData, knownServiceData) {
-    const { locationData, id: fpcId } = serviceData;
+    const { location: locationData, id: fpcId } = serviceData;
     const { organizationName } = locationData;
-    const { orgName: knownOrgName, nearbyButDifferentOrgs = [] } = knownServiceData.orgName;
+    const { orgName: knownOrgName, nearbyButDifferentOrgs = [] } = knownServiceData;
 
     const nearbyLocations = await this.api.getLocations({
       position: locationData.position,
@@ -123,7 +132,9 @@ class Matcher {
       return existingLocation;
     }
 
-    await this.updateKnownServiceData(fpcId, { nearbyButDifferentOrgs: potentialDuplicates });
+    await this.updateKnownServiceData(fpcId, {
+      nearbyButDifferentOrgs: potentialDuplicates.map(location => location.Organization.name),
+    });
     return null;
   }
 
@@ -131,14 +142,18 @@ class Matcher {
   async getMatchingService(existingLocation, serviceData, knownServiceData) {
     const { taxonomyId, name } = serviceData;
     const existingServices = existingLocation.Services;
+    const knownServiceName = knownServiceData.serviceName;
 
     if (!existingServices) {
       return null;
     }
 
-    const sameNameService = existingServices.find(existingService => existingService.name === name);
-    if (sameNameService) {
-      return sameNameService;
+    const matchingNames = [name, knownServiceName];
+    const matchingNameService = existingServices.find(
+      existingService => matchingNames.includes(existingService.name),
+    );
+    if (matchingNameService) {
+      return matchingNameService;
     }
 
     const sameTaxonomyServices = existingServices.filter(
@@ -162,12 +177,14 @@ class Matcher {
       serviceId,
     } = knownServiceData;
 
-    const existingLocation = await this.api.getLocation(locationId);
-    if (existingLocation) {
-      return {
-        location: existingLocation,
-        service: existingLocation.Services.find(service => service.id === serviceId),
-      };
+    if (locationId) {
+      const existingLocation = await this.api.getLocation(locationId);
+      if (existingLocation) {
+        return {
+          location: existingLocation,
+          service: existingLocation.Services.find(service => service.id === serviceId),
+        };
+      }
     }
 
     const matchingLocation = await this.getMatchingLocation(serviceData, knownServiceData);
