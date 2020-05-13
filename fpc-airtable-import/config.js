@@ -6,7 +6,9 @@ export default {
   },
   streetlives: {
     baseApi: process.env.STREETLIVES_API_URL || 'http://localhost:3000',
-    username: process.env.STREETLIVES_USER,
-    password: process.env.STREETLIVES_PASSWORD,
+    authToken: process.env.STREETLIVES_API_TOKEN,
+  },
+  geocoding: {
+    apiKey: process.env.GOOGLE_API_KEY,
   },
 };

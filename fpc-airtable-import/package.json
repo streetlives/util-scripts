@@ -21,6 +21,7 @@
     "axios": "^0.19.2",
     "es6-promise-pool": "^2.5.0",
     "inquirer": "^7.1.0",
+    "moment": "^2.25.3",
     "pg": "^7.10.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^5.7.0"
