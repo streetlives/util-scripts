@@ -4,6 +4,7 @@ import config from './config';
 const { baseApi, authToken } = config.streetlives;
 
 const covidOccasion = 'COVID19';
+const source = `FPC (${baseApi})`;
 
 class Api {
   constructor() {
@@ -46,26 +47,27 @@ class Api {
     return data;
   }
 
-  // TODO: Figure out metadata. Just a specific user? New "source" field (with e.g. URL)?
-  // TODO: Should some of the logic here actually be in load-into-db?
-  // TODO: All of these functions should set the last_action_date (based on Last Updated FPC).
-  //       Although... that shouldn't necessarily be the date for _every_ field.
-
   async createLocation({
     organizationName,
     position,
-    // TODO: Make address format compatible with what the API expects.
     address,
     url,
     phones,
     covidRelatedInfo,
+    lastUpdated,
   }) {
+    const metadata = {
+      lastUpdated,
+      source,
+    };
+
     const { data: organization } = await this.client.request({
       url: `${config.baseApi}/organizations`,
       method: 'post',
       data: {
         name: organizationName,
         url,
+        metadata,
       },
     });
 
@@ -77,6 +79,7 @@ class Api {
         latitude: position.latitude,
         longitude: position.longitude,
         address,
+        metadata,
       },
     });
 
@@ -85,6 +88,7 @@ class Api {
         url: `${config.baseApi}/locations/${location.id}/phones`,
         method: 'post',
         data: phone,
+        metadata,
       })));
     }
 
@@ -99,7 +103,13 @@ class Api {
     hours,
     covidRelatedInfo,
     idRequired,
+    lastUpdated,
   }) {
+    const metadata = {
+      lastUpdated,
+      source,
+    };
+
     const { data: service } = await this.client.request({
       url: `${config.baseApi}/services`,
       method: 'post',
@@ -108,11 +118,70 @@ class Api {
         description,
         taxonomyId,
         locationId: location.id,
+        metadata,
       },
     });
 
-    // TODO: Some/much of the following should be shared with the update function.
-    const updateParams = {};
+    await this.updateService(service, {
+      idRequired,
+      isClosed,
+      hours,
+      covidRelatedInfo,
+      lastUpdated,
+    });
+
+    return service;
+  }
+
+  async updateLocation(location, {
+    url,
+    phones,
+    covidRelatedInfo,
+    lastUpdated,
+  }) {
+    const metadata = {
+      lastUpdated,
+      source,
+    };
+
+    await this.client.request({
+      url: `${config.baseApi}/locations/${location.id}`,
+      method: 'patch',
+      data: {
+        url,
+        eventRelatedInfo: covidRelatedInfo ? {
+          event: covidOccasion,
+          information: covidRelatedInfo,
+        } : undefined,
+        metadata,
+      },
+    });
+
+    if (phones) {
+      await Promise.all(phones.map(phone => this.client.request({
+        url: `${config.baseApi}/locations/${location.id}/phones`,
+        method: 'post',
+        data: phone,
+        metadata,
+      })));
+    }
+  }
+
+  async updateService(service, {
+    idRequired,
+    isClosed,
+    hours,
+    covidRelatedInfo,
+    lastUpdated,
+  }) {
+    const metadata = {
+      lastUpdated,
+      source,
+    };
+
+    const updateParams = {
+      metadata,
+    };
 
     if (isClosed) {
       updateParams.irregularHours = [{
@@ -138,7 +207,6 @@ class Api {
 
     if (idRequired != null) {
       updateParams.documents = {
-        // TODO: Is "ID required" actually equivalent to photo ID?
         proofs: idRequired ? ['photo ID'] : [],
       };
     }
@@ -148,20 +216,6 @@ class Api {
       method: 'patch',
       data: updateParams,
     });
-
-    return service;
-  }
-
-  async updateLocation(location, {}) {
-    // TODO: Implement.
-    // TODO: Override only covidRelatedInfo, I guess (if that...).
-    // TODO: Probably add check (here or in the caller) that doesn't update if nothing's changed.
-  }
-
-  async updateService(service, {}) {
-    // TODO: Implement.
-    // TODO: Override only status, hours, phone(?), and maybe any fields that don't already exist.
-    // TODO: Probably add check (here or in the caller) that doesn't update if nothing's changed.
   }
 }
 
