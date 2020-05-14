@@ -4,8 +4,6 @@ import config from './config';
 const base = new Airtable({ apiKey: config.airtable.apiKey }).base(config.airtable.base);
 const table = base(config.airtable.table);
 
-// TODO: Filter out additional notes that aren't relevant for users (somewhere).
-
 const getRecordFields = record => ({
   id: record.get('id'),
   phone: record.get('Phone'),
@@ -51,8 +49,6 @@ export const fetchServices = async () => {
   }).all();
 
   console.log(`Got ${records.length} records from Airtable`);
-
-  // TODO: Filter out the "7:00" records if needed.
 
   return records.map(getRecordFields);
 };
