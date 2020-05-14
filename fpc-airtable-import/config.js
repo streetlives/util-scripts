@@ -11,4 +11,7 @@ export default {
   geocoding: {
     apiKey: process.env.GOOGLE_API_KEY,
   },
+  maxDaysSinceLastUpdate: process.env.MAX_DAYS_SINCE_LAST_UPDATE
+    ? parseInt(process.env.MAX_DAYS_SINCE_LAST_UPDATE, 10)
+    : 7,
 };

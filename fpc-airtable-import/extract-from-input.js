@@ -1,8 +1,6 @@
 import Airtable from 'airtable';
 import config from './config';
 
-const maxDaysSinceLastUpdate = 7;
-
 const base = new Airtable({ apiKey: config.airtable.apiKey }).base(config.airtable.base);
 const table = base(config.airtable.table);
 
@@ -46,12 +44,13 @@ export const fetchServices = async () => {
       'lat',
     ],
     filterByFormula: `AND(
-      DATETIME_DIFF(NOW(), {Last Updated FPC}, 'd') < ${maxDaysSinceLastUpdate},
+      DATETIME_DIFF(NOW(), {Last Updated FPC}, 'd') < ${config.maxDaysSinceLastUpdate},
       NOT({Status FPC} = ''),
-      NOT({Status FPC} = 'unknown'),
-      NOT({Hours FPC} = '')
+      NOT({Status FPC} = 'unknown')
     )`,
   }).all();
+
+  console.log(`Got ${records.length} records from Airtable`);
 
   // TODO: Filter out the "7:00" records if needed.
 

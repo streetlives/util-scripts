@@ -34,25 +34,6 @@ export const getDaysInRange = (range) => {
   return individualDays;
 };
 
-export const filterDuplicateDays = (schedule) => {
-  const hoursByDay = groupBy(schedule, 'day');
-
-  return Object.keys(hoursByDay).reduce(({ deduped, skipped }, day) => {
-    const hoursForDay = hoursByDay[day];
-
-    const hasDifferentHours = hoursForDay.some(
-      ({ start, end }) => hoursForDay.some(
-        ({ start: otherStart, end: otherEnd }) => start !== otherStart || end !== otherEnd,
-      ),
-    );
-
-    if (hasDifferentHours) {
-      return { deduped, skipped: [...skipped, day] };
-    }
-    return { deduped: [...deduped, hoursForDay[0]], skipped };
-  }, { deduped: [], skipped: [] });
-};
-
 export const to24HourFormat = time => moment(time, ['h:mmA']).format('HH:mm');
 
 export const ensureMinutesSpecified = time => time.replace(
@@ -76,7 +57,6 @@ export const ensureAmPmSpecified = ({ start, end }) => {
 
 export default {
   getDaysInRange,
-  filterDuplicateDays,
   to24HourFormat,
   ensureMinutesSpecified,
   ensureAmPmSpecified,

@@ -1,7 +1,6 @@
 import { getAllRegexResults, flatten } from './utils';
 import {
   getDaysInRange,
-  filterDuplicateDays,
   to24HourFormat,
   ensureMinutesSpecified,
   ensureAmPmSpecified,
@@ -31,7 +30,6 @@ function parseIdRequired(idRequired) {
   }
 }
 
-// TODO: Is filtering out conflicting hours actually needed, or are they additive?
 function parseHours(hoursString) {
   /* eslint-disable-next-line max-len */
   const regex = /([A-Z]{3,5}(?:-[A-Z]{3,5})?):? *(\d{1,2}(?::\d{2})?(?:AM|PM)?)-(\d{1,2}(?::\d{2})?(?:AM|PM))[, ]*/ig;
@@ -58,12 +56,7 @@ function parseHours(hoursString) {
     }),
   );
 
-  const { deduped, skipped } = filterDuplicateDays(schedule);
-  skipped.forEach((day) => {
-    console.error(`Error parsing hours: Day ${day} has conflicting hours (${hoursString})`);
-  });
-
-  return deduped.map(({ day, start, end }) => {
+  return schedule.map(({ day, start, end }) => {
     const { start: openingHour, end: closingHour } = ensureAmPmSpecified({
       start: ensureMinutesSpecified(start),
       end: ensureMinutesSpecified(end),
@@ -152,8 +145,8 @@ class Transformer {
       taxonomyName: facilityType,
       isClosed: parseIsClosed(status),
       covidRelatedInfo: cleanString(additionalNotes),
-      hours: parseHours(hours),
-      lastUpdated,
+      hours: hours && parseHours(hours),
+      lastUpdated: lastUpdated && new Date(lastUpdated),
       idRequired: parseIdRequired(idRequired),
       location: {
         organizationName: cleanString(name),
@@ -170,6 +163,7 @@ class Transformer {
           state,
           country,
         },
+        lastUpdated,
       },
     };
 
