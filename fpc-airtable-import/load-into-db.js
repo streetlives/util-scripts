@@ -1,4 +1,5 @@
 import inquirer from 'inquirer';
+import moment from 'moment';
 import { flatten } from './utils';
 import config from './config';
 
@@ -34,28 +35,30 @@ async function decideNewCovidRelatedInfo({
   newInfo,
   existingLastUpdated,
   newLastUpdated,
+  name,
 }) {
-  if (!newInfo) return null;
-  if (newInfo === existingInfo) return null;
+  if (newInfo === existingInfo) return existingInfo;
 
   if (!existingInfo) return newInfo;
 
-  if (existingInfo.includes(newInfo)) return null;
-  if (newLastUpdated <= existingLastUpdated) return null;
+  if (newInfo && existingInfo.includes(newInfo)) return existingInfo;
+  if (newLastUpdated <= existingLastUpdated) return existingInfo;
 
   const { userChoice } = await inquirer.prompt([{
     type: 'list',
     name: 'userChoice',
     message:
-      'Which of the following covid-related info should be used?',
+      `Which of the following covid-related info should be used for ${name}?`,
     choices: [
       {
-        value: null,
-        name: `${existingInfo} (last updated ${existingLastUpdated})`,
+        value: existingInfo,
+        name: `${JSON.stringify(existingInfo)} (last updated ${
+          moment(existingLastUpdated).format('LLL')})`,
       },
       {
         value: newInfo,
-        name: `${newInfo} (last updated ${newLastUpdated})`,
+        name: `${JSON.stringify(newInfo)} (last updated ${
+          moment(newLastUpdated).format('LLL')})`,
       },
       new inquirer.Separator(),
       {
@@ -75,6 +78,7 @@ class Loader {
   }
 
   async createLocation(locationData) {
+    console.log(`Creating location - ${locationData.organizationName}`);
     return this.api.createLocation({
       ...locationData,
       metadata: { lastUpdated: locationData.lastUpdated, source },
@@ -82,6 +86,7 @@ class Loader {
   }
 
   async createService(location, serviceData) {
+    console.log(`Creating service - ${serviceData.name} @ ${location.Organization.name}`);
     return this.api.createService(location, {
       ...serviceData,
       metadata: { lastUpdated: serviceData.lastUpdated, source },
@@ -94,7 +99,9 @@ class Loader {
     phones,
     covidRelatedInfo,
     lastUpdated,
+    organizationName,
   }) {
+    // TODO: Figure out why everything is updating despite no changes.
     const updateParams = {};
 
     if (url && !location.Organization.url) {
@@ -115,8 +122,9 @@ class Loader {
       newInfo: covidRelatedInfo,
       existingLastUpdated,
       newLastUpdated: lastUpdated,
+      name: `location ${organizationName}`,
     });
-    if (updatedCovidRelatedInfo) {
+    if (updatedCovidRelatedInfo !== existingInfo) {
       updateParams.covidRelatedInfo = updatedCovidRelatedInfo;
     }
 
@@ -124,6 +132,7 @@ class Loader {
       return location;
     }
 
+    console.log(`Updating location - ${location.Organization.name}`);
     return this.api.updateLocation(location, {
       ...updateParams,
       metadata: { lastUpdated, source },
@@ -136,6 +145,8 @@ class Loader {
     covidRelatedInfo,
     idRequired,
     lastUpdated,
+    name,
+    location: locationData,
   }) {
     const updateParams = {};
 
@@ -164,8 +175,9 @@ class Loader {
       newInfo: covidRelatedInfo,
       existingLastUpdated,
       newLastUpdated: lastUpdated,
+      name: `service ${name} @ ${locationData.organizationName}`,
     });
-    if (updatedCovidRelatedInfo) {
+    if (updatedCovidRelatedInfo !== existingInfo) {
       updateParams.covidRelatedInfo = updatedCovidRelatedInfo;
     }
 
@@ -173,6 +185,7 @@ class Loader {
       return service;
     }
 
+    console.log(`Updating service - ${service.name} @ ${locationData.organizationName}`);
     return this.api.updateService(service, { ...updateParams, metadata: { lastUpdated, source } });
   }
 

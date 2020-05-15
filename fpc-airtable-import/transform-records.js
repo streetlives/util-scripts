@@ -113,7 +113,7 @@ class Transformer {
     };
 
     const uniqueTaxonomyNames = Object.keys(
-      taxonomyNames.reduce((obj, name) => ({ ...obj, [name]: true })),
+      taxonomyNames.reduce((obj, name) => ({ ...obj, [name]: true }), {}),
     );
     const completeTaxonomy = await this.api.getTaxonomy();
 
@@ -180,8 +180,10 @@ class Transformer {
 
     if (service.isClosed) {
       service.location.covidRelatedInfo = parseCovidInfo(cleanString(additionalNotes));
+      service.covidRelatedInfo = null;
     } else {
       service.covidRelatedInfo = parseCovidInfo(cleanString(additionalNotes));
+      service.location.covidRelatedInfo = null;
     }
 
     return service;

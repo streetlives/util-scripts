@@ -84,13 +84,16 @@ class Api {
       },
     });
 
+    if (covidRelatedInfo !== undefined) {
+      await this.updateLocation(location, {
+        covidRelatedInfo,
+        metadata,
+      });
+    }
+
     let createdPhones;
     if (phones) {
-      createdPhones = await Promise.all(phones.map(phone => this.client.request({
-        url: `${baseApi}/locations/${location.id}/phones`,
-        method: 'post',
-        data: { ...phone, metadata },
-      })));
+      createdPhones = await this.createPhones({ location, phones, metadata });
     }
 
     return {
@@ -144,7 +147,7 @@ class Api {
       method: 'patch',
       data: {
         url,
-        eventRelatedInfo: covidRelatedInfo ? {
+        eventRelatedInfo: covidRelatedInfo !== undefined ? {
           event: covidOccasion,
           information: covidRelatedInfo,
         } : undefined,
@@ -153,12 +156,7 @@ class Api {
     });
 
     if (phones) {
-      await Promise.all(phones.map(phone => this.client.request({
-        url: `${baseApi}/locations/${location.id}/phones`,
-        method: 'post',
-        data: phone,
-        metadata,
-      })));
+      await this.createPhones({ location, phones, metadata });
     }
   }
 
@@ -188,7 +186,7 @@ class Api {
       }));
     }
 
-    if (covidRelatedInfo) {
+    if (covidRelatedInfo !== undefined) {
       updateParams.eventRelatedInfo = {
         event: covidOccasion,
         information: covidRelatedInfo,
@@ -206,6 +204,14 @@ class Api {
       method: 'patch',
       data: updateParams,
     });
+  }
+
+  async createPhones({ location, phones, metadata }) {
+    return Promise.all(phones.map(phone => this.client.request({
+      url: `${baseApi}/locations/${location.id}/phones`,
+      method: 'post',
+      data: { ...phone, metadata },
+    })));
   }
 }
 
