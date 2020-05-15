@@ -4,7 +4,6 @@ import config from './config';
 const { baseApi, authToken } = config.streetlives;
 
 const covidOccasion = 'COVID19';
-const source = `FPC (${baseApi})`;
 
 class Api {
   constructor() {
@@ -32,11 +31,18 @@ class Api {
   }
 
   async getLocation(id) {
-    const { data } = await this.client.request({
-      url: `${baseApi}/locations/${id}`,
-      method: 'get',
-    });
-    return data;
+    try {
+      const { data } = await this.client.request({
+        url: `${baseApi}/locations/${id}`,
+        method: 'get',
+      });
+      return data;
+    } catch (err) {
+      if (err.response.status === 404) {
+        return null;
+      }
+      throw err;
+    }
   }
 
   async getTaxonomy() {
@@ -54,15 +60,10 @@ class Api {
     url,
     phones,
     covidRelatedInfo,
-    lastUpdated,
+    metadata,
   }) {
-    const metadata = {
-      lastUpdated,
-      source,
-    };
-
     const { data: organization } = await this.client.request({
-      url: `${config.baseApi}/organizations`,
+      url: `${baseApi}/organizations`,
       method: 'post',
       data: {
         name: organizationName,
@@ -72,7 +73,7 @@ class Api {
     });
 
     const { data: location } = await this.client.request({
-      url: `${config.baseApi}/locations`,
+      url: `${baseApi}/locations`,
       method: 'post',
       data: {
         organizationId: organization.id,
@@ -83,16 +84,20 @@ class Api {
       },
     });
 
+    let createdPhones;
     if (phones) {
-      await Promise.all(phones.map(phone => this.client.request({
-        url: `${config.baseApi}/locations/${location.id}/phones`,
+      createdPhones = await Promise.all(phones.map(phone => this.client.request({
+        url: `${baseApi}/locations/${location.id}/phones`,
         method: 'post',
-        data: phone,
-        metadata,
+        data: { ...phone, metadata },
       })));
     }
 
-    return location;
+    return {
+      ...location,
+      Organization: organization,
+      Phones: createdPhones,
+    };
   }
 
   async createService(location, {
@@ -103,15 +108,10 @@ class Api {
     hours,
     covidRelatedInfo,
     idRequired,
-    lastUpdated,
+    metadata,
   }) {
-    const metadata = {
-      lastUpdated,
-      source,
-    };
-
     const { data: service } = await this.client.request({
-      url: `${config.baseApi}/services`,
+      url: `${baseApi}/services`,
       method: 'post',
       data: {
         name,
@@ -127,7 +127,7 @@ class Api {
       isClosed,
       hours,
       covidRelatedInfo,
-      lastUpdated,
+      metadata,
     });
 
     return service;
@@ -137,15 +137,10 @@ class Api {
     url,
     phones,
     covidRelatedInfo,
-    lastUpdated,
+    metadata,
   }) {
-    const metadata = {
-      lastUpdated,
-      source,
-    };
-
     await this.client.request({
-      url: `${config.baseApi}/locations/${location.id}`,
+      url: `${baseApi}/locations/${location.id}`,
       method: 'patch',
       data: {
         url,
@@ -159,7 +154,7 @@ class Api {
 
     if (phones) {
       await Promise.all(phones.map(phone => this.client.request({
-        url: `${config.baseApi}/locations/${location.id}/phones`,
+        url: `${baseApi}/locations/${location.id}/phones`,
         method: 'post',
         data: phone,
         metadata,
@@ -172,13 +167,8 @@ class Api {
     isClosed,
     hours,
     covidRelatedInfo,
-    lastUpdated,
+    metadata,
   }) {
-    const metadata = {
-      lastUpdated,
-      source,
-    };
-
     const updateParams = {
       metadata,
     };
@@ -212,7 +202,7 @@ class Api {
     }
 
     await this.client.request({
-      url: `${config.baseApi}/services/${service.id}`,
+      url: `${baseApi}/services/${service.id}`,
       method: 'patch',
       data: updateParams,
     });

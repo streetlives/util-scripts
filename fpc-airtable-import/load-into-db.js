@@ -1,19 +1,30 @@
 import inquirer from 'inquirer';
 import { flatten } from './utils';
+import config from './config';
+
+const source = `FPC (${config.airtable.url})`;
 
 function getMissingPhones(phones, location) {
+  if (!phones) return [];
+
   const normalizeNumber = number => number.replace(/[^\d]/g, '');
 
   const existingNumbers = [
     ...location.Phones.map(({ number }) => number),
-    flatten(location.Services.map(service => service.Phones.map(({ number }) => number))),
+    ...flatten(location.Services.map(
+      service => (service.Phones || []).map(({ number }) => number),
+    )),
   ].map(normalizeNumber);
 
   return phones.filter(({ number }) => !existingNumbers.includes(normalizeNumber(number)));
 }
 
-function getLatestUpdate(metadata) {
+function getLatestUpdate(entity, entityName) {
+  if (!entity.metadata) return new Date(0);
+
+  const metadata = entity.metadata[entityName];
   if (!metadata || !metadata.length) return new Date(0);
+
   const fieldUpdates = metadata.map(field => new Date(field.last_action_date));
   return new Date(Math.max(...fieldUpdates));
 }
@@ -64,13 +75,20 @@ class Loader {
   }
 
   async createLocation(locationData) {
-    return this.api.createLocation(locationData);
+    return this.api.createLocation({
+      ...locationData,
+      metadata: { lastUpdated: locationData.lastUpdated, source },
+    });
   }
 
   async createService(location, serviceData) {
-    return this.api.createService(location, serviceData);
+    return this.api.createService(location, {
+      ...serviceData,
+      metadata: { lastUpdated: serviceData.lastUpdated, source },
+    });
   }
 
+  // TODO: If there's only 1 service and it's closed, would be good to mark the location as closed.
   async updateLocation(location, {
     url,
     phones,
@@ -88,8 +106,10 @@ class Loader {
       updateParams.phones = missingPhones;
     }
 
-    const existingLastUpdated = getLatestUpdate(location.metadata.location);
-    const existingInfo = location.EventRelatedInfos[0] && location.EventRelatedInfos[0].information;
+    const existingLastUpdated = getLatestUpdate(location, 'location');
+    const existingInfo = location.EventRelatedInfos
+      && location.EventRelatedInfos[0]
+      && location.EventRelatedInfos[0].information;
     const updatedCovidRelatedInfo = await decideNewCovidRelatedInfo({
       existingInfo,
       newInfo: covidRelatedInfo,
@@ -104,7 +124,10 @@ class Loader {
       return location;
     }
 
-    return this.api.updateLocation(location, { ...updateParams, lastUpdated });
+    return this.api.updateLocation(location, {
+      ...updateParams,
+      metadata: { lastUpdated, source },
+    });
   }
 
   async updateService(service, {
@@ -116,21 +139,26 @@ class Loader {
   }) {
     const updateParams = {};
 
-    const existingLastUpdated = getLatestUpdate(service.metadata.service);
+    const existingLastUpdated = getLatestUpdate(service, 'service');
 
-    if (idRequired && !service.RequiredDocuments.length && lastUpdated > existingLastUpdated) {
+    const areExistingDocumentsRequired = service.RequiredDocuments
+      && service.RequiredDocuments.length;
+    if (idRequired && !areExistingDocumentsRequired && lastUpdated > existingLastUpdated) {
       updateParams.idRequired = idRequired;
     }
 
-    const existingStatusUnknown = !service.HolidaySchedules.length;
-    const currentlyClosed = service.HolidaySchedules.every(({ closed }) => closed);
+    const existingStatusUnknown = !service.HolidaySchedules || !service.HolidaySchedules.length;
+    const currentlyClosed = !service.HolidaySchedules
+      || service.HolidaySchedules.every(({ closed }) => closed);
     if (existingStatusUnknown
       || (lastUpdated > existingLastUpdated && currentlyClosed !== isClosed)) {
       updateParams.isClosed = isClosed;
       updateParams.hours = hours;
     }
 
-    const existingInfo = service.EventRelatedInfos[0] && service.EventRelatedInfos[0].information;
+    const existingInfo = service.EventRelatedInfos
+      && service.EventRelatedInfos[0]
+      && service.EventRelatedInfos[0].information;
     const updatedCovidRelatedInfo = await decideNewCovidRelatedInfo({
       existingInfo,
       newInfo: covidRelatedInfo,
@@ -145,7 +173,7 @@ class Loader {
       return service;
     }
 
-    return this.api.updateService(service, { ...updateParams, lastUpdated });
+    return this.api.updateService(service, { ...updateParams, metadata: { lastUpdated, source } });
   }
 
   async loadServiceIntoDb(serviceData) {

@@ -8,11 +8,6 @@ export const splitIntoArray = (value) => {
 
 export const flatten = arrs => arrs.reduce((flatArr, arr) => [...flatArr, ...arr], []);
 
-export const groupBy = (arr, prop) => arr.reduce((grouped, curr) => ({
-  ...grouped,
-  [curr[prop]]: [...(grouped[curr[prop]] || []), curr],
-}), {});
-
 export const getAllRegexResults = (string, regex, resultToObj) => {
   let regexResult = regex.exec(string);
 
@@ -32,6 +27,5 @@ export const getAllRegexResults = (string, regex, resultToObj) => {
 export default {
   splitIntoArray,
   flatten,
-  groupBy,
   getAllRegexResults,
 };

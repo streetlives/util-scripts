@@ -44,7 +44,10 @@ export const fetchServices = async () => {
     filterByFormula: `AND(
       DATETIME_DIFF(NOW(), {Last Updated FPC}, 'd') < ${config.maxDaysSinceLastUpdate},
       NOT({Status FPC} = ''),
-      NOT({Status FPC} = 'unknown')
+      NOT({Status FPC} = 'unknown'),
+      NOT(lat = ''),
+      NOT(lng = ''),
+      NOT(Address = '')
     )`,
   }).all();
 

@@ -4,6 +4,7 @@ import {
   to24HourFormat,
   ensureMinutesSpecified,
   ensureAmPmSpecified,
+  getDayStringForNumber,
 } from './times';
 
 const state = 'NY';
@@ -32,7 +33,7 @@ function parseIdRequired(idRequired) {
 
 function parseHours(hoursString) {
   /* eslint-disable-next-line max-len */
-  const regex = /([A-Z]{3,5}(?:-[A-Z]{3,5})?):? *(\d{1,2}(?::\d{2})?(?:AM|PM)?)-(\d{1,2}(?::\d{2})?(?:AM|PM))[, ]*/ig;
+  const regex = /([A-Z]{2,5}(?:[,-][A-Z]{2,5})?):? *(\d{1,2}(?::\d{2})?(?:AM|PM)?) ?- ?(\d{1,2}(?::\d{2})?(?:AM|PM))[, ]*/ig;
 
   const parts = getAllRegexResults(
     hoursString.toLowerCase(),
@@ -63,9 +64,9 @@ function parseHours(hoursString) {
     });
 
     return {
-      weekday: day,
-      opens_at: to24HourFormat(openingHour),
-      closes_at: to24HourFormat(closingHour),
+      weekday: getDayStringForNumber(day),
+      opensAt: to24HourFormat(openingHour),
+      closesAt: to24HourFormat(closingHour),
     };
   });
 }
@@ -144,6 +145,7 @@ class Transformer {
       taxonomyId: taxonomy.id,
       taxonomyName: facilityType,
       isClosed: parseIsClosed(status),
+      // TODO: Some parsing for notes (trim bullet when 1 line, fix Plentiful links, etc).
       covidRelatedInfo: cleanString(additionalNotes),
       hours: hours && parseHours(hours),
       lastUpdated: lastUpdated && new Date(lastUpdated),
@@ -163,7 +165,7 @@ class Transformer {
           state,
           country,
         },
-        lastUpdated,
+        lastUpdated: lastUpdated && new Date(lastUpdated),
       },
     };
 
