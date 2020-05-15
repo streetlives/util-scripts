@@ -86,7 +86,7 @@ class Loader {
   }
 
   async createService(location, serviceData) {
-    console.log(`Creating service - ${serviceData.name} @ ${location.Organization.name}`);
+    console.log(`Creating service  - ${serviceData.name} @ ${location.Organization.name}`);
     return this.api.createService(location, {
       ...serviceData,
       metadata: { lastUpdated: serviceData.lastUpdated, source },
@@ -101,7 +101,6 @@ class Loader {
     lastUpdated,
     organizationName,
   }) {
-    // TODO: Figure out why everything is updating despite no changes.
     const updateParams = {};
 
     if (url && !location.Organization.url) {
@@ -124,11 +123,12 @@ class Loader {
       newLastUpdated: lastUpdated,
       name: `location ${organizationName}`,
     });
-    if (updatedCovidRelatedInfo !== existingInfo) {
+    if ((updatedCovidRelatedInfo || existingInfo) && updatedCovidRelatedInfo !== existingInfo) {
       updateParams.covidRelatedInfo = updatedCovidRelatedInfo;
     }
 
     if (!Object.keys(updateParams).length) {
+      console.log(`No need for location update - ${location.Organization.name}`);
       return location;
     }
 
@@ -158,10 +158,11 @@ class Loader {
       updateParams.idRequired = idRequired;
     }
 
+    // TODO: Update hours even if status hasn't changed, in case they're mot as up-to-date?
     const existingStatusUnknown = !service.HolidaySchedules || !service.HolidaySchedules.length;
     const currentlyClosed = !service.HolidaySchedules
       || service.HolidaySchedules.every(({ closed }) => closed);
-    if (existingStatusUnknown
+    if ((existingStatusUnknown && lastUpdated.getTime() !== existingLastUpdated.getTime())
       || (lastUpdated > existingLastUpdated && currentlyClosed !== isClosed)) {
       updateParams.isClosed = isClosed;
       updateParams.hours = hours;
@@ -177,15 +178,18 @@ class Loader {
       newLastUpdated: lastUpdated,
       name: `service ${name} @ ${locationData.organizationName}`,
     });
-    if (updatedCovidRelatedInfo !== existingInfo) {
+    if ((updatedCovidRelatedInfo || existingInfo) && updatedCovidRelatedInfo !== existingInfo) {
       updateParams.covidRelatedInfo = updatedCovidRelatedInfo;
     }
 
     if (!Object.keys(updateParams).length) {
+      console.log(
+        `No need for service update  - ${service.name} @ ${locationData.organizationName}`,
+      );
       return service;
     }
 
-    console.log(`Updating service - ${service.name} @ ${locationData.organizationName}`);
+    console.log(`Updating service  - ${service.name} @ ${locationData.organizationName}`);
     return this.api.updateService(service, { ...updateParams, metadata: { lastUpdated, source } });
   }
 
