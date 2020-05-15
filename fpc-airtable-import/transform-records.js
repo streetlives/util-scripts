@@ -39,6 +39,11 @@ function parseCovidInfo(info) {
     .replace(/(\n|\s)*\[\d\]: http:\/\/www.plentifulapp.com/, '');
 }
 
+function parseAddress(address) {
+  return address
+    && address.replace(/\n?[,\s]*(?:New York|Bronx|Brooklyn|Queens)?[, ]*NY[, ]+\d{4,5}/g, '');
+}
+
 function parseHours(hoursString) {
   /* eslint-disable-next-line max-len */
   const regex = /([A-Z]{2,5}(?:[,-][A-Z]{2,5})?):? *(\d{1,2}(?::\d{2})?(?:AM|PM)?) ?- ?(\d{1,2}(?::\d{2})?(?:AM|PM))[, ]*/ig;
@@ -167,8 +172,7 @@ class Transformer {
           latitude,
         },
         address: {
-          // TODO: See if anything can be done about the duplicate city+zipcode in some addresses.
-          street: cleanString(address),
+          street: parseAddress(cleanString(address)),
           postalCode: zipcode,
           city: await this.geolocation.getCity({ zipcode, neighborhood }),
           state,
