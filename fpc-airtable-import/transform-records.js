@@ -31,6 +31,14 @@ function parseIdRequired(idRequired) {
   }
 }
 
+function parseCovidInfo(info) {
+  if (!info) return info;
+  return info
+    .replace(/^\s*-\s*/, '')
+    .replace(/\[Plentiful\]\[\d\]/, 'Plentiful (http://www.plentifulapp.com)')
+    .replace(/(\n|\s)*\[\d\]: http:\/\/www.plentifulapp.com/, '');
+}
+
 function parseHours(hoursString) {
   /* eslint-disable-next-line max-len */
   const regex = /([A-Z]{2,5}(?:[,-][A-Z]{2,5})?):? *(\d{1,2}(?::\d{2})?(?:AM|PM)?) ?- ?(\d{1,2}(?::\d{2})?(?:AM|PM))[, ]*/ig;
@@ -134,6 +142,8 @@ class Transformer {
   }, taxonomyMapping) {
     const taxonomy = taxonomyMapping[facilityType];
 
+    // TODO: If it's an existing location with only 1 service, maybe we should support it.
+    // TODO: In general, errors shouldn't fail if the fields wouldn't be used anyway (update).
     if (!taxonomy) {
       console.error(`Unknown taxonomy for facility type ${facilityType} (${name})`);
       return null;
@@ -145,8 +155,6 @@ class Transformer {
       taxonomyId: taxonomy.id,
       taxonomyName: facilityType,
       isClosed: parseIsClosed(status),
-      // TODO: Some parsing for notes (trim bullet when 1 line, fix Plentiful links, etc).
-      covidRelatedInfo: cleanString(additionalNotes),
       hours: hours && parseHours(hours),
       lastUpdated: lastUpdated && new Date(lastUpdated),
       idRequired: parseIdRequired(idRequired),
@@ -159,6 +167,7 @@ class Transformer {
           latitude,
         },
         address: {
+          // TODO: See if anything can be done about the duplicate city+zipcode in some addresses.
           street: cleanString(address),
           postalCode: zipcode,
           city: await this.geolocation.getCity({ zipcode, neighborhood }),
@@ -170,9 +179,9 @@ class Transformer {
     };
 
     if (service.isClosed) {
-      service.location.covidRelatedInfo = cleanString(additionalNotes);
+      service.location.covidRelatedInfo = parseCovidInfo(cleanString(additionalNotes));
     } else {
-      service.covidRelatedInfo = cleanString(additionalNotes);
+      service.covidRelatedInfo = parseCovidInfo(cleanString(additionalNotes));
     }
 
     return service;
