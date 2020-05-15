@@ -31,8 +31,8 @@ class Geolocation {
   }
 
   async updateCityMapping({ zipcode, neighborhood, city }) {
-    this.zipcodeMapping[zipcode] = city;
-    this.neighborhoodMapping[neighborhood] = city;
+    if (zipcode) this.zipcodeMapping[zipcode] = city;
+    if (neighborhood) this.neighborhoodMapping[neighborhood] = city;
 
     const writeFileAsync = promisify(fs.writeFile);
     return Promise.all([
@@ -84,8 +84,8 @@ class Geolocation {
   }
 
   async getCity({ zipcode, neighborhood }) {
-    const cityByZipcode = this.zipcodeMapping[zipcode];
-    const cityByNeighborhood = this.neighborhoodMapping[neighborhood];
+    const cityByZipcode = zipcode && this.zipcodeMapping[zipcode];
+    const cityByNeighborhood = neighborhood && this.neighborhoodMapping[neighborhood];
 
     if (cityByZipcode) {
       return cityByZipcode;
