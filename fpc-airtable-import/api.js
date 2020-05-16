@@ -133,7 +133,12 @@ class Api {
       metadata,
     });
 
-    return service;
+    return {
+      ...service,
+      isClosed,
+      hours,
+      covidRelatedInfo,
+    };
   }
 
   async updateLocation(location, {

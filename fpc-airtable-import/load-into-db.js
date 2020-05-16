@@ -1,5 +1,6 @@
 import inquirer from 'inquirer';
 import moment from 'moment';
+import isEqual from 'lodash.isequal';
 import { flatten } from './utils';
 import config from './config';
 
@@ -28,6 +29,49 @@ function getLatestUpdate(entity, entityName) {
 
   const fieldUpdates = metadata.map(field => new Date(field.last_action_date));
   return new Date(Math.max(...fieldUpdates));
+}
+
+function getHoursUpdates({
+  service,
+  isClosed,
+  hours,
+  lastUpdated,
+  existingLastUpdated,
+}) {
+  const areExistingHoursKnown = service.HolidaySchedules && service.HolidaySchedules.length;
+  const areNewHoursKnown = hours && hours.length;
+
+  if (!areExistingHoursKnown) {
+    if (areNewHoursKnown) return { isClosed, hours };
+    if (isClosed === true) return { isClosed };
+    return {};
+  }
+
+  const isDataSignificantlyNewer = moment(existingLastUpdated)
+    .add(config.minHoursFresherToOverrideData, 'hours')
+    .isBefore(lastUpdated);
+
+  if (!isDataSignificantlyNewer) {
+    return {};
+  }
+
+  const currentlyClosed = service.HolidaySchedules.every(({ closed }) => closed);
+  if (currentlyClosed !== isClosed) {
+    return { isClosed, hours };
+  }
+
+  const existingHours = service.HolidaySchedules
+    .filter(({ closed }) => !closed)
+    .map(({ opens_at: opensAt, closes_at: closesAt, weekday }) => ({
+      opensAt,
+      closesAt,
+      weekday,
+    }));
+  if (!isEqual(hours, existingHours)) {
+    return { hours };
+  }
+
+  return {};
 }
 
 async function decideNewCovidRelatedInfo({
@@ -93,7 +137,6 @@ class Loader {
     });
   }
 
-  // TODO: If there's only 1 service and it's closed, would be good to mark the location as closed.
   async updateLocation(location, {
     url,
     phones,
@@ -110,21 +153,6 @@ class Loader {
     const missingPhones = getMissingPhones(phones, location);
     if (missingPhones.length) {
       updateParams.phones = missingPhones;
-    }
-
-    const existingLastUpdated = getLatestUpdate(location, 'location');
-    const existingInfo = location.EventRelatedInfos
-      && location.EventRelatedInfos[0]
-      && location.EventRelatedInfos[0].information;
-    const updatedCovidRelatedInfo = await decideNewCovidRelatedInfo({
-      existingInfo,
-      newInfo: covidRelatedInfo,
-      existingLastUpdated,
-      newLastUpdated: lastUpdated,
-      name: `location ${organizationName}`,
-    });
-    if ((updatedCovidRelatedInfo || existingInfo) && updatedCovidRelatedInfo !== existingInfo) {
-      updateParams.covidRelatedInfo = updatedCovidRelatedInfo;
     }
 
     if (!Object.keys(updateParams).length) {
@@ -158,15 +186,13 @@ class Loader {
       updateParams.idRequired = idRequired;
     }
 
-    // TODO: Update hours even if status hasn't changed, in case they're mot as up-to-date?
-    const existingStatusUnknown = !service.HolidaySchedules || !service.HolidaySchedules.length;
-    const currentlyClosed = !service.HolidaySchedules
-      || service.HolidaySchedules.every(({ closed }) => closed);
-    if ((existingStatusUnknown && lastUpdated.getTime() !== existingLastUpdated.getTime())
-      || (lastUpdated > existingLastUpdated && currentlyClosed !== isClosed)) {
-      updateParams.isClosed = isClosed;
-      updateParams.hours = hours;
-    }
+    Object.assign(updateParams, getHoursUpdates({
+      service,
+      isClosed,
+      hours,
+      lastUpdated,
+      existingLastUpdated,
+    }));
 
     const existingInfo = service.EventRelatedInfos
       && service.EventRelatedInfos[0]
@@ -190,7 +216,31 @@ class Loader {
     }
 
     console.log(`Updating service  - ${service.name} @ ${locationData.organizationName}`);
-    return this.api.updateService(service, { ...updateParams, metadata: { lastUpdated, source } });
+    await this.api.updateService(service, { ...updateParams, metadata: { lastUpdated, source } });
+    return { ...service, ...updateParams };
+  }
+
+  async updateLocationStatus(location, updatedService, serviceData) {
+    const metadata = { lastUpdated: serviceData.lastUpdated, source };
+    const openLocation = () => this.api.updateLocation(location, {
+      covidRelatedInfo: null,
+      metadata,
+    });
+    const closeLocation = () => this.api.updateLocation(location, {
+      covidRelatedInfo: serviceData.covidRelatedInfo || 'This location is temporarily closed.',
+      metadata,
+    });
+
+    const hasOtherServices = location.Services
+      && location.Services.some(({ id }) => id !== updatedService.id);
+
+    const wasStatusUpdated = updatedService.isClosed != null;
+    if (wasStatusUpdated) {
+      if (updatedService.isClosed === false) return openLocation();
+      if (updatedService.isClosed === true && !hasOtherServices) return closeLocation();
+    }
+
+    return null;
   }
 
   async loadServiceIntoDb(serviceData) {
@@ -210,10 +260,12 @@ class Loader {
     if (!service) {
       service = await this.createService(location, serviceData);
     } else {
-      await this.updateService(service, serviceData);
+      service = await this.updateService(service, serviceData);
     }
 
     await this.existingDataMatcher.updateKnownServiceData(fpcId, { location, service });
+
+    await this.updateLocationStatus(location, service, serviceData);
   }
 }
 

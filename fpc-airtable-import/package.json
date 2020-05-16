@@ -1,5 +1,5 @@
 {
-  "name": "311-data",
+  "name": "fpc-airtable-import",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -21,6 +21,7 @@
     "axios": "^0.19.2",
     "es6-promise-pool": "^2.5.0",
     "inquirer": "^7.1.0",
+    "lodash.isequal": "^4.5.0",
     "moment": "^2.25.3",
     "pg": "^7.10.0",
     "pg-hstore": "^2.3.2",

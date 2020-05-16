@@ -147,19 +147,18 @@ class Transformer {
   }, taxonomyMapping) {
     const taxonomy = taxonomyMapping[facilityType];
 
-    // TODO: If it's an existing location with only 1 service, maybe we should support it.
-    // TODO: In general, errors shouldn't fail if the fields wouldn't be used anyway (update).
     if (!taxonomy) {
       console.error(`Unknown taxonomy for facility type ${facilityType} (${name})`);
       return null;
     }
 
-    const service = {
+    return {
       id,
       name: taxonomy.name,
       taxonomyId: taxonomy.id,
       taxonomyName: facilityType,
       isClosed: parseIsClosed(status),
+      covidRelatedInfo: parseCovidInfo(cleanString(additionalNotes)),
       hours: hours && parseHours(hours),
       lastUpdated: lastUpdated && new Date(lastUpdated),
       idRequired: parseIdRequired(idRequired),
@@ -181,16 +180,6 @@ class Transformer {
         lastUpdated: lastUpdated && new Date(lastUpdated),
       },
     };
-
-    if (service.isClosed) {
-      service.location.covidRelatedInfo = parseCovidInfo(cleanString(additionalNotes));
-      service.covidRelatedInfo = null;
-    } else {
-      service.covidRelatedInfo = parseCovidInfo(cleanString(additionalNotes));
-      service.location.covidRelatedInfo = null;
-    }
-
-    return service;
   }
 
   async transformRecords(records) {
