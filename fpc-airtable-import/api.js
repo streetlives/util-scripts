@@ -189,8 +189,8 @@ class Api {
         closed: true,
         occasion: covidOccasion,
       }];
-    } else if (hours) {
-      updateParams.irregularHours = hours.map(({ opensAt, closesAt, weekday }) => ({
+    } else if (hours || isClosed != null) {
+      updateParams.irregularHours = (hours || []).map(({ opensAt, closesAt, weekday }) => ({
         opensAt,
         closesAt,
         weekday,

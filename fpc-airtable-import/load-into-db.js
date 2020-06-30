@@ -67,6 +67,10 @@ function getHoursUpdates({
     return { isClosed, hours };
   }
 
+  if (isClosed) {
+    return {};
+  }
+
   const existingHours = service.HolidaySchedules
     .filter(({ closed }) => !closed)
     .map(({ opens_at: opensAt, closes_at: closesAt, weekday }) => ({
