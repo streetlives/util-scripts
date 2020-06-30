@@ -45,6 +45,7 @@ export const fetchServices = async () => {
       DATETIME_DIFF(NOW(), {Last Updated FPC}, 'd') < ${config.maxDaysSinceLastUpdate},
       NOT({Status FPC} = ''),
       NOT({Status FPC} = 'unknown'),
+      OR({Status FPC} = 'closed', NOT({Hours FPC} = '')),
       NOT(lat = ''),
       NOT(lng = ''),
       NOT(Address = '')

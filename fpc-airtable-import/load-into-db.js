@@ -31,6 +31,12 @@ function getLatestUpdate(entity, entityName) {
   return new Date(Math.max(...fieldUpdates));
 }
 
+function getCovidRelatedInfo(service) {
+  return service.EventRelatedInfos
+    && service.EventRelatedInfos[0]
+    && service.EventRelatedInfos[0].information;
+}
+
 function getHoursUpdates({
   service,
   isClosed,
@@ -57,6 +63,7 @@ function getHoursUpdates({
 
   const currentlyClosed = service.HolidaySchedules.every(({ closed }) => closed);
   if (currentlyClosed !== isClosed) {
+    console.log(`Service ${isClosed ? 'closed' : 'opened'} - ${service.name}`);
     return { isClosed, hours };
   }
 
@@ -100,7 +107,7 @@ async function decideNewCovidRelatedInfo({
           moment(existingLastUpdated).format('LLL')})`,
       },
       {
-        value: newInfo,
+        value: newInfo || null,
         name: `${JSON.stringify(newInfo)} (last updated ${
           moment(newLastUpdated).format('LLL')})`,
       },
@@ -194,9 +201,7 @@ class Loader {
       existingLastUpdated,
     }));
 
-    const existingInfo = service.EventRelatedInfos
-      && service.EventRelatedInfos[0]
-      && service.EventRelatedInfos[0].information;
+    const existingInfo = getCovidRelatedInfo(service);
     const updatedCovidRelatedInfo = await decideNewCovidRelatedInfo({
       existingInfo,
       newInfo: covidRelatedInfo,
@@ -220,7 +225,7 @@ class Loader {
     return { ...service, ...updateParams };
   }
 
-  async updateLocationStatus(location, updatedService, serviceData) {
+  async updateLocationStatus(location, { oldService, updatedService, serviceData }) {
     const metadata = { lastUpdated: serviceData.lastUpdated, source };
     const openLocation = () => this.api.updateLocation(location, {
       covidRelatedInfo: null,
@@ -236,8 +241,25 @@ class Loader {
 
     const wasStatusUpdated = updatedService.isClosed != null;
     if (wasStatusUpdated) {
-      if (updatedService.isClosed === false) return openLocation();
-      if (updatedService.isClosed === true && !hasOtherServices) return closeLocation();
+      if (updatedService.isClosed === false) {
+        if (oldService) console.log(`Location opened          - ${location.Organization.name}`);
+        return openLocation();
+      }
+      if (updatedService.isClosed === true && !hasOtherServices) {
+        if (oldService) console.log(`Location closed          - ${location.Organization.name}`);
+        return closeLocation();
+      }
+    } else if (oldService) {
+      const existingCovidRelatedInfo = getCovidRelatedInfo(oldService);
+      const newCovidRelatedInfo = serviceData.covidRelatedInfo;
+      const remainsClosed = oldService.HolidaySchedules.every(({ closed }) => closed);
+      const hasUpdatedCovidRelatedInfo = newCovidRelatedInfo !== undefined
+        && existingCovidRelatedInfo !== newCovidRelatedInfo;
+
+      if (remainsClosed && !hasOtherServices && hasUpdatedCovidRelatedInfo) {
+        console.log(`Location closure updated - ${location.Organization.name}`);
+        return closeLocation();
+      }
     }
 
     return null;
@@ -246,10 +268,9 @@ class Loader {
   async loadServiceIntoDb(serviceData) {
     const { id: fpcId, location: locationData } = serviceData;
 
-    let {
-      location,
-      service,
-    } = await this.existingDataMatcher.getExistingRecords(serviceData);
+    const existingRecords = await this.existingDataMatcher.getExistingRecords(serviceData);
+    let { location } = existingRecords;
+    const { service } = existingRecords;
 
     if (!location) {
       location = await this.createLocation(locationData);
@@ -257,15 +278,13 @@ class Loader {
       await this.updateLocation(location, locationData);
     }
 
-    if (!service) {
-      service = await this.createService(location, serviceData);
-    } else {
-      service = await this.updateService(service, serviceData);
-    }
+    const updatedService = service
+      ? await this.updateService(service, serviceData)
+      : await this.createService(location, serviceData);
 
-    await this.existingDataMatcher.updateKnownServiceData(fpcId, { location, service });
+    await this.existingDataMatcher.updateKnownServiceData(fpcId, { location, updatedService });
 
-    await this.updateLocationStatus(location, service, serviceData);
+    await this.updateLocationStatus(location, { oldService: service, updatedService, serviceData });
   }
 }
 
