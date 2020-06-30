@@ -44,9 +44,13 @@ function parseAddress(address) {
     && address.replace(/\n?[,\s]*(?:New York|Bronx|Brooklyn|Queens)?[, ]*NY[, ]+\d{4,5}/g, '');
 }
 
+function parseOrganizationName(name, facilityType) {
+  return name.replace(new RegExp(` *- *${facilityType} *$`, 'i'), '');
+}
+
 function parseHours(hoursString) {
   /* eslint-disable-next-line max-len */
-  const regex = /([A-Z]{2,5}(?:[,-][A-Z]{2,5})?):? *(\d{1,2}(?::\d{2})?(?:AM|PM)?) ?- ?(\d{1,2}(?::\d{2})?(?:AM|PM))[, ]*/ig;
+  const regex = /([A-Z]{2,5}(?:[,-][A-Z]{2,5})*):? *(\d{1,2}(?::\d{2})?(?:AM|PM)?) ?- ?(\d{1,2}(?::\d{2})?(?:AM|PM))[, ]*/ig;
 
   const parts = getAllRegexResults(
     hoursString.toLowerCase(),
@@ -163,7 +167,7 @@ class Transformer {
       lastUpdated: lastUpdated && new Date(lastUpdated),
       idRequired: parseIdRequired(idRequired),
       location: {
-        organizationName: cleanString(name),
+        organizationName: parseOrganizationName(cleanString(name), facilityType),
         url: cleanString(website),
         phones: parsePhones(cleanString(phone)),
         position: {

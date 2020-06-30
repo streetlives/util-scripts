@@ -4,16 +4,16 @@ import inquirer from 'inquirer';
 
 const matchingDataFilePath = './data/matching_data.json';
 
-const matchRadius = 30;
+const matchRadius = 50;
 
 async function askUserIfExistingLocation(locationData, potentialMatches) {
   const { organizationName } = locationData;
 
   const formatLocationOption = (location) => {
+    const { id, name } = location;
     const orgName = location.Organization.name;
-    const locationName = location.name;
     const address = location.PhysicalAddresses[0] && location.PhysicalAddresses[0].address_1;
-    return `${orgName}${locationName ? ` - ${locationName}` : ''} @ ${address}`;
+    return `${orgName}${name ? ` - ${name}` : ''} @ ${address} (${id})`;
   };
 
   const { matchingLocation } = await inquirer.prompt([{
@@ -112,9 +112,9 @@ class Matcher {
       radius: matchRadius,
     });
 
-    const orgNames = [organizationName, knownOrgName];
+    const orgNames = [organizationName.toLowerCase(), knownOrgName && knownOrgName.toLowerCase()];
     const definiteDuplicate = nearbyLocations.find(
-      nearbyLocation => orgNames.includes(nearbyLocation.Organization.name),
+      nearbyLocation => orgNames.includes(nearbyLocation.Organization.name.toLowerCase()),
     );
     if (definiteDuplicate) {
       return definiteDuplicate;
@@ -182,7 +182,8 @@ class Matcher {
       if (existingLocation) {
         return {
           location: existingLocation,
-          service: existingLocation.Services.find(service => service.id === serviceId),
+          service: existingLocation.Services.find(service => service.id === serviceId)
+            || await this.getMatchingService(existingLocation, serviceData, knownServiceData),
         };
       }
     }

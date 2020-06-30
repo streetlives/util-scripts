@@ -147,6 +147,14 @@ class Api {
     covidRelatedInfo,
     metadata,
   }) {
+    if (url) {
+      await this.client.request({
+        url: `${baseApi}/organizations/${location.Organization.id}`,
+        method: 'patch',
+        data: { url, metadata },
+      });
+    }
+
     await this.client.request({
       url: `${baseApi}/locations/${location.id}`,
       method: 'patch',

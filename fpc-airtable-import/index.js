@@ -16,7 +16,10 @@ const importData = async () => {
   const services = await transformer.transformRecords(records);
 
   /* eslint-disable no-restricted-syntax, no-await-in-loop */
-  for (const service of services) {
+  for (let i = 0; i < services.length; i += 1) {
+    if (i && i % 50 === 0) console.log(`Completed importing ${i} services`);
+
+    const service = services[i];
     await loader.loadServiceIntoDb(service);
   }
   /* eslint-enable no-restricted-syntax, no-await-in-loop */
