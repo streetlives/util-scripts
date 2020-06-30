@@ -48,7 +48,8 @@ export const fetchServices = async () => {
       OR({Status FPC} = 'closed', NOT({Hours FPC} = '')),
       NOT(lat = ''),
       NOT(lng = ''),
-      NOT(Address = '')
+      NOT(Address = ''),
+      NOT({Don't import})
     )`,
   }).all();
 
