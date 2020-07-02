@@ -1,36 +1,234 @@
 {
+  "80026": {
+    "locationId": "0a4ddb6a-ea06-4aba-8472-ab7bda1f9e46",
+    "orgName": "Bronx SDA Church Food Pantry",
+    "serviceId": "340bfec5-3234-4c20-9655-c012066df7e7",
+    "serviceName": "Food Pantry"
+  },
+  "80081": {
+    "locationId": "ff80d524-3fd1-4df7-88d6-d3d98ba4d32e",
+    "orgName": "Holy Tabernacle Church Food Provider I",
+    "serviceId": "4df30b2e-250c-4016-9488-9d62ed5627f3",
+    "serviceName": "Food Pantry"
+  },
+  "80082": {
+    "locationId": "ff80d524-3fd1-4df7-88d6-d3d98ba4d32e",
+    "orgName": "Holy Tabernacle Church Food Provider I",
+    "serviceId": "6f693611-f0a5-4248-b9e3-e2992f8df816",
+    "serviceName": "Soup kitchen"
+  },
   "80085": {
-    "locationId": "4323e9ce-262c-4a04-8755-033ba09c7f7b",
+    "locationId": "e13bbaa3-5ca3-4e3d-8f63-bd0c5bc62df3",
     "orgName": "Black Forum of Co-op City",
-    "serviceId": "8446598b-10f4-4af7-b76d-a8e22ac29f04",
+    "serviceId": "023a48bf-bac7-42d7-ad07-8626eb506741",
+    "serviceName": "Food Pantry"
+  },
+  "80086": {
+    "locationId": "80fd7fd6-193f-45e2-8344-ea08256a1290",
+    "orgName": "Jewish Community Council of Pelham Parkway",
+    "serviceId": "2e065870-215e-49ec-95d7-6ff4769e0db5",
+    "serviceName": "Food Pantry"
+  },
+  "80117": {
+    "locationId": "63dce2b1-41f3-4ad0-9626-cc9ed97d2460",
+    "orgName": "Our Lady of Refuge",
+    "serviceId": "c9e3b68f-ed15-4b46-aadb-092858026721",
+    "serviceName": "Food Pantry"
+  },
+  "80121": {
+    "locationId": "688c0cbf-b8fa-4fb0-9138-9a9bfc00039a",
+    "orgName": "Part Of The Solution",
+    "serviceId": "41121976-415b-47f8-b29f-8f87d907f636",
+    "serviceName": "Food Pantry"
+  },
+  "80137": {
+    "locationId": "ab73ee1b-862a-4313-8d6a-f0afd9d107e6",
+    "orgName": "The Salvation Army",
+    "serviceId": "b5672e81-b833-46a2-a3be-c0ea467e40e1",
+    "serviceName": "Food Pantry"
+  },
+  "80160": {
+    "locationId": "8ee40f0a-083d-49a6-86e4-e2aa502764be",
+    "orgName": "St Luke's Senior Community Program",
+    "serviceId": "a361ab5f-2a62-43e7-b84a-849c7fd289b7",
+    "serviceName": "Food Pantry"
+  },
+  "80161": {
+    "locationId": "8ee40f0a-083d-49a6-86e4-e2aa502764be",
+    "orgName": "St Luke's Senior Community Program",
+    "serviceId": "9e9f15c3-bc61-4978-8079-b71c0c7f029d",
+    "serviceName": "Soup kitchen"
+  },
+  "80162": {
+    "locationId": "4331d071-02fc-4d5f-b365-d65b13df8636",
+    "orgName": "St Paul's Lutheran Church",
+    "serviceId": "1acc03b9-06cb-4c8a-9266-595533261a50",
+    "serviceName": "Food Pantry"
+  },
+  "80174": {
+    "locationId": "bab330be-0425-448d-930a-ce35151f62eb",
+    "orgName": "Thessalonia Baptist Church",
+    "serviceId": "0239785c-1306-4a79-a753-c7f784369b94",
+    "serviceName": "Soup kitchen"
+  },
+  "80179": {
+    "locationId": "d9f97025-3fc2-4e2a-a995-c5ea755bafaa",
+    "orgName": "New St John Baptist Church",
+    "serviceId": "71e73352-f551-4da8-9f21-9a05bf2fff06",
+    "serviceName": "Food Pantry"
+  },
+  "80180": {
+    "locationId": "c90b5adb-0f69-4f92-9a2f-d8a2a4cf37a5",
+    "orgName": "True Gospel Tabernacle",
+    "serviceId": "eab1dd01-c81b-4fcc-9496-bf77d05301e8",
+    "serviceName": "Food Pantry"
+  },
+  "80182": {
+    "locationId": "a6640482-5d4d-425b-88d4-c6da1a5d2b37",
+    "orgName": "United bronx parents inc",
+    "serviceId": "48a068b5-9677-46b3-be7a-9cf99c486f7d",
+    "serviceName": "Food Pantry"
+  },
+  "80204": {
+    "locationId": "ec055315-f5ee-46d7-9a36-bbd6fdd2b8c5",
+    "orgName": "RHOW Brooklyn Inc",
+    "serviceId": "c98e3085-3ec1-4380-bd47-84bfd515ae2b",
+    "serviceName": "Food Pantry"
+  },
+  "80212": {
+    "locationId": "28113c9e-ad1b-45d7-a2b1-0035669ea5a9",
+    "orgName": "SCO Family of Services/Bethany 1",
+    "serviceId": "76457f75-f329-433d-b643-e6a0fe37a531",
+    "serviceName": "Food Pantry"
+  },
+  "80213": {
+    "locationId": "16b1dcaa-6080-4f6c-8d29-082b13860c37",
+    "orgName": "Bay Ridge Center",
+    "serviceId": "2222c4be-0a0c-4d1a-9285-32e2364f8a18",
     "serviceName": "Food Pantry"
   },
   "80236": {
     "locationId": "c5d343d8-0a42-4493-bf31-50d36dd6e9db",
     "orgName": "Park Slope Christian Help",
-    "serviceId": "60088811-ad81-4179-8bba-ccb976029f2a",
+    "serviceId": "05d085cc-6e0c-46d0-bd8f-dfb74b6fdce4",
+    "serviceName": "Food Pantry"
+  },
+  "80250": {
+    "locationId": "60f9379c-facf-45fe-87e3-129793d78cf7",
+    "orgName": "Council of Jewish Organizations of Flatbush",
+    "serviceId": "8b20a8ab-1339-40df-92be-4c4771b8a9bb",
+    "serviceName": "Food Pantry"
+  },
+  "80260": {
+    "locationId": "cfbcb1de-ac2a-43cf-bbb7-710dd95c9d1a",
+    "orgName": "Crown Heights Jewish Community Council",
+    "serviceId": "5dfb159e-4750-47f4-9552-3e7118ef9eff",
+    "serviceName": "Food Pantry"
+  },
+  "80269": {
+    "locationId": "e8020b9d-8c0c-430e-b7f0-9d57645c4afb",
+    "orgName": "Ebenezer Seventh Day Adventist Church",
+    "serviceId": "72fbf7b3-6a36-4349-81b6-e52f1a45671e",
+    "serviceName": "Food Pantry"
+  },
+  "80296": {
+    "locationId": "cb7132e8-6ef0-45e0-885c-88cb32e55910",
+    "orgName": "Holy Cross Food Pantry - Brooklyn",
+    "serviceId": "f4d1ef68-b094-4717-a93c-0708bc1bf8b0",
+    "serviceName": "Food Pantry"
+  },
+  "80309": {
+    "locationId": "08e945e2-5ec1-4ae1-b109-d5b51fb77442",
+    "orgName": "JCC of Greater Coney Island",
+    "serviceId": "9cebc3b6-5e1d-4ff4-a1eb-4ade2e9befef",
+    "serviceName": "Food Pantry"
+  },
+  "80341": {
+    "locationId": "670d087f-a834-4829-ac3f-9681c7be3db1",
+    "orgName": "Our Lady of Angels Human Services",
+    "serviceId": "573ba7fa-8cdc-4a28-a04c-f47fe94ddd4b",
+    "serviceName": "Food Pantry"
+  },
+  "80345": {
+    "locationId": "0cc3f474-6faa-4ec7-b5b1-02a61b99b994",
+    "orgName": "Our Lady of Mercy Church",
+    "serviceId": "d320585e-6379-49be-8887-90b8f70f2431",
+    "serviceName": "Food Pantry"
+  },
+  "80357": {
+    "locationId": "528e9fea-680a-4c21-8da3-d0fa1a21c376",
+    "orgName": "The Salvation Army Sunset Park Corps",
+    "serviceId": "0f85da5b-a49f-4a4a-bd8b-ae0ae16c591e",
+    "serviceName": "Food Pantry"
+  },
+  "80363": {
+    "locationId": "a97976f9-c33c-457d-ada0-ad7e5598037f",
+    "orgName": "Salvation Army, Brownsville Corps",
+    "serviceId": "cfebf5d6-41c8-429b-ab1a-5d2e134e8065",
+    "serviceName": "Soup kitchen"
+  },
+  "80373": {
+    "locationId": "394e2430-e328-49b6-8d4e-03479afa2fb6",
+    "orgName": "Brooklyn West Family Center",
+    "serviceId": "a19d5bf2-e8c2-4fd3-9174-1c2e4b749cd9",
     "serviceName": "Food Pantry"
   },
   "80401": {
     "nearbyButDifferentOrgs": [
       "St Benedict's Church"
     ],
-    "locationId": "080d0e73-3281-40ee-abe4-2dbca84b5e83",
+    "locationId": "feb9b505-f829-4fe1-a6e4-d355c9e0c57c",
     "orgName": "St. Phillip's Episcopal Church",
-    "serviceId": "ce033daa-ba41-4cbe-b8dd-2c3f53c11cd7",
+    "serviceId": "a967f459-a5df-4a97-b5bf-7c74dd1f18d0",
     "serviceName": "Food Pantry"
+  },
+  "80403": {
+    "locationId": "bec7a1cc-229d-44f1-99cb-49c3b18721a3",
+    "orgName": "Saint Teresa of Avila",
+    "serviceId": "2235a8b0-d396-459f-9d37-547d45b847e4",
+    "serviceName": "Food Pantry"
+  },
+  "80413": {
+    "locationId": "724c0dc9-f214-4cad-b0b6-8e8852bf0c8c",
+    "orgName": "CENTER FOR FAMILY LIFE—SUNSET PARK",
+    "serviceId": "523d5943-8b07-4e37-a119-f55e51c50017",
+    "serviceName": "Food Pantry"
+  },
+  "80474": {
+    "locationId": "8d3af588-6062-4113-b0cd-7bb6e5d942cb",
+    "orgName": "Food Bank for New York City Food for Survival",
+    "serviceId": "5e4246b3-9f89-47c1-b782-100e04b1335b",
+    "serviceName": "Soup kitchen"
   },
   "80476": {
     "locationId": "4d70929c-e4d1-44be-9a03-a1816c73d387",
     "orgName": "All Souls Unitarian Church",
-    "serviceId": "478e024e-e3c4-41eb-9dc9-e1783875fc5a",
+    "serviceId": "1e5de219-2cec-46af-b0aa-d5004bdf351f",
     "serviceName": "Food Pantry"
   },
   "80491": {
     "locationId": "6a714dc6-43d6-4306-963e-8f93d83427ed",
     "orgName": "THE BOWERY MISSION",
-    "serviceId": "4bb486d2-1080-4f5c-83da-2d58c0c56a98",
+    "serviceId": "03e2c098-9e03-42fe-b0be-7f46a43cedbe",
     "serviceName": "Food Pantry"
+  },
+  "80512": {
+    "locationId": "1beab3cb-2ed6-49bd-ae67-78f503d31452",
+    "orgName": "Central Synogogue Breakfast Program",
+    "serviceId": "e03bb5d0-745a-4546-9c37-97bda6ea21cc",
+    "serviceName": "Soup kitchen"
+  },
+  "80518": {
+    "locationId": "d09289f3-bdbe-44d5-8e69-208ad31caac0",
+    "orgName": "Christ Church United Methodist",
+    "serviceId": "1e6c263a-7f46-4295-8a8e-d8c6ff73011e",
+    "serviceName": "Food Pantry"
+  },
+  "80522": {
+    "locationId": "cecb5edb-7da6-4523-b158-c44aa3f0a03f",
+    "orgName": "Church of the Epiphany",
+    "serviceId": "e61ea2ab-137d-41f3-816b-d3c6a7f8d229",
+    "serviceName": "Soup kitchen"
   },
   "80565": {
     "locationId": "2b409a20-ef3d-46b7-82b3-171f9056efde",
@@ -38,11 +236,68 @@
     "serviceId": "8147c805-9502-4baf-bb6e-40222da4ff68",
     "serviceName": "Food Pantry"
   },
-  "80712": {
-    "locationId": "877e1c40-7c01-4e17-bc7f-fdf780c810cb",
-    "orgName": "RIVERSIDE CHURCH FOOD PANTRY",
-    "serviceId": "5e0b43e1-2bef-4472-9d66-ffc109fda9b4",
+  "80581": {
+    "locationId": "185b6481-d729-4717-aaa5-cf935b1abaec",
+    "orgName": "Good Shepherd Food Pantry",
+    "serviceId": "4b94b9cc-85bf-4e96-b3b9-7cba139f6ced",
     "serviceName": "Food Pantry"
+  },
+  "80604": {
+    "locationId": "5426de21-4e1b-4e6e-bcf1-6bf334de56b5",
+    "orgName": "Holy Apostles Soup Kitchen",
+    "serviceId": "94bf6765-75f2-415b-8ea2-057d4f264e42",
+    "serviceName": "Soup kitchen"
+  },
+  "80605": {
+    "locationId": "547dfa9b-d231-4988-ac51-aec617d82db5",
+    "orgName": "HOLY CROSS - CROSSROADS FOOD PANTRY",
+    "serviceId": "7e67266b-9935-4ac1-bdd8-beab3521f0dd",
+    "serviceName": "Food Pantry"
+  },
+  "80618": {
+    "locationId": "8809ed6c-4f0f-4146-902b-7ac3dd346a4e",
+    "orgName": "Jewish Community Council of Washington Heights",
+    "serviceId": "97bcbce8-c39e-4a73-a302-9918020f31f9",
+    "serviceName": "Food Pantry"
+  },
+  "80627": {
+    "locationId": "53646062-6c3d-4026-a1f5-41e89b8abf47",
+    "orgName": "Little Sisters of the Assumption",
+    "serviceId": "e3dd1125-c932-4c07-b28a-82d7316d7bcc",
+    "serviceName": "Food Pantry"
+  },
+  "80644": {
+    "nearbyButDifferentOrgs": [
+      "NYC Rescue Mission"
+    ],
+    "locationId": "9a4d0687-568b-4013-a195-eb45a7b498f1",
+    "orgName": "New York City Relief, Lower Manhattan",
+    "serviceId": "dc2fb5be-769d-4d4a-a521-a9a70fec3b92",
+    "serviceName": "Soup kitchen"
+  },
+  "80699": {
+    "locationId": "6f3e13c5-92a4-4b17-8191-decdb9921935",
+    "orgName": "Project Create - Anthony House",
+    "serviceId": "74641e0a-f468-4ba4-9789-d483c85f526a",
+    "serviceName": "Food Pantry"
+  },
+  "80712": {
+    "locationId": "7633a08b-f3c5-453b-bce2-2f7b933ed5be",
+    "orgName": "RIVERSIDE CHURCH FOOD PANTRY",
+    "serviceId": "8dc02613-9bb2-4b33-8e15-53d89da59a72",
+    "serviceName": "Food Pantry"
+  },
+  "80720": {
+    "locationId": "f6f5e757-5ae8-4d44-bdae-0e485cef8f42",
+    "orgName": "The Salvation Army New York Temple Corps",
+    "serviceId": "37d06b94-62a7-4f11-811a-c0f932af8960",
+    "serviceName": "Food Pantry"
+  },
+  "80730": {
+    "locationId": "1794d56b-896f-459e-b215-a916edb7da0c",
+    "orgName": "National Council of Jewish Women (NCJW)",
+    "serviceId": "817f5b3c-c5ed-4eca-ad0c-e6ecabbcc088",
+    "serviceName": "Community Kitchen"
   },
   "80739": {
     "locationId": "df42156e-9eea-4c9f-89b8-ac3ac208ff90",
@@ -50,10 +305,16 @@
     "serviceId": "f51e2ecb-e058-415d-9110-2366a007de52",
     "serviceName": "Crossroads Food Pantry"
   },
+  "80744": {
+    "locationId": "727fccdd-b89e-4eae-a6fe-5879788e3c2e",
+    "orgName": "St. Cecilia's Parish Services",
+    "serviceId": "5cab7efa-ef36-4afb-a0d6-44586c2d5bd8",
+    "serviceName": "Food Pantry"
+  },
   "80745": {
-    "locationId": "2cf94c0c-0596-495e-9d9d-ca07eeb621cb",
+    "locationId": "5f1637e2-f1a5-4e86-b451-6a3c0db4aac2",
     "orgName": "St. Charles Borromeo Food Pantry",
-    "serviceId": "1061e4d7-22eb-4318-b557-651b7cba53bb",
+    "serviceId": "f2f827e7-642e-4290-9f1f-57d7156b7555",
     "serviceName": "Food Pantry"
   },
   "80749": {
@@ -62,16 +323,46 @@
     "serviceId": "3b7c02ec-8b33-447a-a152-a41baac757e9",
     "serviceName": "Customer-Choice Food Pantry"
   },
+  "80752": {
+    "locationId": "a7ac5a11-8783-4ed2-a0cc-7a33d299b21a",
+    "orgName": "Saint Ignatius of Antioch Episcopal Church",
+    "serviceId": "f87ea85e-c6d5-4b5e-958b-118bf64b3034",
+    "serviceName": "Food Pantry"
+  },
+  "80757": {
+    "locationId": "ed0abdbb-5137-4ab8-984d-088dcf05de99",
+    "orgName": "St John the Baptist - Bread of Life Pantry",
+    "serviceId": "ea212274-339a-41bb-b5a6-6fd917ca474a",
+    "serviceName": "Food Pantry"
+  },
+  "80800": {
+    "locationId": "1c6de80e-42ba-4bc8-b5cf-37c314aa15f5",
+    "orgName": "Temple Shaaray Tefila",
+    "serviceId": "0612f370-5d23-4f1f-b648-379ce5b9c16d",
+    "serviceName": "Food Pantry"
+  },
   "80801": {
     "locationId": "fb0a7188-b103-4afc-8bf6-3881087edab6",
     "orgName": "Cathedral Community Cares (CCC)",
-    "serviceId": "3021be2d-2170-4a99-80b0-3d71655a2738",
+    "serviceId": "a4745f12-bc23-488c-b12d-43c717c186b2",
+    "serviceName": "Food Pantry"
+  },
+  "80841": {
+    "locationId": "44f51e96-48c6-4f52-80df-5d80837b084b",
+    "orgName": "Catholic Charities Washington Heights at St. Rose of Lime Food Pantry",
+    "serviceId": "11d47cd4-9668-4fa2-ac27-918d52639fc8",
+    "serviceName": "Food Pantry"
+  },
+  "80846": {
+    "locationId": "2208860c-f8c5-4198-87ed-6d2bf95e4e1c",
+    "orgName": "Westside Campaign Against Hunger",
+    "serviceId": "e8ec0d0c-9238-474b-9d6b-d0cd39566af1",
     "serviceName": "Food Pantry"
   },
   "80850": {
-    "locationId": "08980975-c64d-4e88-8025-d978634e25e7",
+    "locationId": "790a3dc4-0c92-42b3-b988-e4ce1f4eebe9",
     "orgName": "Holy Name of Jesus - St. Gregory the Great",
-    "serviceId": "11351aac-6213-4010-9bf4-989ee81157e8",
+    "serviceId": "fe571322-e504-4664-964a-fb1a6caf5d7a",
     "serviceName": "Food Pantry"
   },
   "80861": {
@@ -80,11 +371,83 @@
     "serviceId": "43539c6c-8ca8-47aa-a807-999dc251b96e",
     "serviceName": "Choice Pantry"
   },
+  "80866": {
+    "locationId": "82bd1f9b-7af3-459e-87bc-50b690db0fcd",
+    "orgName": "Allen Outreach Ministry Feeding Program",
+    "serviceId": "9d160c1a-7b2a-4ec4-8f77-564b1889626c",
+    "serviceName": "Food Pantry"
+  },
+  "80876": {
+    "locationId": "642a671b-585b-484f-9c8c-0b966a23d2af",
+    "orgName": "Calvary Baptist Church",
+    "serviceId": "d4270bb6-edae-4cd8-a0a0-9a8dffb3e7b4",
+    "serviceName": "Food Pantry"
+  },
+  "80880": {
+    "locationId": "e6a0fba9-4bc0-4c2b-ac2f-26ce4e694155",
+    "orgName": "Catholic Charities Brooklyn and Queens, Church of the Incarnation",
+    "serviceId": "c4fc20a8-08ea-45ec-809c-78b3e3fe4407",
+    "serviceName": "Food Pantry"
+  },
+  "80891": {
+    "locationId": "d6a72687-442f-4c6c-9354-13a0463dd8a6",
+    "orgName": "Corpus Christi Food Pantry",
+    "serviceId": "9040be34-03db-4681-8b61-af397816f2be",
+    "serviceName": "Food Pantry"
+  },
+  "80893": {
+    "locationId": "f52b0d1a-04e0-43c7-8cf6-680afaa6c5b6",
+    "orgName": "ELMCOR YOUTH AND ADULT ACTIVITIES, INC.",
+    "serviceId": "51d3fe72-d8ff-4d53-8703-8e30a7435667",
+    "serviceName": "Food Pantry"
+  },
   "80903": {
     "locationId": "7ecd960a-d8e7-483c-bf7d-45fbd0a2e853",
     "orgName": "Jewish Community Council of The Rockway Peninsula Food Provider",
     "serviceId": "3c731737-9d0c-498b-8b76-1c7559c33887",
     "serviceName": "Food Pantry"
+  },
+  "80904": {
+    "locationId": "a57d0f3f-7416-4df7-ba55-d45dd779f410",
+    "orgName": "First United Methodist Church of Jamaica",
+    "serviceId": "5dd0245d-105a-4dd0-9c9c-47f7eceea11e",
+    "serviceName": "Food Pantry"
+  },
+  "80917": {
+    "locationId": "a19e4538-b0dc-4ea7-b622-6abc166d5d3b",
+    "orgName": "Hollis Avenue Congregational Church",
+    "serviceId": "e608e1f4-c972-4b9c-92b4-a49e95f516d0",
+    "serviceName": "Food Pantry"
+  },
+  "80929": {
+    "locationId": "3442470d-8b16-42ea-be8c-1c5147e834c8",
+    "orgName": "AIDS Center of Queens County",
+    "serviceId": "e3d6162b-283b-4b4f-99ac-e178671a8729",
+    "serviceName": "Food Pantry"
+  },
+  "80952": {
+    "locationId": "d50a7bd7-bac3-4ac2-88a5-553b4cb1785e",
+    "orgName": "Presentation of the Blessed Virgin Mary",
+    "serviceId": "94ce75cf-8adb-46c9-b48e-475cf2565840",
+    "serviceName": "Food Pantry"
+  },
+  "80959": {
+    "locationId": "b21789ed-6b24-43e3-98c7-3527d3f29f78",
+    "orgName": "LSS/Resurrection Lutheran Church",
+    "serviceId": "bd1e32d7-93d0-4816-b238-75d4c75009d3",
+    "serviceName": "Food Pantry"
+  },
+  "80971": {
+    "locationId": "327196c2-f3d7-4814-959e-d956c9fe0345",
+    "orgName": "Salvation Army, Queens Astoria Corps",
+    "serviceId": "48bf6393-6ac0-4518-a8f8-53945eda87bb",
+    "serviceName": "Food Pantry"
+  },
+  "80974": {
+    "locationId": "9f5a382c-3e41-4110-995d-6f0aabfabc2c",
+    "orgName": "Salvation Army, Ridgewood Citadel Corps",
+    "serviceId": "86eddca1-9fc5-4426-9123-b2c291eb28b6",
+    "serviceName": "Soup kitchen"
   },
   "80995": {
     "locationId": "28f56a7e-76a1-4551-838e-6aff30512fa8",
@@ -92,22 +455,82 @@
     "serviceId": "7f0f1764-82e0-4621-9281-1090cd297714",
     "serviceName": "Food Pantry"
   },
+  "80996": {
+    "locationId": "be1905fd-05c7-4e75-b718-38162b72419e",
+    "orgName": "Catholic Charities Brooklyn and Queens, St. Michael",
+    "serviceId": "5e6dfb77-eec5-443f-a9e7-fa147f943468",
+    "serviceName": "Food Pantry"
+  },
+  "81001": {
+    "locationId": "c316af63-518e-4115-92b0-2b7e4487e134",
+    "orgName": "St Teresa of Avila Community Services",
+    "serviceId": "0e1505ab-461d-4349-975e-70f3c4be9241",
+    "serviceName": "Food Pantry"
+  },
   "81033": {
-    "locationId": "7ffa9329-790c-4e35-9e31-61e1ce135ead",
+    "locationId": "40e8d84c-d99b-4720-aae1-92895540fd46",
     "orgName": "Project Hospitality - Soup Kitchen",
-    "serviceId": "6f9c7ad8-7aa2-4459-8c05-67dd832938eb",
+    "serviceId": "8b6a2cee-c111-4293-a3d9-c4d78b090634",
     "serviceName": "Soup kitchen"
   },
+  "81046": {
+    "locationId": "70b22690-bd6d-4c76-896f-66cbd787f0b4",
+    "orgName": "Trinity Evangelical Lutheran Church",
+    "serviceId": "df88cd42-ea19-434e-9fe8-68f0ea24344f",
+    "serviceName": "Food Pantry"
+  },
+  "81049": {
+    "locationId": "fdc531aa-7880-442c-9ce6-8148469fa45f",
+    "orgName": "Church of God in Christ on the Hill",
+    "serviceId": "95141559-c2a4-46ad-a8b8-b19d6af9c026",
+    "serviceName": "Food Pantry"
+  },
+  "81052": {
+    "locationId": "16b1dcaa-6080-4f6c-8d29-082b13860c37",
+    "orgName": "Bay Ridge Center",
+    "serviceId": "52b71509-bf0f-4233-8967-31946de7e628",
+    "serviceName": "Soup kitchen"
+  },
+  "81054": {
+    "locationId": "53f63c10-798b-4090-a214-317476e9445b",
+    "orgName": "Bible Faith Tabernacle",
+    "serviceId": "f38126f1-9231-41c9-b8bb-325a7678d399",
+    "serviceName": "Food Pantry"
+  },
+  "81064": {
+    "locationId": "4d43005f-8868-49c8-b80e-7546a845e916",
+    "orgName": "Mount Carmel Baptist Church",
+    "serviceId": "9661d6a5-d5f9-4c2c-a737-288a3f490627",
+    "serviceName": "Food Pantry"
+  },
   "81071": {
-    "locationId": "cf40ce4b-15d4-4764-8872-5b5c54aeec0a",
+    "locationId": "56c61b82-0366-4b41-9b60-e373d2751e50",
     "orgName": "Community League of the Height's Pantry",
-    "serviceId": "b0c9177b-3b0b-41fc-8bee-0a6a1e8c827e",
+    "serviceId": "e95f6339-a178-48af-98d8-bfaeb0bd888e",
     "serviceName": "Food Pantry"
   },
   "81073": {
-    "locationId": "702de3ae-73dc-430a-8db2-cd298c0b1886",
+    "locationId": "6b750362-4337-402c-bb73-7936803e1f0b",
     "orgName": "ST. MARY'S EPISCOPAL CHURCH FOOD PANTRY",
-    "serviceId": "ba75692f-b915-4aed-a6ab-01eaab1e0784",
+    "serviceId": "41227da6-3200-4fec-b57d-2a495133b5db",
+    "serviceName": "Food Pantry"
+  },
+  "81113": {
+    "locationId": "b3a070bb-7f10-41d8-8519-fcac2fec6c89",
+    "orgName": "Grand Concourse SDA Church",
+    "serviceId": "d5ccccb9-815d-449c-9d3a-b044d805845a",
+    "serviceName": "Food Pantry"
+  },
+  "81119": {
+    "locationId": "1794d56b-896f-459e-b215-a916edb7da0c",
+    "orgName": "National Council of Jewish Women (NCJW)",
+    "serviceId": "c86e3024-56e5-4340-a1bc-7567cbece391",
+    "serviceName": "Food Pantry"
+  },
+  "81139": {
+    "locationId": "f8c78ff4-8eb2-4bf1-a303-07b7af24a4ef",
+    "orgName": "Park Avenue Synagogue",
+    "serviceId": "2d47188f-ad6b-47c1-95ef-0d0a9ab429b1",
     "serviceName": "Food Pantry"
   },
   "81145": {
@@ -116,10 +539,34 @@
     "serviceId": "0332d0b3-e834-4b55-8e70-96ef64ae5cc3",
     "serviceName": "Food Pantry"
   },
+  "81146": {
+    "locationId": "28172305-bc21-4754-936b-fb60c1012742",
+    "orgName": "Northeast Conference Community Center Seventh Day Adventist Church",
+    "serviceId": "d702615c-73db-49ab-b94a-6084fbe3cced",
+    "serviceName": "Food Pantry"
+  },
+  "81148": {
+    "locationId": "255305a7-bf87-4267-bf36-9a87122fbecc",
+    "orgName": "Bethel Gospel Tabernacle Church",
+    "serviceId": "bdbcac4c-ddc1-4ace-baa0-a2c8a7a4af7e",
+    "serviceName": "Soup kitchen"
+  },
+  "81178": {
+    "locationId": "c5d343d8-0a42-4493-bf31-50d36dd6e9db",
+    "orgName": "Park Slope Christian Help",
+    "serviceId": "ae37c4c4-8371-4266-8956-baf514895505",
+    "serviceName": "Soup kitchen"
+  },
+  "81199": {
+    "locationId": "a2c9e50d-6b5b-4d68-baf7-eb93472ee725",
+    "orgName": "Momentum Project at St Peter's Church",
+    "serviceId": "69b6dd6a-b1f6-4632-96a2-95da777508ec",
+    "serviceName": "Food Pantry"
+  },
   "81204": {
     "locationId": "a1cfb784-afa6-4dbf-bda4-efdc066c2fc1",
     "orgName": "St. Luke's Lutheran Church",
-    "serviceId": "51f4c303-6df2-4390-b012-2847539f4670",
+    "serviceId": "ae7eea11-c387-49fe-ad4e-4daf35fff3d1",
     "serviceName": "Food Pantry"
   },
   "81206": {
@@ -128,10 +575,49 @@
     "serviceId": "a8e39b87-48ff-42c7-b148-7f7232b3b731",
     "serviceName": "Soup kitchen"
   },
+  "81228": {
+    "locationId": "e8020b9d-8c0c-430e-b7f0-9d57645c4afb",
+    "orgName": "Ebenezer Seventh Day Adventist Church",
+    "serviceId": "947e45cf-c7ce-46cf-b89d-c66bb63c5425",
+    "serviceName": "Soup kitchen"
+  },
+  "81235": {
+    "locationId": "0eebc5d2-12d9-402b-b17b-3db9a40cd026",
+    "orgName": "Project ORE of Educational Alliance",
+    "serviceId": "dd94fd35-80c1-4ea4-8b99-dfdc8c27eb27",
+    "serviceName": "Food Pantry"
+  },
+  "81243": {
+    "locationId": "255305a7-bf87-4267-bf36-9a87122fbecc",
+    "orgName": "Bethel Gospel Tabernacle Church",
+    "serviceId": "0c8ff61d-c4fd-4683-9d87-055ae2efe745",
+    "serviceName": "Food Pantry"
+  },
   "81246": {
     "locationId": "28ef41cf-a8a0-4bb0-86f0-1b9c65ea34d4",
     "orgName": "New York City Love Kitchen Inc",
-    "serviceId": "c33ec758-3113-471d-aacf-447ddb67de90",
+    "serviceId": "207037f3-9c82-449f-afbe-961678439a6a",
+    "serviceName": "Food Pantry"
+  },
+  "81251": {
+    "locationId": "c29e3cd3-ca53-49aa-bdff-6c3dea0dcb94",
+    "orgName": "Broadway Community",
+    "serviceId": "e3e1ade7-d032-452f-b2bb-0bf7cc8132e2",
+    "serviceName": "Soup kitchen",
+    "nearbyButDifferentOrgs": [
+      "The Food Pantry at Columbia"
+    ]
+  },
+  "81260": {
+    "locationId": "f4e16917-807a-40fd-bf6e-9e2d9878febb",
+    "orgName": "Salvation Army, Port Richmond Corps",
+    "serviceId": "9ccb9596-abef-47ac-9a8e-9bd73ef3aeb7",
+    "serviceName": "Food Pantry"
+  },
+  "81272": {
+    "locationId": "89b8d0ab-5da8-47dc-bf03-b73fc871ea16",
+    "orgName": "Blessed Sacrament Church-Brooklyn",
+    "serviceId": "13fbe24f-ac62-4260-9615-351ab07d401f",
     "serviceName": "Food Pantry"
   },
   "81315": {
@@ -140,10 +626,46 @@
     "serviceId": "c2f25c30-0bf6-4d99-80d6-4f57b71106b9",
     "serviceName": "Soup kitchen"
   },
+  "81316": {
+    "locationId": "c83b4470-6192-480b-b027-586402afadc5",
+    "orgName": "St Edmund's Youth Programs",
+    "serviceId": "4149fb6c-2b1d-4459-ba5b-1781bf000260",
+    "serviceName": "Food Pantry"
+  },
   "81317": {
     "locationId": "fcfe65e9-cd16-48bd-98d7-61813e72b5db",
     "orgName": "Catholic Charities",
     "serviceId": "836eb2a4-f6eb-496a-9850-cef380ef84f4",
+    "serviceName": "Food Pantry"
+  },
+  "81319": {
+    "locationId": "3ec45a94-0a92-40f8-a4cf-1789d1f1f8ef",
+    "orgName": "United Bronx Parents Food Provider",
+    "serviceId": "b584a391-29e1-4ea9-855f-23d7f6b02085",
+    "serviceName": "Soup kitchen"
+  },
+  "81344": {
+    "locationId": "39d26a45-3625-40b4-aaf5-bdb50ea9d48c",
+    "orgName": "Bethesda Missionary Baptist Church",
+    "serviceId": "72d12526-c065-4aac-8ec4-458e142b7f34",
+    "serviceName": "Soup kitchen"
+  },
+  "81348": {
+    "locationId": "589f6533-d77b-40bd-974f-578d8d3ea3cc",
+    "orgName": "Creston Avenue Baptist Church, Inc",
+    "serviceId": "812a65b5-ee00-467e-8c71-8a3b1c94662a",
+    "serviceName": "Food Pantry"
+  },
+  "81353": {
+    "locationId": "0bbd2e2c-c722-4521-a657-d51dd46bf71c",
+    "orgName": "Beth Hark Christian Counseling Center Food Provider II",
+    "serviceId": "abc59d12-4983-465d-8cdd-c5af8506920f",
+    "serviceName": "Food Pantry"
+  },
+  "81402": {
+    "locationId": "7bd66f6a-fe6d-4274-9291-b9eb60a1106f",
+    "orgName": "National Commission for Jewish Education",
+    "serviceId": "05842372-58ee-41b6-8422-d990c2ba5e21",
     "serviceName": "Food Pantry"
   },
   "81412": {
@@ -153,10 +675,68 @@
     "serviceName": "Soup kitchen"
   },
   "81424": {
-    "locationId": "b2e1a6c8-e33f-48c3-9186-6b28745defae",
+    "locationId": "d50a7bd7-bac3-4ac2-88a5-553b4cb1785e",
     "orgName": "Presentation of the Blessed Virgin Mary",
-    "serviceId": "77ed4d81-6f6a-4ed3-a149-337e3686aa12",
+    "serviceId": "11702881-4806-4ddc-9656-622d167a6d9e",
     "serviceName": "Soup kitchen"
+  },
+  "81435": {
+    "locationId": "b7ca4b9a-8ba8-4890-b685-bfd3d9f84039",
+    "orgName": "Grace Episcopal Church Bronx",
+    "serviceId": "d4c9b3b6-a199-4162-b21e-32e6b2b9ba51",
+    "serviceName": "Food Pantry"
+  },
+  "81450": {
+    "locationId": "c86331a4-5aac-4649-bf6a-f45f95ebf93e",
+    "orgName": "First Presbyterian Church of Jamaica",
+    "serviceId": "93ce667c-f03a-49b4-b149-6c6eccd036a7",
+    "serviceName": "Soup kitchen"
+  },
+  "81451": {
+    "nearbyButDifferentOrgs": [
+      "COALITION FOR THE HOMELESS"
+    ],
+    "locationId": "6e0554d5-0b3d-4c17-abc8-ff5c2f285af3",
+    "orgName": "Grand Central Food Program, St. Mark's Place",
+    "serviceId": "f196a5cd-4d61-4438-949b-5b5038cc7d9e",
+    "serviceName": "Soup kitchen"
+  },
+  "81452": {
+    "locationId": "d0cba348-bdce-41ad-883d-02c28636b18b",
+    "orgName": "Canaan Senior Service Center",
+    "serviceId": "2749a35d-f503-4a2e-9498-7b6c8d9dbe25",
+    "serviceName": "Food Pantry"
+  },
+  "81453": {
+    "locationId": "c86331a4-5aac-4649-bf6a-f45f95ebf93e",
+    "orgName": "First Presbyterian Church of Jamaica",
+    "serviceId": "fca1d95b-2b2d-4687-8c28-7a8a9b5a0a82",
+    "serviceName": "Food Pantry"
+  },
+  "81457": {
+    "nearbyButDifferentOrgs": [
+      "THIS LOCATION IS CLOSED – GAY MEN’S HEALTH CRISIS (GMHC)—CLIENT ADVOCACY"
+    ],
+    "locationId": "a15954c0-d26b-4c7e-8ffc-742f1c79fa4c",
+    "orgName": "Gay Men's Health Crisis (GMHC)"
+  },
+  "81458": {
+    "locationId": "407b6a0a-f482-4400-9b46-9b3eef049092",
+    "orgName": "God's Love We Deliver",
+    "serviceId": "acd1ee0c-e534-4408-9bb7-b35487c1f74a",
+    "serviceName": "Soup kitchen"
+  },
+  "81460": {
+    "locationId": "0c2fe5d6-5e51-4860-bf5f-f2e0a778c933",
+    "orgName": "Bethany United Methodist Church",
+    "serviceId": "60df1510-4424-488f-a2c1-e859a044bd0f",
+    "serviceName": "Soup kitchen"
+  },
+  "81473": {
+    "locationId": "5810b390-22e0-41b2-b91c-e578d4c3a74e",
+    "orgName": "Village Temple",
+    "serviceId": "1e4ec128-cb97-4ee1-8ae7-540e771f37ff",
+    "serviceName": "Soup Kitchen"
   },
   "81479": {
     "locationId": "860611c6-e3b5-488b-be86-269dc54d0b19",
@@ -165,17 +745,54 @@
     "serviceName": "Food Pantry"
   },
   "81487": {},
+  "81501": {
+    "nearbyButDifferentOrgs": [
+      "THIS LOCATION IS CLOSED – GAY MEN’S HEALTH CRISIS (GMHC)—CLIENT ADVOCACY"
+    ],
+    "locationId": "27685203-554b-4d4d-9ea4-6eea80b04b3a",
+    "orgName": "Gay Men's Health Crisis (GMHC) Nutrition & Wellness Programs"
+  },
   "81507": {
-    "locationId": "4083bd31-aae0-4dcd-b1ba-11586eb89e1a",
+    "locationId": "ed22bccf-40c1-4864-9045-77de64e0cf5d",
     "orgName": "St. Clements Food Pantry",
-    "serviceId": "772321c1-bcb2-446f-b70c-49de2eec6be3",
+    "serviceId": "4dfe6214-ad13-4f09-a0b5-368da9e8389e",
     "serviceName": "Food Pantry"
+  },
+  "81509": {
+    "locationId": "cb9ab449-4745-436f-9fcc-725df2b81f09",
+    "orgName": "We Care Community Outreach/New Jerusalem Church",
+    "serviceId": "fe07f2ff-5657-41fd-aded-d926e6ac58e4",
+    "serviceName": "Food Pantry"
+  },
+  "81510": {
+    "locationId": "cb9ab449-4745-436f-9fcc-725df2b81f09",
+    "orgName": "We Care Community Outreach/New Jerusalem Church",
+    "serviceId": "2a94ffec-11d6-4217-92b7-d0f03dc106a0",
+    "serviceName": "Soup kitchen"
+  },
+  "81511": {
+    "locationId": "b81820f5-2b58-4afc-a443-38735dc06088",
+    "orgName": "Roman Catholic Church of St. Anthony",
+    "serviceId": "f0e81814-03bc-4290-b662-d6e116eb28e2",
+    "serviceName": "Soup kitchen"
   },
   "81528": {
     "locationId": "eabe34af-33e4-44fb-94f2-7363b7050bc1",
     "orgName": "Our Lady Of Good Counsel",
     "serviceId": "dc2b5c96-d76b-4f6a-9552-5db3ee9fd1c3",
     "serviceName": "Breakfast Program"
+  },
+  "81558": {
+    "locationId": "450ae0fb-55ad-483a-af04-039e990e59c6",
+    "orgName": "South Ozone Park Seventh Day Adventist Church",
+    "serviceId": "7ee30fef-41e4-4e4c-b0da-6a41307022d8",
+    "serviceName": "Food Pantry"
+  },
+  "81559": {
+    "locationId": "92ada4bf-5f51-445d-a79e-19c2ab7435a7",
+    "orgName": "Christian Pentacostal Church",
+    "serviceId": "43d4c11d-7485-44bc-9511-b00f78b0e8a7",
+    "serviceName": "Food Pantry"
   },
   "81578": {
     "locationId": "635d2e2d-1300-4a8e-9606-4143b7d8a066",
@@ -195,6 +812,15 @@
     "serviceId": "a407114b-425f-4a81-8b16-72a35e1faeb0",
     "serviceName": "Food Pantry"
   },
+  "81597": {
+    "nearbyButDifferentOrgs": [
+      "BOOM!HEALTH"
+    ],
+    "locationId": "e6ce132e-3708-479e-80b8-dc65f239877d",
+    "orgName": "Bronx AIDS Services, Inc.",
+    "serviceId": "5df2a8ba-f416-49c5-94e2-3a9da1870188",
+    "serviceName": "Food Pantry"
+  },
   "81608": {
     "locationId": "ace94672-4ff3-4f58-9b51-957ddbb2d8e9",
     "orgName": "International Pentecostal Church Food Provider",
@@ -206,6 +832,12 @@
     "orgName": "Father Creavins Food Pantry",
     "serviceId": "7f4dfaa6-80c5-4d65-8a55-25d5d41cdf65",
     "serviceName": "Food Pantry"
+  },
+  "81622": {
+    "locationId": "e019485d-5199-4acc-8e95-8db83f4a719a",
+    "orgName": "Urban Outreach Center",
+    "serviceId": "7b908281-908a-4865-a3c5-6333424697a0",
+    "serviceName": "Soup kitchen"
   },
   "81626": {
     "locationId": "2a111a80-b574-4323-95d3-5e4f047488df",
@@ -219,10 +851,50 @@
     "serviceId": "cd7fe3ab-b294-45a5-9c51-e992ebf26f8d",
     "serviceName": "Food Pantry"
   },
+  "81646": {
+    "locationId": "444e2696-3d98-484c-af86-809fd9be793d",
+    "orgName": "Solid Rock Baptist Church",
+    "serviceId": "ae47e280-a712-46d6-b4d5-8d5f5290900f",
+    "serviceName": "Food Pantry"
+  },
+  "81657": {
+    "locationId": "f048547a-1a3f-478b-b26f-bb28cc9fcbc2",
+    "orgName": "Hanson Place Seventh Day Adventist Church",
+    "serviceId": "f82587b0-f691-4ad1-af4c-c25ed635af63",
+    "serviceName": "Soup kitchen"
+  },
+  "81659": {
+    "nearbyButDifferentOrgs": [
+      "ST. IGNATIUS EPISCOPAL CHURCH",
+      "Westside Campaign Against Hunger"
+    ],
+    "locationId": "bff25688-1fe5-4e34-afa2-667ca9300fe3",
+    "orgName": "The Other Place/Goddard Riverside",
+    "serviceId": "eb6e3a84-4b88-4db3-aaf4-2af224040170",
+    "serviceName": "Soup kitchen"
+  },
+  "81665": {
+    "locationId": "06351b48-3d6d-4b67-a779-0cc900488e19",
+    "orgName": "Resource Center of Community Development, Inc.",
+    "serviceId": "8653be2d-631f-486a-8809-f0f24bfaf103",
+    "serviceName": "Food Pantry"
+  },
+  "81671": {
+    "locationId": "5af3199f-3447-4114-907a-385c78a4b501",
+    "orgName": "Immaculate Conception Church",
+    "serviceId": "a162da7c-cf86-4ba8-9de0-ab2291d4b727",
+    "serviceName": "Food Pantry"
+  },
   "81679": {
     "locationId": "7bbff4f0-03f4-48d6-9396-a56898a10a41",
     "orgName": "FORGING AHEAD FOR COMMUNITY EMPOWERMENT AND SUPPORT (FACES)",
-    "serviceId": "35f30b55-5245-4db9-94f5-1140684b9bf3",
+    "serviceId": "60a6f8ef-5d22-4bcf-8b7a-687d38a4ba83",
+    "serviceName": "Food Pantry"
+  },
+  "81687": {
+    "locationId": "8142cdfd-c70a-49d6-8df3-9c2d5e4cdf12",
+    "orgName": "Maranatha SDA Church",
+    "serviceId": "06a879fa-1726-4ca7-9476-2960551e4a6b",
     "serviceName": "Food Pantry"
   },
   "81699": {
@@ -231,40 +903,94 @@
     "serviceId": "f53e3f7d-f387-49a3-a0d9-7662ab1014af",
     "serviceName": "Food Pantry"
   },
+  "81727": {
+    "locationId": "4eb7da4e-0fd0-4518-8d85-4dd982dfea11",
+    "orgName": "African Service Committee",
+    "serviceId": "7ea7baf1-e5bf-4b9a-a1af-1706f00072b2",
+    "serviceName": "Food Pantry"
+  },
   "81733": {
     "nearbyButDifferentOrgs": [
       "Jewish Community Council of The Rockway Peninsula Food Provider"
     ],
-    "locationId": "6dae5970-c678-495f-b472-bb85eafc2691",
+    "locationId": "01cbed87-48c6-4639-9a6b-5d1f2e56a0bc",
     "orgName": "AIDS Center of Queens County",
-    "serviceId": "1dd3bb09-f08d-41db-80f9-c3e1b3b9746e",
+    "serviceId": "2d587c2e-3c3b-400a-ac55-72ae3580362d",
     "serviceName": "Food Pantry"
   },
   "81741": {
-    "locationId": "1b7b5d23-5279-4843-bfef-c7faa09c0e3c",
+    "locationId": "39dcc0d8-a3af-4f61-b213-07daa95c7406",
     "orgName": "Commonpoint Queens Central Queens Food Pantry",
-    "serviceId": "adf21725-35b6-4bb1-93f2-86152c112339",
+    "serviceId": "cc8759f3-3f79-49c2-a4bc-b99fd79ca81c",
     "serviceName": "Food Pantry",
     "nearbyButDifferentOrgs": [
       "Esther Grunblatt-Central Queens Y"
     ]
   },
   "81742": {
-    "locationId": "73526e01-afd8-4291-aa3c-8c70ffe35585",
-    "orgName": "CAMBA, Inc./ Beyond Hunger Emergency Food Pantry",
-    "serviceId": "a7eee4a1-5e39-4350-9ae0-3483819df93b",
+    "locationId": "af356881-3417-4c35-a6e3-17b498aaebb8",
+    "orgName": "CAMBA, Inc./Beyond Hunger Emergency Food Pantry",
+    "serviceId": "4c8c7a4e-8ad8-4e8f-8942-b98cec6f5261",
+    "serviceName": "Food Pantry"
+  },
+  "81780": {
+    "locationId": "f794be36-ac1a-4d60-bb85-84f98e9ff5ca",
+    "orgName": "Tabernacle of Prayer",
+    "serviceId": "9b85c772-9b97-4d14-a936-5aa1da5ab35c",
     "serviceName": "Food Pantry"
   },
   "81838": {
-    "locationId": "7f801987-1e5f-4a99-9160-740f63e647da",
+    "locationId": "5af3199f-3447-4114-907a-385c78a4b501",
     "orgName": "Immaculate Conception Church",
-    "serviceId": "d5c4334b-3948-40ae-bf9f-fe774de45588",
+    "serviceId": "f9a0f134-c0f2-40b6-a8d7-51f8cdf98c44",
     "serviceName": "Soup kitchen"
   },
+  "81917": {
+    "locationId": "cd09379d-bf2f-46e2-a8fb-24edc0557850",
+    "orgName": "Church of the Village United Methodist Church",
+    "serviceId": "452b2032-0c7d-4d74-8fa1-a88e2a764bb5",
+    "serviceName": "Food Pantry"
+  },
+  "81961": {
+    "locationId": "9c6a694d-0cb0-4165-a4b6-ca8d1874331e",
+    "orgName": "Macedonia Church Of Christ",
+    "serviceId": "b0d37eeb-61aa-462b-b850-d8ad67ad6799",
+    "serviceName": "Food Pantry"
+  },
+  "81977": {
+    "locationId": "90aa5132-5a62-418f-b4de-204ab731f4b4",
+    "orgName": "Iris House",
+    "serviceId": "24576313-9359-48cb-945d-1364ff442a71",
+    "serviceName": "Soup kitchen"
+  },
+  "81987": {
+    "locationId": "dd4befe3-c342-4a43-857a-04b3f4b037d9",
+    "orgName": "Brownsville Temple Seventh Day Adventist Church",
+    "serviceId": "19586823-f74e-4791-a782-4f675d8f2c5c",
+    "serviceName": "Food Pantry"
+  },
   "82034": {
-    "locationId": "0a278a78-d4c1-4bb5-bcb8-d5a0aaf5564e",
+    "locationId": "1700f626-33de-4327-a2d2-733aa454d15b",
     "orgName": "Full Gospel Tabernacle",
-    "serviceId": "e064ddf1-dc9a-4a3e-acb5-06124478b7f2",
+    "serviceId": "9907e3ff-ae52-4170-9282-5ac98d05f34a",
+    "serviceName": "Food Pantry"
+  },
+  "82038": {
+    "locationId": "71dbb645-d270-4729-8c45-09790e653773",
+    "orgName": "Abrigo Del Altisimo",
+    "serviceId": "159ac2d7-5d8a-42f5-b927-d26e14a79ad2",
+    "serviceName": "Food Pantry"
+  },
+  "82056": {
+    "locationId": "91318f78-2a47-4ee2-9320-19cd63ca4c98",
+    "orgName": "Unity Faith Outreach",
+    "serviceId": "b14b87d0-4790-4b23-b83c-9b2ca48b8c33",
+    "serviceName": "Food Pantry"
+  },
+  "82075": {
+    "locationId": "c7f19d80-6077-4e2e-895f-779509bf80eb",
+    "orgName": "Macedonia African Methodist Episcopal Church",
+    "serviceId": "ed47216c-005c-459b-8c8f-3e4c5a8f8cfe",
     "serviceName": "Food Pantry"
   },
   "82133": {
@@ -273,16 +999,88 @@
     "serviceId": "676a9c0c-6088-471f-9d6d-10feabdbc2b1",
     "serviceName": "Soup kitchen"
   },
+  "82139": {
+    "locationId": "d43d0d8a-f4cd-4e9c-8f8f-2fe2d47285f1",
+    "orgName": "Stapleton United African Methodist Episcopal Church",
+    "serviceId": "07bba6d0-9c8c-4371-bd7d-4f4879810528",
+    "serviceName": "Food Pantry"
+  },
   "82188": {
     "locationId": "2605312f-79a7-4f96-b55e-aae42a634a19",
     "orgName": "Food First, Inc",
     "serviceId": "f6cb3118-ebd4-4024-92d8-744e2b7c41f6",
     "serviceName": "Food Pantry"
   },
+  "82200": {
+    "locationId": "bcf2d895-306f-4b03-914b-6b0edd9287ae",
+    "orgName": "Liberty Baptist Church",
+    "serviceId": "98560f83-c57c-44cb-be6c-4b16d2f12168",
+    "serviceName": "Food Pantry"
+  },
+  "82212": {
+    "locationId": "aed39e41-fa82-47c7-9620-2c49eb427978",
+    "orgName": "Bethel AME Church",
+    "serviceId": "7fd487a4-b75e-4756-a8ec-0e888f08805f",
+    "serviceName": "Food Pantry"
+  },
+  "82252": {
+    "locationId": "3b0eb796-1294-4fd0-ad8d-73f961f7d19c",
+    "orgName": "Soundview Presbyterian Church",
+    "serviceId": "4ce7980f-4b38-4f80-adc7-91e6b5a28f15",
+    "serviceName": "Food Pantry"
+  },
+  "82289": {
+    "locationId": "da549803-78a3-43cf-af05-08d8ccf2fa8e",
+    "orgName": "Glover Memorial Bread of Life Food Provider",
+    "serviceId": "f05bb23b-447d-46ec-80ae-a3bd563e3196",
+    "serviceName": "Soup kitchen"
+  },
   "82359": {
-    "locationId": "f878922c-8cf5-467a-9b09-48cb7e431905",
+    "locationId": "b1806a76-8505-4106-8cff-a018e6daf169",
     "orgName": "El Amanecer De La Esperanza Ministry, Inc.",
-    "serviceId": "5dc34f1c-ebc3-4f41-aae8-b36641079c2f",
+    "serviceId": "6e0f46a9-4cf9-4389-85e8-aa60067658eb",
+    "serviceName": "Food Pantry"
+  },
+  "82364": {
+    "locationId": "0febaaf7-1610-4f0c-94d4-bcf7a51e8159",
+    "orgName": "Union Baptist Church",
+    "serviceId": "317480e6-25b8-4889-b634-b4760e1ea329",
+    "serviceName": "Soup kitchen"
+  },
+  "82750": {
+    "locationId": "7f8bfbfe-60fc-497b-b35d-0ce1e024c93e",
+    "orgName": "Catholic Charities Community Services, Bronx",
+    "serviceId": "60f549c7-177f-437b-9185-4d98731fb1d0",
+    "serviceName": "Food Pantry"
+  },
+  "82851": {
+    "locationId": "8dd893e6-d7d1-49ec-8b79-e3a83d249a42",
+    "orgName": "Bethel Prayer Ministry Inter. USA Inc.",
+    "serviceId": "f2c635df-d80c-4d21-92df-470b187d9bbc",
+    "serviceName": "Food Pantry"
+  },
+  "82854": {
+    "locationId": "32bbfc09-21ae-4202-92f0-d05fba714d86",
+    "orgName": "Mount Paran Community Development Corp.",
+    "serviceId": "5ffcdd10-0723-4923-956e-acda58201355",
+    "serviceName": "Soup kitchen"
+  },
+  "82859": {
+    "locationId": "8fd90e71-e2ec-4e66-989d-4f441f522a7f",
+    "orgName": "New York City Relief, Lower Manhattan",
+    "serviceId": "cf7a65b9-eb76-47bc-810c-d3bda83a4c9f",
+    "serviceName": "Food Pantry"
+  },
+  "82861": {
+    "locationId": "c29e3cd3-ca53-49aa-bdff-6c3dea0dcb94",
+    "orgName": "Broadway Community",
+    "serviceId": "625f3288-5bf2-491e-89b4-caeb03b1a2a6",
+    "serviceName": "Food Pantry"
+  },
+  "82872": {
+    "locationId": "1b69fb5b-00bc-48d9-8fba-157b8baa3293",
+    "orgName": "Church of the Living God",
+    "serviceId": "769cbc35-898f-41d8-9079-526d037fcbe9",
     "serviceName": "Food Pantry"
   },
   "82904": {
@@ -292,15 +1090,21 @@
     "serviceName": "Food Pantry"
   },
   "83002": {
-    "locationId": "f6ed3b8c-4360-4019-8e41-a41b343ecc12",
+    "locationId": "831ebdc3-90be-447f-9f84-82ac6849523c",
     "orgName": "Metropolitan Council on Jewish Poverty",
-    "serviceId": "b7bd6948-e37b-4c56-930e-4107a8cfa289",
+    "serviceId": "78264633-bfdd-4e94-8be9-3450a74974fc",
+    "serviceName": "Food Pantry"
+  },
+  "83008": {
+    "locationId": "6a5bfdb1-a06a-481e-ace2-7d199b8450c3",
+    "orgName": "Bronx JCC - Jewish Community Center",
+    "serviceId": "3ca655d2-2a4e-4083-9ba2-651f35e22478",
     "serviceName": "Food Pantry"
   },
   "83174": {
-    "locationId": "3c5aab1e-5cd5-4951-a14e-82ff77ef357a",
-    "orgName": "Los Sures Social Services",
-    "serviceId": "98cec5e9-bffa-4bc7-a156-27013ca2fe3a",
+    "locationId": "69a8ad2f-603f-4b62-aa39-1b324a5fe0ae",
+    "orgName": "Southside United HDFC - Los Sures",
+    "serviceId": "b89eeb05-3215-4553-b35d-8f5d32297bb4",
     "serviceName": "Food Pantry"
   },
   "83197": {
@@ -309,11 +1113,28 @@
     "serviceId": "97a08b57-17ba-4f07-8b08-0968a1f4e967",
     "serviceName": "Food Pantry"
   },
-  "83278": {},
+  "83270": {
+    "locationId": "4cac9fc7-e42f-4a38-9e6a-d0e4d4d95690",
+    "orgName": "Morris Brown Helping Hand Food Program",
+    "serviceId": "5a7e7e1f-86c9-4e2c-a5e5-3d637dda44ce",
+    "serviceName": "Food Pantry"
+  },
+  "83278": {
+    "locationId": "bb9e76a9-2032-4e0b-8fb3-118444363136",
+    "orgName": "Black Veterans for Social Justice",
+    "serviceId": "b230d924-cd71-4149-befd-7b9a00557802",
+    "serviceName": "Food Pantry"
+  },
+  "83282": {
+    "locationId": "e02ab91f-c79f-439e-bb7f-0217b31cd766",
+    "orgName": "God's Deliverance Temple, Inc",
+    "serviceId": "0d4cb607-e6ed-4fc9-a5b8-17fd97e19eba",
+    "serviceName": "Food Pantry"
+  },
   "83304": {
-    "locationId": "a5ac3fc5-13df-409f-9126-f3c6e3a3a9a1",
+    "locationId": "376700ee-0a31-4d38-ae25-a49d62b66a17",
     "orgName": "City Of Faith Church Of God",
-    "serviceId": "8a66f39f-07f2-4216-95db-029f456d7af1",
+    "serviceId": "84a33e9e-3ece-4fee-be8c-f940b1c7c9d8",
     "serviceName": "Food Pantry"
   },
   "83348": {
@@ -322,22 +1143,40 @@
     "serviceId": "122337eb-82a3-41d4-a3a2-6e53ae5052bc",
     "serviceName": "Food Pantry"
   },
+  "83351": {
+    "locationId": "54e5924b-992b-4072-a5e4-99289549f212",
+    "orgName": "Deliverance Temple Church of Jesus Christ",
+    "serviceId": "0d6278b0-b48f-4b4b-8f68-1ebac05432ff",
+    "serviceName": "Food Pantry"
+  },
   "83356": {
-    "locationId": "95d6511b-e03a-41a1-b09d-dcdcc8954e18",
+    "locationId": "185a65b9-3366-495f-8872-0efbc5dc641e",
     "orgName": "Act of Faith Ministries",
-    "serviceId": "60f16ec6-5107-46b4-8a2f-957264f2caaa",
+    "serviceId": "afa0e35f-50d6-4683-989a-c5e6d5bbf805",
     "serviceName": "Food Pantry"
   },
   "83361": {
-    "locationId": "a0e1363c-e45a-4b69-ab5d-7825344009f5",
+    "locationId": "5602d80d-b06e-44ce-9248-49b125f1ff16",
     "orgName": "Our Lady Of Fatima Church",
-    "serviceId": "81951b99-e373-46d4-b393-dd2b886672c8",
+    "serviceId": "4a43b1ec-1ab4-4dfa-941d-e7f30be75aa5",
+    "serviceName": "Food Pantry"
+  },
+  "83364": {
+    "locationId": "c1bedf46-2db3-4f26-b2b1-de0fe184aba1",
+    "orgName": "Tomche Shabbos of Boro Park",
+    "serviceId": "fef7f518-0488-4f62-b11a-094d94811b46",
     "serviceName": "Food Pantry"
   },
   "83379": {
-    "locationId": "abcb872f-1f31-4586-bfa1-9e16fee94814",
+    "locationId": "90830ffc-6f36-4186-a2bc-d8139dc108d7",
     "orgName": "St. Rose Of Lima",
-    "serviceId": "bda6675d-3fbb-4d93-8b87-a806235c7b6a",
+    "serviceId": "a3a7106b-c499-4f37-98a6-86c95b47bc81",
+    "serviceName": "Food Pantry"
+  },
+  "83382": {
+    "locationId": "8eebf87b-0b47-4202-909f-7402fc494c55",
+    "orgName": "Shout For Joy Baptist Church, Inc.",
+    "serviceId": "02a419aa-62bf-4f6a-8525-d41d13ecde41",
     "serviceName": "Food Pantry"
   },
   "83397": {
@@ -346,52 +1185,224 @@
     "serviceId": "f696a6df-f372-47bd-80ab-2e171de81a30",
     "serviceName": "Food Pantry"
   },
+  "83444": {
+    "locationId": "ea75b29a-b541-48c7-be8a-b376da8e94de",
+    "orgName": "Fernanda Valme Ministries Inc",
+    "serviceId": "b911e86f-dd6e-4bb4-a122-5e8f1b939db8",
+    "serviceName": "Food Pantry"
+  },
+  "83447": {
+    "locationId": "088dc155-a8bf-4a7c-8557-a178ad77359c",
+    "orgName": "The First Mary Magdalene Temple of Faith",
+    "serviceId": "de141cac-f7b8-4e27-9adc-254f8328162d",
+    "serviceName": "Food Pantry"
+  },
+  "83450": {
+    "locationId": "4cac9fc7-e42f-4a38-9e6a-d0e4d4d95690",
+    "orgName": "Morris Brown Helping Hand Food Program",
+    "serviceId": "7f242c89-42f4-4f04-badc-4461de59ce21",
+    "serviceName": "Soup kitchen"
+  },
+  "83457": {
+    "locationId": "c7f19d80-6077-4e2e-895f-779509bf80eb",
+    "orgName": "Macedonia African Methodist Episcopal Church",
+    "serviceId": "af319fe8-4b93-4cc4-bf71-d7f7ab8d9393",
+    "serviceName": "Soup kitchen"
+  },
+  "83501": {
+    "locationId": "5312a722-53d1-44cc-87c6-5e759fe1b1ef",
+    "orgName": "First Baptist Church/H.O. Scott Education & Community Center",
+    "serviceId": "618404a8-0fd3-4b78-9080-e4031e74f626",
+    "serviceName": "Food Pantry"
+  },
+  "83503": {
+    "locationId": "86c03bdb-689c-4439-8438-ebf61b3efc96",
+    "orgName": "Our Lady of Grace Parish Ministry",
+    "serviceId": "7f3ad82e-f808-4679-a90d-eadbea7cc4ee",
+    "serviceName": "Soup kitchen"
+  },
   "83514": {
-    "locationId": "6a4ad34c-e908-485a-bb69-2508b629a5c2",
+    "locationId": "ba18e002-7a90-4d5f-afab-f1806c22c67d",
     "orgName": "House of David, Pentecostal Apostolic Faith Church",
-    "serviceId": "78bc092c-d07c-4ed5-9d36-509698fcbd90",
+    "serviceId": "f87e732b-5377-4d9a-97fc-67232f50789a",
     "serviceName": "Food Pantry"
   },
   "83540": {
-    "locationId": "271f7bfd-4368-4322-8946-7f0e8d3708ec",
+    "locationId": "a9a9a1fc-1cf0-4eab-baaa-47d9d6352897",
     "orgName": "Bikur Cholim of Staten Island",
-    "serviceId": "c638e373-e493-40ca-a942-95554571af80",
+    "serviceId": "280780ed-ad8c-4fcc-b43a-b7ec2cacd05d",
+    "serviceName": "Food Pantry"
+  },
+  "83543": {
+    "locationId": "654f3db8-a64a-404e-a53e-2ec584ac49bc",
+    "orgName": "Stephen Wise Free Synagogue",
+    "serviceId": "a99b336b-17d8-493f-87a6-8b3e41519f85",
     "serviceName": "Food Pantry"
   },
   "83550": {
-    "locationId": "32a49ff1-f098-4343-8ec3-e6a35a22e230",
+    "locationId": "688c0cbf-b8fa-4fb0-9138-9a9bfc00039a",
     "orgName": "Part Of The Solution",
-    "serviceId": "6e0f89ac-a93b-4bce-ad5d-783116009ec3",
+    "serviceId": "41121976-415b-47f8-b29f-8f87d907f636",
     "serviceName": "Food Pantry"
+  },
+  "83560": {
+    "locationId": "39d26a45-3625-40b4-aaf5-bdb50ea9d48c",
+    "orgName": "Bethesda Missionary Baptist Church",
+    "serviceId": "c3b60d76-85d8-4778-a17c-d54ae88bf44a",
+    "serviceName": "Food Pantry"
+  },
+  "83561": {
+    "locationId": "2c07a5b2-5ac4-4940-834e-bee211abfe4a",
+    "orgName": "The Salvation Army Temple Corps",
+    "serviceId": "c09effda-8330-435b-941a-1cbba416f3fc",
+    "serviceName": "Soup kitchen"
+  },
+  "83567": {
+    "locationId": "9074e65a-df0b-4804-82c1-e5ed09eb9c0a",
+    "orgName": "The Harding Food Vision Inc",
+    "serviceId": "3408d2b7-61e6-4e77-bc1a-6e779ac48805",
+    "serviceName": "Food Pantry"
+  },
+  "83569": {
+    "locationId": "fff7a9a6-3a43-4687-904e-96dd21315647",
+    "orgName": "Shiloh Seventh Day Adventist",
+    "serviceId": "84633ce8-49d3-4800-a618-89161403ae6e",
+    "serviceName": "Food Pantry"
+  },
+  "83599": {
+    "locationId": "809307d7-876d-4dcc-a7eb-acfc8ed287fc",
+    "orgName": "King Emmanuel Missionary Baptist Church",
+    "serviceId": "3f7b9898-a79b-412e-b12f-abc758904582",
+    "serviceName": "Food Pantry"
+  },
+  "83616": {
+    "locationId": "2d194a00-b5c4-4b98-a316-7beadc83340b",
+    "orgName": "Family Life Development Center",
+    "serviceId": "cce095bc-9dde-4a8a-b5c2-2a213c5501f8",
+    "serviceName": "Food Pantry"
+  },
+  "83617": {
+    "locationId": "aa115600-a348-488d-9e14-ea59ac98c937",
+    "orgName": "Catholic Charities Neighborhood Services, St. Mark's",
+    "serviceId": "30dfd7a3-aa27-413f-bf7b-d64c636fa6ff",
+    "serviceName": "Food Pantry"
+  },
+  "83618": {
+    "locationId": "94bc764b-4398-4556-a921-105433c23546",
+    "orgName": "Shorefront Jewish Community Council",
+    "serviceId": "55aa5035-ce79-4381-85ca-d15cd4f02bd5",
+    "serviceName": "Food Pantry"
+  },
+  "83621": {
+    "locationId": "77513a72-eb45-4a27-a542-ddb5f849b391",
+    "orgName": "Momentum PROJECT @ ST. JOHN'S LUTHERAN CHURCH",
+    "serviceId": "b0108451-1812-445b-9d2c-9e3e6ec66992",
+    "serviceName": "Soup kitchen"
   },
   "83622": {
-    "locationId": "b7a0c256-e6cd-4cbd-b534-c598e5951225",
+    "locationId": "77513a72-eb45-4a27-a542-ddb5f849b391",
     "orgName": "Momentum PROJECT @ ST. JOHN'S LUTHERAN CHURCH",
-    "serviceId": "d94e7be6-41ad-4ed9-bf38-b4ea6453affc",
+    "serviceId": "dadc9b9e-b2f1-4380-be27-30c9047f71f4",
     "serviceName": "Food Pantry"
   },
+  "83623": {
+    "locationId": "8aea1425-1b3a-438f-ae6a-dbde0e5ee329",
+    "orgName": "First Baptist Church",
+    "serviceId": "d694f5d2-a019-42c5-996b-589510ce2768",
+    "serviceName": "Soup kitchen"
+  },
   "83628": {
-    "locationId": "5e97676f-8356-4571-94f4-7c58cfb66f67",
-    "orgName": "St. Raphael Food Pantry",
-    "serviceId": "cdd6028c-3d37-4cae-9c4e-8347aab71acf",
+    "locationId": "75f3754a-bff7-4a94-ae14-1cfc243a1bb0",
+    "orgName": "St Raphael's Church Food Pantry",
+    "serviceId": "0ce9e854-10fc-4251-970b-7202f30825dc",
     "serviceName": "Food Pantry"
   },
   "83656": {
-    "locationId": "5aa21800-0f5c-4c5d-b669-4bd685786bbf",
+    "locationId": "aa9f8e99-b162-4619-8fe5-594693a61376",
     "orgName": "Our Lady Of Good Counsel Church",
-    "serviceId": "979d087d-5d23-4264-acd2-a3cdfe94da75",
+    "serviceId": "20b4c7fc-7692-454b-b3f5-bd3348ff326b",
+    "serviceName": "Food Pantry"
+  },
+  "83661": {
+    "locationId": "47ab1568-e501-487a-9f4d-638bf299e84c",
+    "orgName": "St Anthony's Baptist Church",
+    "serviceId": "cecc4d0c-1cef-4647-b2ce-812d75e40f13",
+    "serviceName": "Soup kitchen"
+  },
+  "83696": {
+    "locationId": "3ec9d839-b18d-4235-ac88-728841acdb9e",
+    "orgName": "LSS/All Saints Lutheran Church",
+    "serviceId": "8bdccc1b-33e9-480e-82be-542d0c922591",
+    "serviceName": "Food Pantry"
+  },
+  "83811": {
+    "locationId": "0c1d5ed8-c382-4e1f-a36f-88bfbc9af701",
+    "orgName": "Make The Road",
+    "serviceId": "e320c757-d9be-4d29-8fe5-319ffc31b5ae",
     "serviceName": "Food Pantry"
   },
   "83874": {
-    "locationId": "95f5b86a-90bc-4ace-bc87-76a6c3b227ba",
+    "locationId": "2c5a9ece-5e5e-4c01-a69d-ec176ec6c0d8",
     "orgName": "BFFY-Our Lady Of Lourdes Outreach",
-    "serviceId": "2bbfcb14-6fdf-495a-9fc6-74dd3baf8cab",
+    "serviceId": "eaf78a9d-1be1-42df-affe-e94acb5e1bfc",
+    "serviceName": "Food Pantry"
+  },
+  "83883": {
+    "locationId": "ed06ad2a-1a48-4d84-8de2-75a63f900f73",
+    "orgName": "Catholic Charities Community Services, Central Harlem Parish And Community Outreach",
+    "serviceId": "bae266fe-5b11-4234-9992-149ad3efa494",
+    "serviceName": "Food Pantry"
+  },
+  "83895": {
+    "locationId": "23a00ad1-3e2e-4b9f-8e70-a747f80b08c0",
+    "orgName": "Church of God of Prophecy",
+    "serviceId": "c9287b89-09ff-4ce6-a33c-7449202e55be",
+    "serviceName": "Soup kitchen"
+  },
+  "83907": {
+    "locationId": "da549803-78a3-43cf-af05-08d8ccf2fa8e",
+    "orgName": "Glover Memorial Bread of Life Food Provider",
+    "serviceId": "91679681-4d8d-4db1-bbb7-d234fad1de6d",
+    "serviceName": "Food Pantry"
+  },
+  "83913": {
+    "locationId": "e23934e6-a114-4988-89be-266e59692644",
+    "orgName": "Other People In Need (OPIN)",
+    "serviceId": "1c0b7649-bb45-4f88-814c-04161b1647ea",
+    "serviceName": "Soup kitchen"
+  },
+  "83914": {
+    "locationId": "b228620c-d4fc-429b-8847-056b76839bc7",
+    "orgName": "St Luke's Baptist Church",
+    "serviceId": "c4b67991-874e-4b52-9ea1-e845fd3258b8",
     "serviceName": "Food Pantry"
   },
   "83916": {
-    "locationId": "c78130a2-754a-474b-9461-731d430caa12",
+    "locationId": "23b62f1a-9745-4e22-9aba-196c303ae8ad",
     "orgName": "Project Hospitality food pantry",
-    "serviceId": "f0ee6af9-ab64-4215-b8ea-6b7ae779c5eb",
+    "serviceId": "e9eeff94-f732-4339-b587-77b09e77f5fb",
+    "serviceName": "Food Pantry"
+  },
+  "83940": {
+    "locationId": "bda5e0af-8015-4fa0-8143-a596e1932611",
+    "orgName": "Eben-Ezer Haitian Baptist Church",
+    "serviceId": "af53ada0-db7c-4c6e-82e3-d8caf32799bc",
+    "serviceName": "Food Pantry"
+  },
+  "83941": {
+    "locationId": "f0092a9c-6d01-4ed6-9489-326a25530028",
+    "orgName": "Hope Center Development Corporation"
+  },
+  "83956": {
+    "locationId": "3dd77bf0-3637-4780-932b-ed5898ff714a",
+    "orgName": "The Campaign Against Hunger",
+    "serviceId": "e4d79b78-3f8d-4377-aa8c-cab3b6c9a4e1",
+    "serviceName": "Food Pantry"
+  },
+  "84002": {
+    "locationId": "c7d96eb5-1bc4-4e74-bb71-5bf1f257b307",
+    "orgName": "Church of God, Inc",
+    "serviceId": "aba07881-7360-4d06-a48c-91d0a9b9f0c4",
     "serviceName": "Food Pantry"
   },
   "84012": {
@@ -401,16 +1412,40 @@
     "serviceName": "Food Pantry"
   },
   "84033": {
-    "locationId": "0b15168b-6109-4a48-a249-a26a322e8931",
+    "locationId": "b3e9744e-45cf-43d8-833b-aa5c5729624b",
     "orgName": "Ehrlich Residence",
-    "serviceId": "02e7a0b1-cc32-4901-a97c-4f202385ac27",
+    "serviceId": "ddaf238e-8e80-4b54-855b-90ede85cece1",
     "serviceName": "Shelter"
   },
+  "84034": {
+    "locationId": "dc2233dd-bdd2-4edc-a986-39241e11deb6",
+    "orgName": "St. Ann's Corner of Harm Reduction",
+    "serviceId": "e5280b70-f43a-4d68-97e2-f5d738e8b64b",
+    "serviceName": "Soup kitchen"
+  },
+  "84043": {
+    "locationId": "d2a2e2e5-74ad-44b5-9f60-3cb9589ad52a",
+    "orgName": "Zion Church of the Truth Community Service",
+    "serviceId": "4305926b-2543-4eb5-b7d0-f69327ff8d3d",
+    "serviceName": "Food Pantry"
+  },
+  "84065": {
+    "locationId": "270844c7-0a1d-42ba-9b2e-eda8ed17c9b4",
+    "orgName": "Lenox Hill Senior Center",
+    "serviceId": "e76784ab-7490-4901-bc67-d278b4972187",
+    "serviceName": "Food Pantry"
+  },
   "84072": {
-    "locationId": "86bf6400-79db-4238-92f7-40d9d97258ba",
+    "locationId": "0e8d7c53-c801-4a8a-bf7c-9cb8ee831357",
     "orgName": "Help USA Help Supportive Employment Center",
-    "serviceId": "a0d3904e-cfb7-4499-8930-f337cd54e87c",
-    "serviceName": "Shelter"
+    "serviceId": "037e4be7-6caa-4532-9e80-147fbd00b45a",
+    "serviceName": "Soup kitchen"
+  },
+  "84081": {
+    "locationId": "16922485-985d-4faa-a7bb-95542c8cefbb",
+    "orgName": "Bethel African Methodist Episcopal Church - Bethel Arverne Community Food Provider",
+    "serviceId": "f194e974-e602-4936-bef6-7e39bd036165",
+    "serviceName": "Food Pantry"
   },
   "84086": {
     "locationId": "b0f6a2b7-4590-4dbf-aebf-de0b11c94207",
@@ -421,13 +1456,43 @@
   "84087": {
     "locationId": "f0092a9c-6d01-4ed6-9489-326a25530028",
     "orgName": "Hope Center Development Corporation",
-    "serviceId": "bca092e4-2888-4a7b-b24f-530494e76174",
+    "serviceId": "a0f7ce13-e36c-4b81-8a14-4e55da4a2c00",
     "serviceName": "Food Pantry"
+  },
+  "84088": {
+    "locationId": "0bbd2e2c-c722-4521-a657-d51dd46bf71c",
+    "orgName": "Beth Hark Christian Counseling Center Food Provider II",
+    "serviceId": "9cd0ce92-5528-4200-b63e-a40d6771a4e4",
+    "serviceName": "Soup kitchen"
+  },
+  "84095": {
+    "locationId": "a2cfa4b7-edd2-46e4-8df8-75eb1d9b6389",
+    "orgName": "Fort Greene Hazel Brooks",
+    "serviceId": "69c06721-ab00-4690-8d59-78fd1ebf4743",
+    "serviceName": "Soup kitchen"
   },
   "84105": {
     "locationId": "5f19323e-3cb3-41d5-9730-9c86a83e3e9d",
     "orgName": "Saint Teresa Church - Saint Vincent Depaul Society",
     "serviceId": "b7daf2c2-a1b9-4e8b-970d-e7bae251e5c4",
+    "serviceName": "Food Pantry"
+  },
+  "84108": {
+    "locationId": "fda9ef80-2666-49b6-a925-b9ae63766c0f",
+    "orgName": "First Corinthian Baptist Church",
+    "serviceId": "b282057c-5e4d-4cd1-a33d-2cdf5bf03a0e",
+    "serviceName": "Food Pantry"
+  },
+  "84129": {
+    "locationId": "42de4f9e-3b9d-4496-a6a4-d831b8cb799f",
+    "orgName": "Vineyard International Christian Ministries",
+    "serviceId": "9d3f95c0-c044-4eb3-b69b-db402850a566",
+    "serviceName": "Food Pantry"
+  },
+  "84136": {
+    "locationId": "7a55d9cc-dcfa-4d47-8ba0-e0271f67fdd8",
+    "orgName": "Love Fellowship Tabernacle, Inc.",
+    "serviceId": "08f96475-1c44-4f7f-95c7-e73c74d4cff4",
     "serviceName": "Food Pantry"
   },
   "84137": {
@@ -436,10 +1501,52 @@
     "serviceId": "e7fe725a-fcb6-4ab4-bac4-83332e38e819",
     "serviceName": "Food Pantry"
   },
+  "84142": {
+    "locationId": "59cfbb64-0527-4b95-a0dd-ce490625452c",
+    "orgName": "St. Albans Baptist Church",
+    "serviceId": "74325b8f-7082-4052-8322-70b91115b1c7",
+    "serviceName": "Food Pantry"
+  },
+  "84145": {
+    "locationId": "0bd3213d-3588-481a-b111-b3602abc6839",
+    "orgName": "Calvary African Methodist Episcopal Church SK",
+    "serviceId": "85b70471-222c-4dbd-8b99-ba39cb4167cf",
+    "serviceName": "Soup kitchen"
+  },
+  "84146": {
+    "locationId": "41cb4988-6aa4-494b-9fa0-2c94620bf6e6",
+    "orgName": "St Augustine's American Catholic Church",
+    "serviceId": "71a6b6e1-e744-48be-a7e0-b422a3dbdd8d",
+    "serviceName": "Food Pantry"
+  },
+  "84148": {
+    "locationId": "23a00ad1-3e2e-4b9f-8e70-a747f80b08c0",
+    "orgName": "Church of God of Prophecy",
+    "serviceId": "6abed988-dee2-419b-9820-41b9e9e7563f",
+    "serviceName": "Food Pantry"
+  },
+  "84167": {
+    "locationId": "17c5cb8c-b9a4-44e4-ba68-8d0dad66600a",
+    "orgName": "Rescue Ministry or Ministerio Rescate Inc",
+    "serviceId": "d9f4a8f5-944c-4967-9b3a-ab266e911799",
+    "serviceName": "Food Pantry"
+  },
   "84174": {
-    "locationId": "ab65416b-27e6-4bf9-80ac-762a1917bf63",
-    "orgName": "Iglesia Alianza Cristiana Misionera Ebenezer",
-    "serviceId": "51048e08-0b64-441a-a9a8-fe1cc85367fb",
+    "locationId": "ea767f24-029a-4466-ab02-2b3e2806b8dd",
+    "orgName": "Iglesia Alianza Misionera Ebenezer",
+    "serviceId": "4eb720a9-a0c3-4d90-a295-2f14d6dbd385",
+    "serviceName": "Food Pantry"
+  },
+  "84177": {
+    "locationId": "abcbfceb-d103-47c1-9e0f-d0ecb1046b36",
+    "orgName": "Manna of Life Ministries, Inc.",
+    "serviceId": "10aca830-9de0-48fe-9e17-ad0ddcf56d75",
+    "serviceName": "Soup kitchen"
+  },
+  "84182": {
+    "locationId": "94b4f507-dace-4f1c-b36f-a4b79a8996cd",
+    "orgName": "First Presbyterian Russell Sage Memorial Church",
+    "serviceId": "de7d082d-ef45-4dd2-929f-2c97f36c2ab0",
     "serviceName": "Food Pantry"
   },
   "84198": {
@@ -455,63 +1562,171 @@
     "serviceName": "Food Pantry"
   },
   "84213": {
-    "locationId": "271229d5-1db2-4a2b-84a7-ca5e743fe969",
+    "locationId": "b83f5671-e530-41ad-9af1-5add0fbe4f72",
     "orgName": "Haber House Senior Center",
-    "serviceId": "2eadaf7b-661b-4cf8-b8d3-44ec554f0499",
+    "serviceId": "372529a2-5d2a-4655-b684-30e049efdf58",
+    "serviceName": "Food Pantry"
+  },
+  "84221": {
+    "locationId": "4693fcc3-eb8e-4c55-a303-d192dd529c60",
+    "orgName": "Christian Cultural Center",
+    "serviceId": "b2e80109-b313-4076-b3aa-d50a7f7e666e",
+    "serviceName": "Food Pantry"
+  },
+  "84222": {
+    "locationId": "b1297c1a-b54a-4fcb-8784-bb73d45e283a",
+    "orgName": "First Presbyterian Church of Springfield Gardens",
+    "serviceId": "5ab3edb5-0e5e-4200-bb30-0b912022c3d1",
     "serviceName": "Food Pantry"
   },
   "84225": {
-    "locationId": "6475949b-8807-4fda-bd71-61ad2a771859",
+    "locationId": "dffeeff0-0c87-4631-bb90-41ace82f9309",
     "orgName": "Bronx Bible Church",
-    "serviceId": "15f2d457-d280-4d0c-87cf-1bfb462c5b2c",
+    "serviceId": "b7d5a411-c79b-4d01-8d41-63f048316bc0",
+    "serviceName": "Food Pantry"
+  },
+  "84226": {
+    "locationId": "1559ea28-eb0e-4169-8a69-d8b286912a6d",
+    "orgName": "House of Completion/Eartha L. Jones Food Pantry",
+    "serviceId": "e7d090a3-508d-4d3a-9636-33b5fbfd4185",
+    "serviceName": "Food Pantry"
+  },
+  "84228": {
+    "locationId": "3d9a44ae-1b9d-4e93-9a6a-17b016cad630",
+    "orgName": "Heavenly Vision Christian Center Food Provider",
+    "serviceId": "359b0c8d-7b9f-4ffb-baf5-88a99535a192",
+    "serviceName": "Food Pantry"
+  },
+  "84259": {
+    "locationId": "4320d816-2075-47ae-8d7a-8da71ccf6f06",
+    "orgName": "Bronx Full Gospel Tabernacle, Inc.",
+    "serviceId": "df8a048b-1f6a-4d44-8d21-346816da0244",
+    "serviceName": "Food Pantry"
+  },
+  "84268": {
+    "locationId": "89e93039-6ff3-485b-9314-0781dcc02763",
+    "orgName": "New Covenant Community Development",
+    "serviceId": "d95b5a4e-2eb8-4b83-93c3-e9ad3bb7bc12",
+    "serviceName": "Food Pantry"
+  },
+  "84319": {
+    "locationId": "abcbfceb-d103-47c1-9e0f-d0ecb1046b36",
+    "orgName": "Manna of Life Ministries, Inc.",
+    "serviceId": "6abcae01-e187-48f9-a00c-f05847ba39fb",
     "serviceName": "Food Pantry"
   },
   "84339": {
-    "locationId": "7477a6c5-8149-46fa-8831-94926eb838dd",
+    "locationId": "525936a0-b00c-480d-85ac-8d6f8bd3877d",
     "orgName": "The Gospel Tabernacle Church of Jesus Christ, Inc.",
-    "serviceId": "b44cfd58-e7fc-4935-9357-60179d57d48a",
+    "serviceId": "e45f3deb-9c1b-4b06-94f6-fdf8a2239c73",
     "serviceName": "Food Pantry"
   },
+  "84451": {
+    "locationId": "8d3af588-6062-4113-b0cd-7bb6e5d942cb",
+    "orgName": "Food Bank for New York City Food for Survival",
+    "serviceId": "bfcc8a74-8deb-4e78-a208-5c533f554211",
+    "serviceName": "Food Pantry"
+  },
+  "84461": {
+    "locationId": "71fd332a-13ea-41f7-954e-966f12d1b2c1",
+    "orgName": "BRC Homeless Senior Services",
+    "serviceId": "8868f7a1-7a69-4a93-8fc0-dd1f5c6c1d43",
+    "serviceName": "Food Pantry"
+  },
+  "84503": {
+    "locationId": "4fdfb684-a339-4638-a320-63227ac27479",
+    "orgName": "The Salvation Army Astoria Corps",
+    "serviceId": "80a920f6-030d-4776-a729-8a80d6a1491a",
+    "serviceName": "Soup kitchen"
+  },
   "84504": {
-    "locationId": "181fa91b-a529-4570-8466-065ac4f1ab56",
+    "locationId": "b2a8625a-8332-4b90-94b0-a4bca6ea208d",
     "orgName": "Food Pantry - Blessed Virgin Mary/St. Mary-Winfield",
-    "serviceId": "a1ba35de-c63e-45da-996e-354e04343fdd",
+    "serviceId": "3299d6ee-355c-4554-89c3-c49ea72ff066",
     "serviceName": "Food Pantry"
   },
   "84512": {
-    "locationId": "fdaffd2a-55b2-4749-9c41-347251d8e686",
+    "locationId": "0004f34b-f9a7-4a05-a6f4-b5c2387579df",
     "orgName": "CCNS-St John's Food Pantry",
-    "serviceId": "71a6675e-a9cd-482f-a8a8-bc6a931c582f",
+    "serviceId": "257de1d0-e7e8-4459-80ea-ac013c171639",
+    "serviceName": "Food Pantry"
+  },
+  "84540": {
+    "locationId": "e019485d-5199-4acc-8e95-8db83f4a719a",
+    "orgName": "Urban Outreach Center",
+    "serviceId": "5266e92b-bc83-450f-939b-bb6b756c8a31",
+    "serviceName": "Food Pantry"
+  },
+  "84563": {
+    "locationId": "322128ba-2765-467e-8fac-81366fb57aac",
+    "orgName": "St. Clement Pope Church",
+    "serviceId": "7e7719d8-fd19-4bf8-9ee4-fc40578f6544",
+    "serviceName": "Food Pantry"
+  },
+  "84594": {
+    "locationId": "18ad89aa-8512-45e7-b08b-0ba2801aaf5f",
+    "orgName": "Atonement Lutheran Church",
+    "serviceId": "5fdda178-5552-4478-8176-bedbe3e55bcd",
+    "serviceName": "Food Pantry"
+  },
+  "84598": {
+    "locationId": "f64bf9a7-bb8d-42a3-9ed3-009acdb7ba6f",
+    "orgName": "Met Council Multi-Service Center Of Boro Park",
+    "serviceId": "e054d033-88f2-47e9-8b63-d2a4f014acae",
     "serviceName": "Food Pantry"
   },
   "84599": {
-    "locationId": "214b93ae-7231-4781-a2ed-b935a6d59889",
+    "locationId": "45366242-1af3-42cc-a301-3937d68aedab",
     "orgName": "Council Towers II",
-    "serviceId": "73d47fc8-87dd-4bb1-b9d8-0bfc316073d4",
+    "serviceId": "253a80d9-b5ce-4714-97d8-ebc2acce939c",
+    "serviceName": "Food Pantry"
+  },
+  "84603": {
+    "locationId": "46a0300b-c877-4c11-a694-fc32387b4a89",
+    "orgName": "Young Israel of Forest Hills",
+    "serviceId": "cde20a54-ea7e-4da2-8833-7019b83ed5b1",
     "serviceName": "Food Pantry"
   },
   "84607": {
-    "locationId": "191739af-6794-4b1c-98e2-02f5d00ae336",
+    "locationId": "e5ae4f36-377e-4673-ae64-8cb239c6e784",
     "orgName": "Flushing Jewish Community Council",
-    "serviceId": "30c57542-b468-4886-a8bd-b5658069a574",
+    "serviceId": "3e569bce-1650-4760-8da5-9e278a78ebbd",
     "serviceName": "Food Pantry"
   },
+  "84611": {
+    "locationId": "a4444577-485d-4cf7-874e-263446f56b45",
+    "orgName": "Overcoming Love Ministries",
+    "serviceId": "019616aa-d72d-4f3f-b517-f4242f0c3ca6",
+    "serviceName": "Food Pantry"
+  },
+  "84676": {
+    "locationId": "af9a6269-9e05-493b-9fd8-09d55cf3f3aa",
+    "orgName": "Cothoa Luncheon Club",
+    "serviceId": "93b1b701-7b54-46e2-974c-fee402c7c50a",
+    "serviceName": "Soup kitchen"
+  },
   "84720": {
-    "locationId": "b28d9e62-6ffd-42d2-8e00-701b24c707ce",
+    "locationId": "ca03e71c-890b-4917-8c06-dcaeefaaabdf",
     "orgName": "Queens Tabernacle Church",
-    "serviceId": "50a3d6b1-b2bc-4028-a7f8-92ac694e8a1d",
+    "serviceId": "6759ea92-c8fe-4c88-a9e6-82c4c728facb",
+    "serviceName": "Food Pantry"
+  },
+  "84722": {
+    "locationId": "1e3a181b-c5aa-4b0c-8374-7d06361adb03",
+    "orgName": "Basilica Of Our Lady Of Perpetual Help",
+    "serviceId": "f2af362c-5ea0-4fd7-a55a-ba60cc985b0f",
     "serviceName": "Food Pantry"
   },
   "84741": {
-    "locationId": "20486cc8-5f51-4450-ba41-f8f3b05d55b4",
+    "locationId": "2304850c-2f5e-4dc2-ae7b-7c3048697917",
     "orgName": "United Grand Chapter Of Eastern Star",
-    "serviceId": "37b046f8-a315-4a9d-a1c6-c4d858a1f174",
+    "serviceId": "7e1cdbf9-64b3-418f-9aa2-d7fb4fc0c697",
     "serviceName": "Food Pantry"
   },
   "84742": {
-    "locationId": "a6d75bc1-2b76-4975-90f5-ce5b623afe70",
+    "locationId": "08c4a013-bf60-430f-a960-ad8f045db762",
     "orgName": "Aishel Shabbat",
-    "serviceId": "1c26db1f-5b53-4f87-a019-db14b2f61810",
+    "serviceId": "2b27bdb3-4262-4ca4-bfb8-858c2580c4f8",
     "serviceName": "Food Pantry"
   },
   "84743": {
@@ -520,23 +1735,124 @@
     "serviceId": "08ecfb18-3232-4776-8674-ee1093a7936a",
     "serviceName": "Food Pantry"
   },
+  "84761": {
+    "locationId": "a5991983-3a5e-473a-9b94-95daf093349f",
+    "orgName": "The Church of Saint Mark",
+    "serviceId": "e6a8f0ed-72a0-45ec-a66e-146f9334165e",
+    "serviceName": "Food Pantry"
+  },
+  "84762": {
+    "locationId": "fc7c2166-48fd-4aeb-921c-d63dc726c8e6",
+    "orgName": "In the Beginning, Inc.",
+    "serviceId": "f2db23ea-ac20-464b-bcd0-23771b0efe27",
+    "serviceName": "Food Pantry"
+  },
+  "84768": {
+    "locationId": "8a752e1b-a703-41f5-9a7c-878c33ed1c26",
+    "orgName": "Holy Ghost Upper Room Filling Station Ministry",
+    "serviceId": "5dd53907-1c1b-4afe-a6a1-f9c36675b81e",
+    "serviceName": "Food Pantry"
+  },
+  "84770": {
+    "locationId": "0eb0ee5f-4122-4d61-a110-d0bdacaab794",
+    "orgName": "Community Health Action of Staten Island",
+    "serviceId": "4767c33d-d3fa-42fb-b3e3-cf7bc3c43440",
+    "serviceName": "Food Pantry"
+  },
   "84780": {
     "locationId": "3df24a73-63fc-4b45-8d41-8bab956c9dcf",
     "orgName": "Urban Strategies Inc",
-    "serviceId": "85adfd3d-1981-4774-9eaa-4abab1da760b",
+    "serviceId": "43e14744-f7ed-43bf-95bc-7a6f51992ac1",
     "serviceName": "Shelter"
   },
-  "84883": {
-    "locationId": "d9a8360b-6688-48f6-839a-28735107df02",
-    "orgName": "Church Of St. Frances Of Rome",
-    "serviceId": "7a4e133a-ac28-4c3c-9a7b-7cb1e6014024",
+  "84788": {
+    "locationId": "a1feb404-5578-4985-b080-e4417247dd01",
+    "orgName": "Worldwide Movement Father Son And Holy Spirit",
+    "serviceId": "a4ab5577-2ee0-4eaa-8d00-0286aa7d2f06",
     "serviceName": "Food Pantry"
   },
-  "84960": {},
+  "84812": {
+    "locationId": "ac11da2b-905d-482a-a1bb-06f86b5042dd",
+    "orgName": "Full Gospel Food Pantry",
+    "serviceId": "e84650cf-b163-4ab3-b3e3-663dcd19f1db",
+    "serviceName": "Food Pantry"
+  },
+  "84841": {
+    "locationId": "ff9772d0-e2c8-4698-8cf6-e9a4f79879c9",
+    "orgName": "BronxWorks Morris Senior Center",
+    "serviceId": "89ebbf74-1457-4b7c-a561-9ae2b69589d5",
+    "serviceName": "Food Pantry"
+  },
+  "84883": {
+    "locationId": "95b1316a-90aa-4ba4-8964-1c93c58f1c22",
+    "orgName": "Church Of St. Frances Of Rome",
+    "serviceId": "a1daf59b-0a10-4e83-8696-480fa172fa7b",
+    "serviceName": "Food Pantry"
+  },
+  "84884": {
+    "locationId": "8a1e80f4-864d-4b83-9d5f-6cf59a9cc212",
+    "orgName": "AIDS Center of Queens County",
+    "serviceId": "7a2ccb3d-a90f-4e02-9256-499ef9c67792",
+    "serviceName": "Food Pantry"
+  },
+  "84936": {
+    "locationId": "b3d35ca1-6ef9-47cd-8176-fd89378a5981",
+    "orgName": "Calvary's Mission",
+    "serviceId": "5569d340-b684-455d-be45-7a6076414f2b",
+    "serviceName": "Food Pantry"
+  },
+  "84944": {
+    "locationId": "b73cab4f-cbbe-416e-a8bd-881e80002273",
+    "orgName": "Church of God Seventh Day Pentecostal",
+    "serviceId": "30e670dc-861e-4d22-9a9e-e07c0fd9eff7",
+    "serviceName": "Food Pantry"
+  },
+  "84948": {
+    "locationId": "c6071a05-df87-483d-963d-ff89a41b2296",
+    "orgName": "Acts Community Development Corporation",
+    "serviceId": "428c9218-d893-47ee-acf1-85f4feb3e941",
+    "serviceName": "Food Pantry"
+  },
+  "84953": {
+    "locationId": "3b1a00df-ea90-4bd3-a5c9-7410519f8c31",
+    "orgName": "Morrisania Revitalization Corporation",
+    "serviceId": "84eda9fc-de7a-460c-9c42-01850f6a5279",
+    "serviceName": "Food Pantry"
+  },
+  "84960": {
+    "locationId": "2a0f90fe-d780-4f3d-b9c3-555dd66a3581",
+    "orgName": "Hour Children",
+    "serviceId": "60090088-c6d2-4733-95f3-6ce1b858f482",
+    "serviceName": "Food Pantry"
+  },
+  "84980": {
+    "locationId": "eeed416f-d839-4bf7-a8cd-b38ec2e1994f",
+    "orgName": "Catholic Charities Brooklyn and Queens, St. Benedict's Faith Mission",
+    "serviceId": "d95a4e17-a069-4c46-ad94-03d399b4dc73",
+    "serviceName": "Food Pantry"
+  },
   "84982": {
-    "locationId": "a7c93ba3-2780-4d86-8659-e0ad43ad9c56",
-    "orgName": "Bnai Raphael Chesed Organization, Inc.",
-    "serviceId": "e8d39a75-35bf-4a82-9203-51f7b354f153",
+    "locationId": "e29cbd00-5b10-4c36-af94-48beaa377a48",
+    "orgName": "Bnai Raphael Chesed Organization Inc Food Provider",
+    "serviceId": "e342be32-fb0c-4a3a-bf10-88d92377822e",
+    "serviceName": "Food Pantry"
+  },
+  "84988": {
+    "locationId": "b0e5bab3-3aab-4773-8884-e09bfca10317",
+    "orgName": "Beth Gavriel Shaare Zion",
+    "serviceId": "fac7867a-fa7d-497f-a916-18a5120023bf",
+    "serviceName": "Food Pantry"
+  },
+  "85011": {
+    "locationId": "80e7d879-7944-4244-9598-ab2c1efa3873",
+    "orgName": "Woodycrest United Methodist Church",
+    "serviceId": "a17594e7-1ef9-40f0-99e3-33276a758883",
+    "serviceName": "Soup kitchen"
+  },
+  "85022": {
+    "locationId": "1af82e2f-6c05-4f81-8ce9-ed9f2ff97e80",
+    "orgName": "Taurus Associates, Inc",
+    "serviceId": "354514e6-348b-4424-9f13-c75c43ae7da2",
     "serviceName": "Food Pantry"
   },
   "85024": {
@@ -545,16 +1861,34 @@
     "serviceId": "046cddf6-c4e3-46bb-b72d-44fe724e7f02",
     "serviceName": "Food Pantry"
   },
+  "85068": {
+    "locationId": "22903ba0-97eb-44b5-a1f4-96077fd4dc91",
+    "orgName": "Immaculate Conception",
+    "serviceId": "511d6548-d5c7-4db9-93b4-7e6cb77a6b5e",
+    "serviceName": "Food Pantry"
+  },
   "85069": {
     "locationId": "de3c23b0-1050-43a1-a8d5-80fc9c7969b9",
     "orgName": "Brown Memorial Baptist Church Food Pantry",
     "serviceId": "e86a61a9-189d-4ce4-b995-d10b7259ff15",
     "serviceName": "Food Pantry"
   },
+  "85071": {
+    "locationId": "a16b575f-66e0-4cdf-93cc-97627ceb6548",
+    "orgName": "St. Albans Deliverance Feeding Program",
+    "serviceId": "af05a682-16c7-4b0d-bc39-8a94145add08",
+    "serviceName": "Food Pantry"
+  },
+  "85079": {
+    "locationId": "e36c582d-7056-458e-b5e2-723e390fc04a",
+    "orgName": "Walk in Love Family Center",
+    "serviceId": "581aa6a8-be49-4c73-bb43-c549742bbc22",
+    "serviceName": "Food Pantry"
+  },
   "85083": {
-    "locationId": "553fc472-737d-4353-9597-7845269a5e75",
+    "locationId": "066c405d-16b0-42b3-a4a3-624dd60decd0",
     "orgName": "Greenpoint Reformed Church Food Pantry",
-    "serviceId": "446e4e70-94d0-40ef-9698-f19e975d54b8",
+    "serviceId": "74a4e3a5-ef1a-4b0b-a80d-891978c9ef0d",
     "serviceName": "Food Pantry"
   },
   "85085": {
@@ -564,9 +1898,9 @@
     "serviceName": "Food Pantry"
   },
   "85086": {
-    "locationId": "f6ed3b8c-4360-4019-8e41-a41b343ecc12",
+    "locationId": "831ebdc3-90be-447f-9f84-82ac6849523c",
     "orgName": "Metropolitan Council on Jewish Poverty",
-    "serviceId": "b7bd6948-e37b-4c56-930e-4107a8cfa289",
+    "serviceId": "78264633-bfdd-4e94-8be9-3450a74974fc",
     "serviceName": "Food Pantry"
   },
   "85088": {
@@ -576,39 +1910,139 @@
     "serviceName": "Food Pantry"
   },
   "85089": {
-    "locationId": "ba000f0e-e79b-4e9b-8406-43f27b8aad5d",
-    "orgName": "Over Coming Love Ministries-Palaski Family Residence",
-    "serviceId": "75436355-986a-44a9-b8dd-953fbf71f9af",
-    "serviceName": "Shelter"
-  },
-  "85090": {
-    "locationId": "1cf81168-faaa-4fe7-b79e-d4e7f7621339",
-    "orgName": "Masbia of Boro Park - Soup Kitchen",
-    "serviceId": "73ee5173-eac4-4b85-b569-e6dc5f41d9fb",
+    "locationId": "2c3d0547-f2a7-4627-8fa3-e3907b93e8a7",
+    "orgName": "Overcoming-Love Ministries",
+    "serviceId": "60819e13-6b5c-44d4-bd9e-c078e1a6cc96",
     "serviceName": "Soup kitchen"
   },
+  "85090": {
+    "locationId": "91cd69e7-426a-4143-b7c8-43a7d57ef3ea",
+    "orgName": "Masbia of Boro Park - Soup Kitchen",
+    "serviceId": "bf38503a-1535-4417-9b57-1d5b0b50c5d8",
+    "serviceName": "Soup kitchen"
+  },
+  "85091": {
+    "locationId": "7628a1bb-e901-4cf9-99b9-1c2fd86ac074",
+    "orgName": "Momentum Project, Middle Collegiate Church",
+    "serviceId": "c12714f6-704a-4649-b55a-73014dca0f24",
+    "serviceName": "Soup kitchen"
+  },
+  "85092": {
+    "locationId": "7628a1bb-e901-4cf9-99b9-1c2fd86ac074",
+    "orgName": "Momentum Project, Middle Collegiate Church",
+    "serviceId": "79b1ff32-96c2-48c0-85cb-73ae26619dc9",
+    "serviceName": "Food Pantry",
+    "nearbyButDifferentOrgs": [
+      "WOMEN’S PRISON ASSOCIATION (WPA)",
+      "WOMEN’S PRISON ASSOCIATION (WPA)"
+    ]
+  },
   "85107": {
-    "locationId": "ee1574dd-69b8-4385-94b0-cf167f09c428",
+    "locationId": "e87e99f8-432b-4849-9656-cb63f70179f6",
     "orgName": "Catholic Charities Our Lady of the Angelus",
-    "serviceId": "728a149a-8a1c-41f4-82d7-03ea466f9bb5",
+    "serviceId": "dc675541-da1c-464e-ad71-413a0d5605b5",
+    "serviceName": "Food Pantry"
+  },
+  "85108": {
+    "locationId": "df0c4fc6-6186-4aaf-99d8-55fc000ebfad",
+    "orgName": "Citadel of God Almighty - (CAC-WOSEM, Bronx)",
+    "serviceId": "a265e937-346a-4b9f-bd8d-e730bc15f5e9",
+    "serviceName": "Food Pantry"
+  },
+  "85109": {
+    "locationId": "68edae28-4b59-45fa-9150-a594c1630810",
+    "orgName": "Bronx Bethany Community Corporation",
+    "serviceId": "c924299b-1f08-4e45-a7d7-1eeba5e99d3b",
+    "serviceName": "Food Pantry"
+  },
+  "85112": {
+    "locationId": "54efdd76-d383-49c1-a367-c25c7e4e8a29",
+    "orgName": "YM & YWHA of Washington Heights & Inwood",
+    "serviceId": "e72c4b22-b4a8-4f4d-af32-df0e837d0f7b",
+    "serviceName": "Food Pantry"
+  },
+  "85113": {
+    "locationId": "41e070d6-a33e-45ee-a515-4e3303556780",
+    "orgName": "Whosoever Will Baptist Church",
+    "serviceId": "308032ea-2a44-43e4-b2e7-4fd659348ec4",
     "serviceName": "Food Pantry"
   },
   "85116": {
-    "locationId": "2d29b50b-f830-4ce0-8271-e7f6fe718935",
-    "orgName": "St. Michael's Church",
-    "serviceId": "72c400e1-e0e2-4578-84c6-94fc04a2a7ee",
-    "serviceName": "Soup kitchen"
+    "locationId": "29bd0c7a-89e0-4724-9578-4f7e389852b7",
+    "orgName": "St. Michael's Episcopal Church",
+    "serviceId": "0d5f8b60-7373-49ca-9f66-b31070ecbcb1",
+    "serviceName": "Saturday Kitchen"
   },
   "85119": {
-    "locationId": "8465d6d6-ae14-4583-8bfc-c45eac672c69",
+    "locationId": "8f6a4426-bcbb-4174-be01-26e422edb5d9",
     "orgName": "First Presbyterian Church of Brooklyn",
-    "serviceId": "b295f731-5035-420c-8c4e-46c860024000",
+    "serviceId": "730a3708-7d6a-4ab3-bd44-2f316bf3006b",
     "serviceName": "Food Pantry"
+  },
+  "85122": {
+    "locationId": "735b56ac-8f32-44ab-bf00-56e899906c0e",
+    "orgName": "Jamaica Hispanic Seventh Day Adventist Church",
+    "serviceId": "82e57680-40ce-4018-99be-9b5a64947e32",
+    "serviceName": "Food Pantry"
+  },
+  "85145": {
+    "locationId": "18babea6-5959-4df8-970d-84b85220cd2d",
+    "orgName": "New Brighton Church of God in Christ",
+    "serviceId": "3df121b3-7796-401d-a626-da6c127d42ff",
+    "serviceName": "Food Pantry"
+  },
+  "85148": {
+    "locationId": "7f227ddd-dce5-4e50-9d44-5c069b339ab8",
+    "orgName": "Mount Hebron Church of Christ",
+    "serviceId": "bfc7caf5-6c04-43ce-9f11-65153d6a59c0",
+    "serviceName": "Food Pantry"
+  },
+  "85151": {
+    "locationId": "17c5cb8c-b9a4-44e4-ba68-8d0dad66600a",
+    "orgName": "Rescue Ministry or Ministerio Rescate Inc",
+    "serviceId": "ade58207-2acc-43e6-8ba8-dff7e5c00f35",
+    "serviceName": "Soup kitchen"
   },
   "85156": {
     "locationId": "21375620-596c-4b2d-8d5c-da6ea7014208",
     "orgName": "Antioch Outreach Ministries",
     "serviceId": "f945a340-e62e-4eeb-a4bc-6b92114e4b00",
+    "serviceName": "Food Pantry"
+  },
+  "85157": {
+    "locationId": "131cc818-2738-4a12-95b1-bf7b01fa1efa",
+    "orgName": "Christ Apostolic Church of America, Inc",
+    "serviceId": "b4d494c1-2b6a-484f-9542-1d016ae1940b",
+    "serviceName": "Food Pantry"
+  },
+  "85160": {
+    "locationId": "a27481ff-be73-438b-bc76-e6254dd949f7",
+    "orgName": "Catholic Charities Brooklyn and Queens, St. Gregory the Great",
+    "serviceId": "c621028c-6a81-464b-aecb-309ce8d379bf",
+    "serviceName": "Food Pantry"
+  },
+  "85162": {
+    "locationId": "14fbe857-c181-4fba-b939-2d3f4ee38ac0",
+    "orgName": "Every Day is a Miracle",
+    "serviceId": "53c34ebc-63b7-41b3-8e17-b11010d3763f",
+    "serviceName": "Food Pantry"
+  },
+  "85163": {
+    "locationId": "04ab9f33-4a10-4ba9-a43b-b8b525aaef62",
+    "orgName": "Zion Tabernacle F.B.H. Church",
+    "serviceId": "dfc82166-50cc-4dde-a953-4b14c5765892",
+    "serviceName": "Food Pantry"
+  },
+  "85165": {
+    "locationId": "a3cd6847-8344-4df6-924c-54934ea73553",
+    "orgName": "Jewish Institute of Queens",
+    "serviceId": "77c61b71-d943-4eb0-ad62-db992b2344f5",
+    "serviceName": "Food Pantry"
+  },
+  "85167": {
+    "locationId": "f3b8d6c1-ddf7-456a-a557-6ddf35f8c2a4",
+    "orgName": "ICNA Relief USA",
+    "serviceId": "047635dc-9c5f-4d21-a32f-17033ed4ca95",
     "serviceName": "Food Pantry"
   },
   "85170": {
@@ -618,27 +2052,57 @@
     "serviceName": "Soup kitchen"
   },
   "85171": {
-    "locationId": "a863056b-645c-497a-b051-7d1d78f79895",
+    "locationId": "474dbce8-19e0-4d7e-be0f-365822bc71f5",
     "orgName": "ST. CECILIAS FOOD PANTRY",
-    "serviceId": "988bd793-e391-4fde-8a72-1f76ee961316",
+    "serviceId": "39e12190-4c62-42cb-98b2-1ff1639397a5",
     "serviceName": "Food Pantry"
   },
+  "85172": {
+    "locationId": "75e7827e-bafb-4c83-96c0-d99f2aaaafcd",
+    "orgName": "Grace Reformed Church of Flatbush",
+    "serviceId": "756582ab-1f58-4cac-b303-23e46603e442",
+    "serviceName": "Soup kitchen"
+  },
   "85177": {
-    "locationId": "deb34e36-99f9-4836-8ac5-81543c4b7731",
+    "locationId": "2df27871-f37b-4a09-9dcc-19d341c06854",
     "orgName": "Faith Apostolic Gospel Temple, Inc.",
-    "serviceId": "0fa04816-2a70-401a-9df3-c7964a3af340",
+    "serviceId": "0484f005-9924-4de9-92c2-3cae8ba46d1c",
+    "serviceName": "Food Pantry"
+  },
+  "85178": {
+    "locationId": "75115b0f-0aa4-4665-9b86-b475f393940e",
+    "orgName": "Ebenezer Wesleyan Methodist Church",
+    "serviceId": "73c003ab-3167-4f9f-8e10-7d9038cccd0e",
     "serviceName": "Food Pantry"
   },
   "85181": {
-    "locationId": "4fdea954-c743-4694-a467-18fd65cc7162",
+    "locationId": "5ff79709-7477-4c17-b6ee-f87c3eabc641",
     "orgName": "Overcoming Love Ministries",
-    "serviceId": "f806b5c4-6480-41f4-856f-b484c936ab4c",
+    "serviceId": "6c3ecc46-bf1b-4235-b1cf-99b34adc3c7e",
     "serviceName": "Soup kitchen"
   },
+  "85182": {
+    "locationId": "d151c71b-90cc-439a-ab74-8bb7e1587ee8",
+    "orgName": "Bedford Central Presbyterian Church Food Provider",
+    "serviceId": "7f9fa9d5-bf22-4023-9fc8-72f946369707",
+    "serviceName": "Food Pantry"
+  },
   "85203": {
-    "locationId": "dace5d69-feef-4175-8bc1-42758fe73c1c",
+    "locationId": "15ac5695-33b2-4ced-b2f6-605d4abc8fe6",
     "orgName": "Church of the Holy Spirit",
-    "serviceId": "4110b1cc-56a3-4464-aafa-6730bae2ed3e",
+    "serviceId": "afdb9dd3-277c-4cd9-90d5-f0a44dbfb63e",
+    "serviceName": "Food Pantry"
+  },
+  "85214": {
+    "locationId": "ebe1bc6d-cb12-44ce-aae0-78b9e384381e",
+    "orgName": "Masbia of Queens",
+    "serviceId": "0e78d8d9-8d53-4c10-97e2-043e88fcbc4c",
+    "serviceName": "Food Pantry"
+  },
+  "85225": {
+    "locationId": "e81bf27b-8e6a-436c-82a7-430ba20688f3",
+    "orgName": "Christ Disciples International Ministries",
+    "serviceId": "142a8cab-f252-4b11-b6db-401c3c568164",
     "serviceName": "Food Pantry"
   },
   "85229": {
@@ -647,17 +2111,52 @@
     "serviceId": "3302bf8d-cdb0-4021-9652-dffadcccacfd",
     "serviceName": "Food Pantry"
   },
-  "85234": {},
+  "85233": {
+    "locationId": "425a08b8-e45c-456f-871d-8b6fa8e00fa2",
+    "orgName": "BronxWorks Heights Senior Center",
+    "serviceId": "7071f437-8338-478f-b3dd-6d3f681acb4b",
+    "serviceName": "Food Pantry"
+  },
+  "85234": {
+    "locationId": "5076f961-b429-4fbe-8b4b-7bcbe9d83dc2",
+    "orgName": "Kingsborough Community College",
+    "serviceId": "4d457ab3-92cc-49b8-9881-e197fdb5b558",
+    "serviceName": "Food Pantry"
+  },
   "85236": {
-    "locationId": "40f04fe1-6839-4049-ab33-54ee5c64fa9d",
+    "locationId": "ea00c781-92e3-47ee-b1d3-e9877fcf2099",
     "orgName": "Riverdale Osborne",
-    "serviceId": "e1bfd1bd-6de8-45eb-9aad-4eb90bfb3fde",
+    "serviceId": "019fab71-5a24-410b-aed0-7a4e1c966f97",
+    "serviceName": "Food Pantry"
+  },
+  "85238": {
+    "locationId": "b5ab6234-6875-48c4-b55a-36eb04040b2f",
+    "orgName": "VETS, Inc",
+    "serviceId": "0a2518ed-e089-45fd-a0ea-e35e502703bd",
+    "serviceName": "Food Pantry"
+  },
+  "85244": {
+    "locationId": "b9ea3f93-8fd0-440f-b6b0-ec457c8d634e",
+    "orgName": "St. Joseph Roman Catholic Church",
+    "serviceId": "21af856b-732b-4d43-b58b-c23c07a15732",
+    "serviceName": "Food Pantry"
+  },
+  "85246": {
+    "locationId": "825c21b7-fd4b-4acc-9b08-0e7ae4712a6e",
+    "orgName": "La Jornada",
+    "serviceId": "7ee76d34-388e-477f-a733-6546c49e727f",
     "serviceName": "Food Pantry"
   },
   "85247": {
-    "locationId": "34143e3e-c407-4723-a7db-2ca1dca70f1f",
-    "orgName": "Admirable Church, Inc.",
-    "serviceId": "bb14640d-aaf5-44be-905e-5dc461e4b38e",
+    "locationId": "bbdabc72-216e-4567-9f18-b2ca626dd806",
+    "orgName": "Admirable Church",
+    "serviceId": "9cc9041c-8779-41df-9a7c-b394c5ac41a6",
+    "serviceName": "Food Pantry"
+  },
+  "85251": {
+    "locationId": "d4390d18-df40-40a4-a32a-f29295b43771",
+    "orgName": "River Fund",
+    "serviceId": "a6fd4dfe-47dd-43b0-b5e5-47f2eb2081a9",
     "serviceName": "Food Pantry"
   },
   "85254": {
@@ -670,27 +2169,109 @@
     "nearbyButDifferentOrgs": [
       "Ministry Tools Inc"
     ],
-    "locationId": "a0539d0b-2a14-43cf-adaa-377f3e7a6b69",
+    "locationId": "a208660c-531a-422c-8611-3e3220649701",
     "orgName": "Project Hope Charities",
-    "serviceId": "de4ecb9b-8826-4cde-85f7-fe8b28167213",
+    "serviceId": "dde0dd1d-4638-4e29-9411-c89e02f90bc7",
     "serviceName": "Food Pantry"
   },
+  "85257": {
+    "locationId": "0e14d965-2c99-449a-8684-de2fd68b7a1d",
+    "orgName": "Original Pentecostal Apostolic Church, Inc.",
+    "serviceId": "1200e5a2-3204-4b85-a61a-541f6200e065",
+    "serviceName": "Food Pantry"
+  },
+  "85261": {
+    "nearbyButDifferentOrgs": [
+      "Church of the Village United Methodist Church",
+      "Church of the Village United Methodist Church"
+    ],
+    "locationId": "6bb7a827-c517-485f-94fb-0eca0ba13aa3",
+    "orgName": "Hope for Our Neighbors in Need",
+    "serviceId": "d7317be1-d97a-424f-9d12-df2a92afbdb7",
+    "serviceName": "Soup kitchen"
+  },
+  "85262": {
+    "locationId": "e0dd8f27-d564-4d15-b71c-8d9f520f8d15",
+    "orgName": "Little Jerusalem House of Prayer Food Pantry Food Provider",
+    "serviceId": "1b9a157f-9262-4a5a-8674-a47d782f8820",
+    "serviceName": "Food Pantry"
+  },
+  "85263": {
+    "locationId": "c2415f0d-f72a-4048-8db5-e9e1580003d9",
+    "orgName": "Hugh Gilroy Senior Center",
+    "serviceId": "a8590df2-a717-4381-969e-05c829d6f133",
+    "serviceName": "Food Pantry"
+  },
+  "85264": {
+    "locationId": "4a61b589-bf9e-4c85-a474-3398df083876",
+    "orgName": "Jamaica Queens Wesleyan Church",
+    "serviceId": "b9fa5843-ae9b-4bc1-89c3-3cef141354dc",
+    "serviceName": "Food Pantry"
+  },
+  "85271": {
+    "locationId": "3dd77bf0-3637-4780-932b-ed5898ff714a",
+    "orgName": "The Campaign Against Hunger",
+    "serviceId": "7d4fbfea-1d72-4eb8-a79b-4aecf08c5a01",
+    "serviceName": "Mobile Market"
+  },
   "85274": {
-    "locationId": "1def2398-4b11-40c8-899b-d3635b3e36bf",
+    "locationId": "45388b3c-2baf-41aa-8589-63d5411b6751",
     "orgName": "St. Patrick's Roman Catholic Church",
-    "serviceId": "a9193af0-380a-4926-9e3a-041d99de0b49",
+    "serviceId": "b80eb8c2-a811-40c9-bc7f-defe8b6f70fa",
+    "serviceName": "Food Pantry"
+  },
+  "85275": {
+    "locationId": "57be5835-4692-4b01-ab91-ae279a783e89",
+    "orgName": "Genesis Transitional Housing Ministries, Inc Food Provider",
+    "serviceId": "1ae2e401-c51f-4d9e-8d8b-5473c0102c8c",
+    "serviceName": "Food Pantry"
+  },
+  "85283": {
+    "locationId": "f1b7e706-ede0-44f1-ad82-8c6b82048453",
+    "orgName": "Union Grove Baptist Church",
+    "serviceId": "05ef06bc-6dfb-4832-a263-256a99e93d4e",
+    "serviceName": "Food Pantry"
+  },
+  "85285": {
+    "locationId": "b0bdda0f-1dd5-4e04-a3c2-cecdc1d2f2eb",
+    "orgName": "Inspirational Gospel Assembly Food Pantry",
+    "serviceId": "324853c1-e732-4c8c-8667-d5772427bd3f",
+    "serviceName": "Food Pantry"
+  },
+  "85288": {
+    "locationId": "7d54e021-c2cc-405b-b148-538416d59bc5",
+    "orgName": "More Than Conquerors Global Ministries Inc Food Pantry",
+    "serviceId": "6c7e644e-b3ce-4af9-8631-dd92e303a484",
+    "serviceName": "Food Pantry"
+  },
+  "85289": {
+    "locationId": "3c4147b0-4556-44f5-bb65-a0816a2df1a5",
+    "orgName": "Holding Hands Ministries Food Pantry",
+    "serviceId": "579a7e55-7626-4e3a-b4dd-e2e4d8467707",
     "serviceName": "Food Pantry"
   },
   "85290": {
-    "locationId": "c6e64b74-816f-4905-bdb5-0176c6523dcf",
+    "locationId": "1bc4a2ef-2f84-4b09-88f0-f82caf20ab82",
     "orgName": "Fort Greene Hazel Brooks Neighborhood Center",
-    "serviceId": "e812eb09-0779-44d1-8478-e2a75a770c3f",
+    "serviceId": "8e984d36-49ef-4c2d-acaf-dc2619436194",
+    "serviceName": "Food Pantry"
+  },
+  "85293": {
+    "locationId": "64e5a61a-3d6b-476b-b979-7137486b6837",
+    "orgName": "Church of Praise and Worship God in Christ",
+    "serviceId": "2900b0d9-7b3d-4e78-b6c3-35f42bd3f423",
+    "serviceName": "Food Pantry"
+  },
+  "85294": {
+    "locationId": "7f600ee5-0382-405c-b489-01ab32489393",
+    "orgName": "Redeemed Christian Church of God",
+    "serviceId": "a0973604-8b8f-4923-8b55-9507c0393345",
     "serviceName": "Food Pantry"
   },
   "85295": {
-    "locationId": "c8df9022-6832-451d-a82f-723ca7310ed9",
+    "locationId": "97476fd1-e584-4bd6-833b-77b47aa8bf83",
     "orgName": "Greater Tabernacle Baptist Church",
-    "serviceId": "8b99cee6-9d4b-4e7b-9390-133648241777",
+    "serviceId": "573d2676-ae59-48fd-b046-9db059bfe609",
     "serviceName": "Food Pantry"
   },
   "85299": {
@@ -699,53 +2280,148 @@
     "serviceId": "d3af2278-e698-4464-b1fa-230d3c03b9b3",
     "serviceName": "Food Pantry"
   },
-  "85315": {},
+  "85309": {
+    "locationId": "ec055315-f5ee-46d7-9a36-bbd6fdd2b8c5",
+    "orgName": "RHOW Brooklyn Inc",
+    "serviceId": "b37fd50c-72a0-408b-8b17-26f72035a0ba",
+    "serviceName": "Soup kitchen"
+  },
+  "85315": {
+    "locationId": "366cfc57-cd4a-44b4-b009-4a6d984e2b89",
+    "orgName": "Health Essential Association Inc Food Provider",
+    "serviceId": "9c031d2a-0a60-4b90-9056-a0a1fe7db801",
+    "serviceName": "Food Pantry"
+  },
+  "85316": {
+    "locationId": "7098c084-b39f-4d30-8ffd-22ab48719748",
+    "orgName": "St Paul Pentecostal Church",
+    "serviceId": "01be08f8-daf3-404a-bae8-895fa5aa32f1",
+    "serviceName": "Food Pantry"
+  },
+  "85317": {
+    "locationId": "03826f49-335e-450a-9008-e1df75cc511a",
+    "orgName": "Lost Sheep Christian Church - Feeding My Sheep Community",
+    "serviceId": "53fac1e7-1212-48c7-844e-d5f9119ad2a0",
+    "serviceName": "Food Pantry"
+  },
   "85319": {
     "locationId": "180a65eb-6b53-4c4a-bed8-e99923966722",
     "orgName": "West Harlem Group Assistance",
     "serviceId": "4d8a3e13-8296-4192-b616-8f798fd91e2c",
     "serviceName": "Food Pantry"
   },
+  "85320": {
+    "locationId": "4a3e8ee2-127b-4e22-a82c-10c7f5dfb443",
+    "orgName": "Christ Temple of the Apostolic Faith",
+    "serviceId": "4052661c-e328-47f2-abcc-d6e81f00d891",
+    "serviceName": "Food Pantry"
+  },
+  "85323": {
+    "locationId": "8189622c-c57e-417b-9b9e-d31e3e84790a",
+    "orgName": "Jesus Is the Answer - J.I.T.A. Community Outreach",
+    "serviceId": "e60f1652-740f-43c5-9d27-82e402649c2f",
+    "serviceName": "Food Pantry"
+  },
+  "85324": {
+    "locationId": "cb76e6cb-6930-48fa-97a2-d45e5bc8e08a",
+    "orgName": "Council of Aid for Central Asian Jews",
+    "serviceId": "f08c525e-65d4-4a66-8ca6-1c8a36322cf2",
+    "serviceName": "Food Pantry"
+  },
+  "85326": {
+    "locationId": "40379095-84ad-4cf4-8668-15650c4a018e",
+    "orgName": "United Church of Praise International Ministries, Inc",
+    "serviceId": "26fc6148-89ea-4355-ae2f-23cd21a10034",
+    "serviceName": "Food Pantry"
+  },
   "85327": {
-    "locationId": "47147a28-bd55-430f-9fe7-04ea54c6ea72",
+    "locationId": "bee8d3d9-f289-446d-ade3-0ab4d5a570cc",
     "orgName": "New Life Holiness Christian Ministries, Inc.",
-    "serviceId": "7124b0e3-4691-4458-a422-2379fb41f4d9",
+    "serviceId": "7a1faa83-b7e2-40ab-b766-308f7172a80d",
+    "serviceName": "Food Pantry"
+  },
+  "85328": {
+    "locationId": "78a171cc-9ee8-4c24-b99a-b368f97de7c0",
+    "orgName": "Full Effect Gospel Ministries",
+    "serviceId": "b09dd1af-324a-4138-866c-ffbd5bf3e55a",
+    "serviceName": "Food Pantry"
+  },
+  "85329": {
+    "locationId": "ae45bd62-5c16-406f-8f6a-301048cac6af",
+    "orgName": "United Yes We Can, Unidos Si Se Puedo, Inc.",
+    "serviceId": "7faead18-2398-4197-a166-6758721ad64b",
     "serviceName": "Food Pantry"
   },
   "85330": {
-    "locationId": "80d4a285-267a-4e9a-b874-2f0fd7a9b6fe",
+    "locationId": "da7b41cd-c057-444d-bf48-3d074fba5ea0",
     "orgName": "Bay View Houses Resident Association",
-    "serviceId": "5ae30981-5c8d-4860-9423-5de43a9c9715",
+    "serviceId": "ab8485ec-a0f6-4a1c-89c7-fdb95fe2aa58",
     "serviceName": "Food Pantry"
   },
   "85339": {
-    "locationId": "cfefcd35-b9f6-4b4e-93d6-32f8faf8e060",
+    "locationId": "e4fe6a59-7d82-40fd-9065-5aa827a9ec1e",
     "orgName": "Unique People Services- AIDS Programs Inc.",
-    "serviceId": "31464138-7fa6-41ce-8b5a-228686c97f80",
+    "serviceId": "143aeb1a-0bc8-47f8-bdef-dba426e947c8",
+    "serviceName": "Food Pantry"
+  },
+  "85344": {
+    "locationId": "b7be9f6e-ddc1-49e5-a0c0-77e51f608a46",
+    "orgName": "Department of Probation Bronx Office",
+    "serviceId": "72bf9966-7ff8-4f38-b5fb-a72aef3d6ee7",
+    "serviceName": "Food Pantry"
+  },
+  "85346": {
+    "locationId": "20f2e98e-d9eb-4c9e-a756-0bdc420eabf9",
+    "orgName": "Blessed Assurance Church of God Blessed Assurance Charity Inc",
+    "serviceId": "e084922e-7904-42fc-a68b-56515c2b8be7",
+    "serviceName": "Food Pantry"
+  },
+  "85348": {
+    "locationId": "47ea7df2-6587-42d5-8291-7ea5024b8d52",
+    "orgName": "The Legacy Center Community Development Corp Food Provider",
+    "serviceId": "bcfc62e2-5a1a-4197-9c03-54d843c16fcf",
+    "serviceName": "Food Pantry"
+  },
+  "85370": {
+    "locationId": "73cd3578-456a-4928-ae26-9f908454852f",
+    "orgName": "Bethel House of Yahweh",
+    "serviceId": "062b26ec-d667-492f-b4de-35ee1f45eb97",
     "serviceName": "Food Pantry"
   },
   "85371": {
-    "locationId": "0aa1f761-9318-41b4-9205-e70afebb43d4",
+    "locationId": "61d9a075-1b56-41cf-a2fd-187152d6ba40",
     "orgName": "Agatha House Foundation",
-    "serviceId": "c90735cf-a449-47ab-84bb-ef84f83c3486",
+    "serviceId": "e990baa3-402c-429b-9c82-8ee0e6b8e160",
     "serviceName": "Food Pantry"
   },
   "85372": {
-    "locationId": "58787218-354a-4341-a316-cfc033a553b7",
+    "locationId": "7013a6f5-d33e-4939-9ff1-e887dbe4bdfd",
     "orgName": "The Greater Springfield Community Church",
-    "serviceId": "6b82a46b-c87a-45fb-8271-627bb7e151b6",
+    "serviceId": "218522aa-865c-4ef0-87a3-8d5d1fafb525",
+    "serviceName": "Food Pantry"
+  },
+  "85373": {
+    "locationId": "3310ef71-4b11-4bf9-820c-632c9362c185",
+    "orgName": "Peniel SDA Church Food Pantry",
+    "serviceId": "e72d4490-f58e-4482-96c9-4eb6ac90c19e",
     "serviceName": "Food Pantry"
   },
   "85374": {
-    "locationId": "d8fb7d79-c644-460a-bf87-0d55f9124684",
+    "locationId": "0d8bd92f-c2d6-4a10-87a6-23c6dd743030",
     "orgName": "Help USA - Clarke Thomas Men's Shelter",
-    "serviceId": "b87b34cd-7fce-4fbb-9ca1-722094d7c018",
-    "serviceName": "Shelter"
+    "serviceId": "42da3932-74f0-43fd-8b9d-129f763329cd",
+    "serviceName": "Soup kitchen"
   },
   "85380": {
     "locationId": "654a3df0-e07e-4c8e-b685-c77eaa6b364b",
     "orgName": "Christ Abundant Life Ministries",
     "serviceId": "6ddf573d-83d2-4f8d-8243-a46213a0586b",
+    "serviceName": "Food Pantry"
+  },
+  "85382": {
+    "locationId": "e54b958b-053f-4d5e-853c-b20c15ab1517",
+    "orgName": "Bronx Community College",
+    "serviceId": "55a0c9d2-c702-4e16-b310-a29b8b73bd67",
     "serviceName": "Food Pantry"
   },
   "85383": {
@@ -754,23 +2430,70 @@
     "serviceId": "73b20b6c-862e-429c-bac2-35f111bb2866",
     "serviceName": "South Asian Pantry"
   },
+  "85384": {
+    "locationId": "e25b6163-dfdf-4bdf-835d-4019783e5eee",
+    "orgName": "Hollis Community Christian Center Food Pantry Food Provider",
+    "serviceId": "012a3c52-3074-402f-8cd4-b3a0a43239f4",
+    "serviceName": "Food Pantry"
+  },
+  "85425": {
+    "locationId": "c1e3b264-65e6-4382-8316-28d3b64f3d80",
+    "orgName": "MAKE THE ROAD NEW YORK",
+    "serviceId": "f5a77ed8-aa18-4a41-8919-51b8ca4a9b64",
+    "serviceName": "Food Pantry"
+  },
+  "85443": {
+    "locationId": "69120aad-9d31-456b-8d01-a75d34ad99e9",
+    "orgName": "Administration for Children's Services, Bronx",
+    "serviceId": "89232591-e97f-4ebd-a773-c907c8c81f27",
+    "serviceName": "Food Pantry"
+  },
   "85444": {
     "locationId": "9322852b-da74-4f1f-8e86-e0c7a2a8107b",
     "orgName": "Divine Food Pantry",
     "serviceId": "12a73737-2b86-448b-b600-4c31d514ac1a",
     "serviceName": "Food Pantry"
   },
-  "85452": {},
+  "85448": {
+    "locationId": "1c1a6284-4463-4b7b-805c-b64139f1bf9f",
+    "orgName": "Veterans of Foreign Wars",
+    "serviceId": "4ca67706-52d9-467a-bdf7-90f59fb6af14",
+    "serviceName": "Food Pantry"
+  },
+  "85452": {
+    "locationId": "d69866c8-64eb-43d2-aec1-f350e0246bb6",
+    "orgName": "Cienfuegos Foundation, Inc",
+    "serviceId": "665b5352-f8bf-4049-825e-6f7d1969779d",
+    "serviceName": "Food Pantry"
+  },
+  "85454": {
+    "locationId": "e574a0e8-7d73-4040-98b5-8a890902c9cf",
+    "orgName": "Reach Out & Touch Ministries (Staten Island)",
+    "serviceId": "6d76882b-23e7-4807-9f9f-75a27fb9939c",
+    "serviceName": "Food Pantry"
+  },
   "85455": {
     "locationId": "a52e7677-6f09-4cc3-939e-67c60885769e",
     "orgName": "Abundant Grace For the Forsaken",
     "serviceId": "4b2ae438-97d6-41d0-ae08-42b8d8407d86",
     "serviceName": "Food Pantry"
   },
+  "85457": {
+    "locationId": "96846335-a133-4c75-94ba-bb5e3a8e4fdd",
+    "orgName": "ICNA Flushing Food Pantry",
+    "serviceId": "81a4f0c7-ccee-46ad-9fbb-8eb9115e0a93",
+    "serviceName": "Food Pantry"
+  },
+  "85458": {
+    "locationId": "fd065481-cb39-4d01-8427-26517c52bd96",
+    "orgName": "Alianza – La Plaza Beacon Food Pantry",
+    "serviceId": "b9a44818-edbe-44fb-9661-c4a22ad5c58e",
+    "serviceName": "Food Pantry"
+  },
   "85467": {
-    "locationId": "a7daf657-ffe6-486e-a6ca-81fbb94c7d8a",
+    "locationId": "dcf7a76e-cc7d-4ad7-b87c-1ef0a11817e0",
     "orgName": "Chazaq",
-    "serviceId": "819ed60a-ce6c-4d09-b0d9-7470812565b2",
+    "serviceId": "591ee907-f33e-426b-a2b7-cf9650796278",
     "serviceName": "Food Pantry"
   },
   "85468": {
@@ -779,13 +2502,36 @@
     "serviceId": "32eee814-da37-44ba-be8f-76d2f4d799cb",
     "serviceName": "Food Pantry"
   },
-  "85477": {
-    "locationId": "afd1e5b4-7838-4091-9117-cc6de1acb76b",
-    "orgName": "Health Essential Association CPMM",
-    "serviceId": "1fda38fc-30a4-4253-b5ba-a0f61ba3e77e",
+  "85472": {
+    "locationId": "93088001-a01e-4d86-b868-5ab25f29db93",
+    "orgName": "Prodigal Center",
+    "serviceId": "08bf7bcb-781e-4064-b382-7b6e666f442b",
     "serviceName": "Food Pantry"
   },
-  "85483": {},
+  "85477": {
+    "locationId": "449d4ead-7f2d-499c-a43b-f1e974c4fa53",
+    "orgName": "Health Essential Association CPMM",
+    "serviceId": "a8b355d9-2d82-4bee-bfcc-82391d36aba9",
+    "serviceName": "Food Pantry"
+  },
+  "85479": {
+    "locationId": "5645a9ae-db5c-4a4c-821f-2e0c9f9187c1",
+    "orgName": "ICNA Relief USA Food Pantry",
+    "serviceId": "728c9a15-2467-449f-89ec-f4534ae3faf2",
+    "serviceName": "Food Pantry"
+  },
+  "85481": {
+    "locationId": "5918006b-3992-41ce-a9ed-114a65acca6c",
+    "orgName": "Vision Urbana Food Provider",
+    "serviceId": "81d9898e-6b26-4036-84d0-f0942ab35ebf",
+    "serviceName": "Food Pantry"
+  },
+  "85483": {
+    "locationId": "45c04f29-8e29-41cd-a7b1-1b0071b7327b",
+    "orgName": "Evangel Food Pantry",
+    "serviceId": "f1f9f156-c51e-444b-ac1b-a975913935d8",
+    "serviceName": "Food Pantry"
+  },
   "85484": {
     "locationId": "3d6cd297-c583-470d-862e-fbd6c460faec",
     "orgName": "Pomonok Food Pantry",
@@ -793,27 +2539,33 @@
     "serviceName": "Food Pantry"
   },
   "85485": {
-    "locationId": "600d6273-8eb7-4631-9a77-8e61209197ec",
+    "locationId": "9eb890ff-35a2-4cd6-acad-319bfc314ea1",
     "orgName": "Ocean Bay Apartments-Bay side",
-    "serviceId": "64ee5c6f-4b32-4997-bf71-058beadccd2a",
+    "serviceId": "0007d424-241d-4b76-9cd5-992b7b1a2942",
     "serviceName": "Food Pantry"
   },
   "85494": {
-    "locationId": "b0ac64da-e309-4f58-957b-92ea21140fef",
+    "locationId": "e155bbbd-4859-4be3-96c8-077f4c326a97",
     "orgName": "Harvest Hand Food Pantry",
-    "serviceId": "220764f7-e861-430b-ad3c-fb9b21dd4624",
+    "serviceId": "b17463ee-0ad6-46ff-82c3-110e591308c0",
+    "serviceName": "Food Pantry"
+  },
+  "85495": {
+    "locationId": "83faf2ce-5a07-41a8-83e1-2085b6887f3b",
+    "orgName": "Medgar Evers College Cougar Country Pantry",
+    "serviceId": "f1348940-a1fe-4d65-88ca-299e858dce23",
     "serviceName": "Food Pantry"
   },
   "85496": {
-    "locationId": "169eb1f9-c765-449a-b0f7-5852f9bed6ea",
+    "locationId": "d2e0b14d-fc05-44cd-a69d-169dd1adc762",
     "orgName": "North Brooklyn Angels",
-    "serviceId": "56902b18-3e39-4df1-8b26-8fe1ee8f2cd7",
+    "serviceId": "b4a33b2a-0669-4446-8280-4e2fef678517",
     "serviceName": "Soup kitchen"
   },
   "85498": {
-    "locationId": "f65e6e1a-176e-4b72-8f74-35272061076b",
-    "orgName": "The Table at The Family Support Center at NYU Langone",
-    "serviceId": "a0f1dabe-a5ea-4b65-b4fa-e0c4df9694b6",
+    "locationId": "a2e259c1-ed2b-41b8-a1de-72c5b90d84fe",
+    "orgName": "The Table at the Family Support Center at NYU Langone Food Provider",
+    "serviceId": "786b24d8-bb30-4573-9c70-7599dd47d5ec",
     "serviceName": "Food Pantry"
   },
   "85499": {
@@ -823,9 +2575,9 @@
     "serviceName": "Food Pantry"
   },
   "85503": {
-    "locationId": "af0bb557-8dc5-433c-857b-347dd9b5bd0e",
+    "locationId": "e081a84e-d8e1-4216-9482-eb49103a1741",
     "orgName": "Mav Market at Mercy College",
-    "serviceId": "e6f92722-6a36-407a-9b76-60b4f83deb9d",
+    "serviceId": "71521eb6-125d-4e23-b49e-02130210077a",
     "serviceName": "Food Pantry"
   },
   "85505": {
@@ -834,43 +2586,73 @@
     "serviceId": "a67d84d7-95c4-40e4-84d8-1ed37ca4fe5b",
     "serviceName": "Food Pantry"
   },
+  "85512": {
+    "locationId": "28bf9cc3-d00f-4a08-aa30-19ba0dd976d7",
+    "orgName": "Hebrew Educational Society",
+    "serviceId": "049aa4a2-d852-4484-a300-b6839adb03ef",
+    "serviceName": "Food Pantry"
+  },
   "87007": {
-    "locationId": "59bb43cd-0c65-4bda-b19a-5a05d769dcf4",
-    "orgName": "Center Of Hope International",
-    "serviceId": "401ce23b-7463-4c44-b9f4-ec7af1d05a97",
+    "locationId": "690a861f-64ff-4940-ad57-792d2a072266",
+    "orgName": "Center of Hope International",
+    "serviceId": "8b0c76fe-ca9d-4a4b-b4ab-46f57b2344e9",
+    "serviceName": "Food Pantry"
+  },
+  "87062": {
+    "locationId": "11ab6003-58ea-4143-a547-c17c8e16a6e9",
+    "orgName": "Davidson Community Center Inc Food Pantry Food Provider",
+    "serviceId": "d4230e95-ed1b-48b0-9f85-2d050bfa2863",
+    "serviceName": "Food Pantry"
+  },
+  "87090": {
+    "locationId": "8e9a8265-104a-43dd-afb3-1dc2a393bcc4",
+    "orgName": "Catholic Charities Community Services, Alianza Division MOSAIC Beacon",
+    "serviceId": "d0ae170e-284c-43c3-b749-43a867893095",
+    "serviceName": "Food Pantry"
+  },
+  "87274": {
+    "locationId": "93013f92-f00b-4906-8453-06bde935d788",
+    "orgName": "First Church of God",
+    "serviceId": "f8de7824-fa7d-436e-9db6-9bc8cb2ffbcc",
+    "serviceName": "Food Pantry"
+  },
+  "89127": {
+    "locationId": "b76a421e-54cb-4965-b20c-fd63506a487d",
+    "orgName": "Otsar, Inc.",
+    "serviceId": "24a0c5e8-64ef-4578-854e-2c3494283155",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-1133": {
-    "locationId": "9ca813f6-5426-44d5-870b-f4e3e05e19c5",
+    "locationId": "547dfa9b-d231-4988-ac51-aec617d82db5",
     "orgName": "HOLY CROSS - CROSSROADS FOOD PANTRY",
-    "serviceId": "33699006-261e-49b8-8f25-cf584465987a",
+    "serviceId": "7431703c-e1ea-4123-8f8d-71f94f6d3c19",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-1814": {
-    "locationId": "698198e7-df07-45dd-a97d-ae7c8352170f",
+    "locationId": "ed0abdbb-5137-4ab8-984d-088dcf05de99",
     "orgName": "St John the Baptist - Bread of Life Pantry",
-    "serviceId": "d5ff5132-3a3e-4140-a92c-4f77c6efb71d",
+    "serviceId": "3d5993dd-d295-43d5-967b-78dbd88e2b69",
     "serviceName": "Food Pantry"
   },
   "FPC-462": {},
   "CH-R16787": {},
   "DSNY-BRS-1808": {},
   "DSNY-BRS-1769": {
-    "locationId": "f799d644-aae2-4a48-9aae-72c3c0c9b5cb",
+    "locationId": "60937e95-22d0-4148-8d16-7bc016d239e8",
     "orgName": "PROJECT CREATE - ANTHONY HOUSE",
-    "serviceId": "a111c52f-e27c-4879-a5f2-7f2c3a5b3ca6",
+    "serviceId": "d15d6d06-2342-4532-a5ca-e9066a10561a",
     "serviceName": "Food Pantry"
   },
   "FPC-294": {
     "locationId": "2a892b4e-b3fd-4d76-9b77-e4e295d64ebd",
     "orgName": "CREATE, INC.",
-    "serviceId": "314db197-205f-4279-be8c-7af76b68c548",
+    "serviceId": "e0d81b74-19d6-4baa-b215-5183fd3091b2",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-1783": {
-    "locationId": "877e1c40-7c01-4e17-bc7f-fdf780c810cb",
+    "locationId": "7633a08b-f3c5-453b-bce2-2f7b933ed5be",
     "orgName": "RIVERSIDE CHURCH FOOD PANTRY",
-    "serviceId": "5e0b43e1-2bef-4472-9d66-ffc109fda9b4",
+    "serviceId": "8dc02613-9bb2-4b33-8e15-53d89da59a72",
     "serviceName": "Food Pantry"
   },
   "FPC-283": {
@@ -881,16 +2663,16 @@
   },
   "FPC-207": {},
   "DSNY-BRS-1054": {
-    "locationId": "3efb99a5-a30d-4333-af18-d57f958daaf5",
+    "locationId": "7b47e042-4e3a-4ff1-a1b4-8b28739901a9",
     "orgName": "The Relief Bus - Chelsea Park (28TH ST. BTWN 9TH & 10TH AVE)",
-    "serviceId": "9254df24-6751-48b4-8f5b-50ef8291cb74",
+    "serviceId": "c92adbf9-4fa1-419c-a6a6-2529918173c6",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-1831": {},
   "FPC-209": {
-    "locationId": "52c98502-1f2c-40d0-ac5a-f4859158d104",
+    "locationId": "7a132c5a-38f7-4454-a5f5-24c98a325820",
     "orgName": "Colony-South Brooklyn Houses",
-    "serviceId": "ea165cd3-a8bf-4aeb-a8a5-58de653d81eb",
+    "serviceId": "c41eea18-4288-4aff-ba93-4dd3cdebe8e3",
     "serviceName": "Food Pantry"
   },
   "Plentiful-104": {
@@ -900,9 +2682,9 @@
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-1463": {
-    "locationId": "d714593b-02e7-4cf5-8905-a3d28ff4ce93",
+    "locationId": "0e69865a-bc45-4aee-8ab9-8315ef6e7d45",
     "orgName": "Grand Central Food Program - SONY Building",
-    "serviceId": "691bbc6b-d057-4588-bf95-86dcaf5a4b14",
+    "serviceId": "2888c694-b83e-4064-8495-5d0982e684ae",
     "serviceName": "Food Pantry"
   },
   "FPC-362": {},
@@ -913,47 +2695,47 @@
     "serviceName": "Food Pantry"
   },
   "FPC-187": {
-    "locationId": "676bb581-2990-4b3f-a5a8-3491f2f8f0a1",
+    "locationId": "312adc61-30ef-4216-8b60-91a9835cf977",
     "orgName": "Race Track Chaplaincy N.Y. Division",
-    "serviceId": "3856049d-4c99-41f4-b61c-ef36f893ac8b",
+    "serviceId": "fb9fb62d-c2fb-45fb-8e68-dc54d747953f",
     "serviceName": "Food Pantry"
   },
   "FPC-393": {},
   "FPC-457": {
-    "locationId": "b57ddc24-f3ec-4f2e-9c1b-8c8cf917ac55",
+    "locationId": "43bc2f19-5b5b-4937-8eaf-30aa6fcfdaca",
     "orgName": "Muslims Giving Back",
-    "serviceId": "52599e89-65a9-4e9f-b3a8-33f8fa3271fb",
+    "serviceId": "313ffe4a-fad5-4438-b282-2f8a747892b1",
     "serviceName": "Food Pantry"
   },
   "FPC-169": {
     "locationId": "1c6de80e-42ba-4bc8-b5cf-37c314aa15f5",
     "orgName": "Temple Shaaray Tefila",
-    "serviceId": "93faabe6-dedb-4336-aaa0-96cae19e672c",
+    "serviceId": "0612f370-5d23-4f1f-b648-379ce5b9c16d",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-2128": {},
   "DSNY-BRS-1073": {
     "locationId": "a4b03f0b-10f0-4520-b4b4-82febfbb45a8",
     "orgName": "The Dwelling Place",
-    "serviceId": "0efea288-2b27-43ec-ace1-0666422c5d2a",
+    "serviceId": "a9420625-742a-4506-a388-8c965e2ec5f6",
     "serviceName": "Food Pantry"
   },
   "FPC-170": {
-    "locationId": "7d4296f8-28c9-4fa0-a61b-9e3c4f62510f",
+    "locationId": "519972cd-1695-4be0-9d68-4f3b1ebb46cd",
     "orgName": "Holy Trinity Neighborhood Ctr.",
-    "serviceId": "95b22825-5422-4011-98fb-d3bcbe8961ab",
+    "serviceId": "62385506-443d-472e-9b21-8513d32a5840",
     "serviceName": "Food Pantry"
   },
   "FPC-182": {
-    "locationId": "7f74266c-4613-477d-9c45-48a43588ca5f",
+    "locationId": "fbb13969-057b-44b2-a097-d84ef4872be9",
     "orgName": "CAMBA",
-    "serviceId": "773bee18-e9f3-4eda-91e1-b07a712d357e",
+    "serviceId": "f4ef2786-cad4-4338-a309-71ee87ff6e0d",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-1467": {
-    "locationId": "ee189c51-db71-49b2-b890-552d3dd55e7f",
+    "locationId": "9ba75e6a-1c8a-4c0a-b178-a1deaae4bff8",
     "orgName": "Grand Central Food Program - Penn Station",
-    "serviceId": "5037abde-1107-4985-af7c-14fafdc3b1ab",
+    "serviceId": "66836b0d-5395-4017-ad8e-b2b6f763858e",
     "serviceName": "Food Pantry"
   },
   "Plentiful-70": {
@@ -973,9 +2755,9 @@
     "serviceName": "Short-Term Pantry"
   },
   "FPC-88": {
-    "locationId": "db74153c-4bf3-40be-8e9a-b663614bbba4",
+    "locationId": "7a8739c1-f439-45a8-8df8-faefd80e0904",
     "orgName": "Christ The King Roman Catholic Church",
-    "serviceId": "548bdf70-5994-4acd-8bbd-482c46b1827b",
+    "serviceId": "1cabffbb-db0a-4dac-8fe3-8698bb91af50",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-1181": {
@@ -984,27 +2766,27 @@
     ]
   },
   "FPC-91": {
-    "locationId": "8c7ddb2c-cbc1-4987-a141-6f1c53d94222",
-    "orgName": "Bread Basket At Woodycrest United Methodist Church",
-    "serviceId": "d8ce14ad-b716-41b3-8e05-60f8b2fabb84",
+    "locationId": "80e7d879-7944-4244-9598-ab2c1efa3873",
+    "orgName": "Woodycrest United Methodist Church",
+    "serviceId": "64d2d487-8bac-4450-b457-fd987147dc66",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-2119": {
-    "locationId": "b677eec6-f3db-4eb4-af6d-6ace27b16977",
+    "locationId": "a5c08ab4-d0a2-45cc-8124-9c00a6a8f620",
     "orgName": "Tzu-Chi Foundation Food Pantry",
-    "serviceId": "a94104c8-c6a8-4ffe-b20a-f34b5de3bf46",
+    "serviceId": "cd1fe2d4-3f77-40c2-a097-47eeaef45265",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-1461": {
-    "locationId": "95ed31a2-9df1-4bd8-a7b0-f0f0f7477a09",
+    "locationId": "271bd686-4666-45e8-bd07-5d4da2727462",
     "orgName": "Grand Central Food Program - 51st & Broadway",
-    "serviceId": "c5baac63-e292-4075-88f1-8e1379e228ae",
+    "serviceId": "7f6f63e0-1565-41eb-9bb7-d0cc7ea134ad",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-1436": {
-    "locationId": "86b9b608-f95e-4b80-b97b-951f46cb1907",
+    "locationId": "4817e329-c365-4fae-898b-f9672e5ec6dc",
     "orgName": "Trinity Church Brown Bag",
-    "serviceId": "b34399c4-97d1-4428-9a71-73b083abd281",
+    "serviceId": "cd710b13-436f-496e-8503-358efe3dffef",
     "serviceName": "Food Pantry"
   },
   "FPC-259": {
@@ -1012,9 +2794,9 @@
     "orgName": "Xavier Mission"
   },
   "DSNY-BRS-1921": {
-    "locationId": "d3c99ce0-0039-489f-ba89-4d0a02a9d456",
+    "locationId": "6f999a4f-fc9e-438e-b2da-61f1655b38de",
     "orgName": "BRC Chemical Dependency Crisis Center",
-    "serviceId": "818fe48f-8f9f-416b-8e37-bdc78bc06e81",
+    "serviceId": "1a99b286-b562-4067-b825-6965670a75e0",
     "serviceName": "Food Pantry"
   },
   "Plentiful-450": {
@@ -1024,57 +2806,57 @@
     "serviceName": "Food Pantry"
   },
   "FPC-168": {
-    "locationId": "f6a636a8-2364-4b4c-9f89-59321f915ce6",
+    "locationId": "8c50d7f1-c319-44ed-95f4-b3d9df6c0301",
     "orgName": "All Saints Episcopal Church",
-    "serviceId": "4afa6aa4-d1e7-4e33-9bea-d7ea57c40d28",
+    "serviceId": "2752427a-1e82-4db2-838b-08018b8dd5fe",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-1110": {
-    "locationId": "6e595923-64bc-4865-bc04-a8a46855f772",
+    "locationId": "1cd12137-9e2c-4bc2-bbc8-e60df3b17f72",
     "orgName": "ST. LUKE'S SENIOR COMMUNITY PROGRAM",
-    "serviceId": "9c0886d7-64c3-4179-afcd-bf05484cf56c",
+    "serviceId": "5f9bd09a-345f-411e-9e8f-ec3f2d94de28",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-1974": {
-    "locationId": "cef28cd9-5ea9-4e41-8385-d41924574b1f",
+    "locationId": "6a5bfdb1-a06a-481e-ace2-7d199b8450c3",
     "orgName": "Bronx JCC - Jewish Community Center",
-    "serviceId": "5ae90335-8c20-42d7-b792-ba80699d01a3",
+    "serviceId": "d83fe928-33e6-46f5-acad-57a3d40d13af",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-2157": {
-    "locationId": "2e265d86-79e4-4652-bbe6-09d68640e525",
+    "locationId": "5e15733c-a62e-4e8d-a73f-4b370a108d39",
     "orgName": "Our Lady of Solace",
-    "serviceId": "38c5841a-238c-4669-aac6-3b37f7b55abd",
+    "serviceId": "4dd88bd0-4e3d-4619-83fd-068f5606f1cb",
     "serviceName": "Food Pantry"
   },
   "FPC-165": {
-    "locationId": "d327cbd2-9f5c-4995-9e32-8d3c3f3ea6f2",
+    "locationId": "bc5593a1-50f6-49f5-bd6f-407cb8d23f4b",
     "orgName": "St. Bartholomew's Community Ministry",
-    "serviceId": "ec87c75a-1746-4260-b437-a55e4bdcc5a3",
+    "serviceId": "9954644d-ab41-4fa8-af0c-86d5d386b3e4",
     "serviceName": "Food Pantry"
   },
   "FPC-328": {
-    "locationId": "0a469149-3a84-447d-9d17-01b704172e59",
-    "orgName": "Iris House",
-    "serviceId": "b7ec1849-e3a7-4f54-9e2e-31aa0b5670c4",
+    "locationId": "f96d32e8-a260-49e3-bed9-04e34244daf2",
+    "orgName": "Iris House A Center for Women",
+    "serviceId": "8c2c6982-f7c5-4fc3-85e1-752928d5c517",
     "serviceName": "Food Pantry"
   },
   "FPC-172": {
-    "locationId": "3b0c9e21-c12c-4c95-b152-fb42073d2088",
+    "locationId": "e3c96bc9-b22c-4f46-807d-a9120d558f39",
     "orgName": "Isaacs Center",
-    "serviceId": "64280841-2ae2-4d56-b309-95e13f1ff6d7",
+    "serviceId": "fd213007-6a9a-4589-85ca-8d36ff0f6fa7",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-2035": {
-    "locationId": "2418b81d-5017-4405-9c3f-3cf090f5de18",
+    "locationId": "6707bd3d-c161-45cf-b6f0-0e3b3c208757",
     "orgName": "JCC Of Greater Coney Island",
-    "serviceId": "06147f5b-4a12-4725-b1ad-38b2a92f429e",
+    "serviceId": "36249813-338b-496d-ac93-34467946b7af",
     "serviceName": "Food Pantry"
   },
   "FPC-167": {
-    "locationId": "665e0f47-3f4b-452c-a7cb-960cce54c145",
+    "locationId": "1beab3cb-2ed6-49bd-ae67-78f503d31452",
     "orgName": "Central Synogogue Breakfast Program",
-    "serviceId": "190fc48a-21d8-4804-9a87-b8a688e2d56a",
+    "serviceId": "b1eba94c-73a3-47e1-bc4a-52f9768373e0",
     "serviceName": "Food Pantry"
   },
   "FPC-348": {
@@ -1084,15 +2866,15 @@
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-1139": {
-    "locationId": "20d24b42-dc33-458f-a4b8-9f5ac3f04411",
+    "locationId": "5ffafffd-1a87-4863-8989-4364f7cf7c70",
     "orgName": "ST. IGNATIUS EPISCOPAL CHURCH",
-    "serviceId": "caa2431e-db69-4c99-82fc-86059a01ab3c",
+    "serviceId": "d9b88481-93ad-4785-b5e1-c00dfa0cf100",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-1070": {
-    "locationId": "82db15f2-6bf8-4c43-9219-fea71cc9060d",
+    "locationId": "a168a043-a4a4-4969-b7dd-9378d87187ea",
     "orgName": "Holy Trinity Church Breakfast Line",
-    "serviceId": "323dbcd1-fd50-430a-8145-e37b47c75663",
+    "serviceId": "bc6f7f1c-42a9-4a39-82d8-946ef0b55de0",
     "serviceName": "Food Pantry"
   },
   "DSNY-BRS-1137": {
@@ -1102,30 +2884,434 @@
     "serviceName": "Food Pantry"
   },
   "FPC-367": {
-    "locationId": "564db34f-2e0d-4a2c-b530-56e14ab94985",
+    "locationId": "8145861c-14c8-4f34-9679-ea10fd879276",
     "orgName": "St. James Holiness Church",
-    "serviceId": "68e7435c-2d4b-48fc-9eef-d0b24e4c124a",
+    "serviceId": "6fcdc3ca-ef03-41aa-85e4-a83532c11860",
     "serviceName": "Food Pantry"
   },
   "FPC-227": {
-    "locationId": "097e387a-dc54-41b7-9835-609aaf582356",
+    "locationId": "7029d4e4-f928-4a7b-934b-ec12dcb443a9",
     "orgName": "Greater Refuge Ministries, Inc",
-    "serviceId": "35c5568c-5b15-4508-aba5-520e497e39e7",
+    "serviceId": "37edbe64-daea-4ba3-8dd5-172757fa13d9",
     "serviceName": "Food Pantry"
   },
   "FPC-45": {
-    "locationId": "73ad2329-5c37-476c-9e38-7ff99dbb8638",
+    "locationId": "54984f48-fbb7-4deb-917f-b982d7e21b96",
     "orgName": "Richmond Hill SDA Community Service",
-    "serviceId": "386667c2-3e57-46b1-a0d4-9c03cd61fac1",
+    "serviceId": "4cf97e93-1561-4c02-9a30-85a7a7bfc189",
     "serviceName": "Food Pantry"
   },
   "FPC-229": {
     "nearbyButDifferentOrgs": [
       "Las Maravillas del Exodo"
     ],
-    "locationId": "fbad0686-6c1a-4735-a9f8-c5ead3789869",
+    "locationId": "ab0919a9-d129-4bdd-a5e2-d8f57a98edb7",
     "orgName": "Celestial Church Of Christ",
-    "serviceId": "54789df8-0e9b-40cf-8b73-cfe3a9a1f601",
+    "serviceId": "9017441b-d480-4e39-8647-c85e6175b16f",
+    "serviceName": "Food Pantry"
+  },
+  "Plentiful-501": {
+    "locationId": "80b44429-935e-49ad-9702-8a85e99c5b25",
+    "orgName": "St. Paul's",
+    "serviceId": "1f80be82-7cd3-4866-857e-acfc411502c9",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-1039": {
+    "locationId": "4590615b-6a88-4b70-b6f3-03717c279837",
+    "orgName": "Faith Assembly of God",
+    "serviceId": "7f62b75e-ee98-4a9c-82d7-512109c3d40c",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-1038": {
+    "locationId": "e3154f53-9ac6-4233-b16b-03a67de068ae",
+    "orgName": "Salvation Army, Bay Ridge",
+    "serviceId": "44d6dff7-30bb-4b2f-a2f2-bccb648752a8",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-2113": {
+    "locationId": "9bbe584f-ac7a-4bda-b1c9-086a5f85607e",
+    "orgName": "The Food Pantry at Columbia",
+    "serviceId": "7ddc64fe-b270-4f1e-9e6b-72ea96609bfc",
+    "serviceName": "Food Pantry",
+    "nearbyButDifferentOrgs": [
+      "Broadway Community"
+    ]
+  },
+  "FPC-420": {
+    "locationId": "d05a5fdc-2fd0-46ae-8b0d-377fa0de4f1e",
+    "orgName": "Path of Blessings",
+    "serviceId": "032aba83-b20b-44ae-b637-f02523e8bb43",
+    "serviceName": "Food Pantry",
+    "nearbyButDifferentOrgs": [
+      "Way Out Church Ministries Inc Food Provider"
+    ]
+  },
+  "DSNY-BRS-1071": {
+    "locationId": "eb83e49c-2c43-4915-8635-9e088b4c9a28",
+    "orgName": "West End Collegiate Church",
+    "serviceId": "3d7244cd-5dcb-40b4-b61b-85ff9764fc47",
+    "serviceName": "Soup kitchen"
+  },
+  "FPC-75": {
+    "locationId": "08c173d7-e2d4-42c3-ab56-9017430e58fe",
+    "orgName": "Blessed Sacrament Church",
+    "serviceId": "b20e1f83-a9cc-4a0e-ae1d-f11198c91a0b",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-55": {
+    "locationId": "ad4810a1-110b-4632-b909-9373bae8ef26",
+    "orgName": "Manna Of Life Ministries Inc",
+    "serviceId": "e8476a22-acbf-4ef0-93e2-d3fd5c6100e6",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-1101": {
+    "locationId": "c5f91b44-3cca-4967-a1b5-7ba8fd7257b2",
+    "orgName": "Brooklyn College Campus Pantry",
+    "serviceId": "f3731662-bff4-42f6-8bd1-8178a6c791c3",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-183": {
+    "locationId": "7aa093b9-f3ab-4fc0-af64-380053fd7bff",
+    "orgName": "Deeper Life Outreach Ministries",
+    "serviceId": "abf90145-8b4e-4971-8af7-9c86a0187b55",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-350": {
+    "locationId": "26153ee8-7333-45fe-a449-69917fa06572",
+    "orgName": "Holy Cross Church",
+    "serviceId": "86169e07-3a40-49af-9776-f13de5d0dafc",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-1855": {
+    "locationId": "d6192516-d160-4d45-87e0-6e35e06087b3",
+    "orgName": "Vets Inc. Hollis Gardens Food Provider",
+    "serviceId": "60383ca1-207c-4217-bf66-b7ff7bdae48c",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-1011": {
+    "locationId": "9f5a382c-3e41-4110-995d-6f0aabfabc2c",
+    "orgName": "Salvation Army, Ridgewood Citadel Corps",
+    "serviceId": "780c6286-ebb6-4dc6-892c-342f4dedc1d0",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-426": {
+    "locationId": "70f7d662-0ef0-4553-af18-ac6ebca89636",
+    "orgName": "The Hopeline",
+    "serviceId": "e0decf2e-7755-4d3a-9fad-2bb1448e786f",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-33": {
+    "locationId": "589f1ef0-5472-44b1-b00b-d845ed0b1317",
+    "orgName": "Richmond Senior Services",
+    "serviceId": "be557ee1-d0ae-484e-aa03-48c327011403",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-1794": {
+    "locationId": "e2dbd70e-44e3-4cc2-9c55-58331a42c568",
+    "orgName": "Shorefront Jewish Community Council",
+    "serviceId": "b5af751b-e348-46da-b5b0-c4743623cdc0",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-105": {
+    "locationId": "3dd77bf0-3637-4780-932b-ed5898ff714a",
+    "orgName": "The Campaign Against Hunger",
+    "serviceId": "e4d79b78-3f8d-4377-aa8c-cab3b6c9a4e1",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-129": {
+    "locationId": "1ca2ca1b-5c5a-449f-bd8f-5f51c501ba6e",
+    "orgName": "Brooklyn Tabernacle Deliverance Center",
+    "serviceId": "c7f1442a-5cc2-4fdc-a7fe-b0663c4f1a73",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-482": {
+    "locationId": "29bd0c7a-89e0-4724-9578-4f7e389852b7",
+    "orgName": "St. Michael's Episcopal Church",
+    "serviceId": "c8671cac-8902-4e19-87d6-d0cecfd66525",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-16": {
+    "locationId": "8e71a80d-e075-4b4f-a573-0406fddd0b4a",
+    "orgName": "Project Hospitality",
+    "serviceId": "765e130b-0cba-43ab-9033-4a67fb9c8439",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-337": {
+    "locationId": "c5ac033a-7eff-469d-ac4e-e1d04a85321d",
+    "orgName": "Food Bank for New York City - Main Office",
+    "serviceId": "219aa246-840a-42e6-8279-ca8e6c539725",
+    "serviceName": "Food Pantry",
+    "nearbyButDifferentOrgs": [
+      "NEW YORK CITY DEPARTMENT OF CONSUMER AFFAIRS",
+      "CENTER FOR EMPLOYMENT OPPORTUNITIES (CEO)",
+      "CENTER FOR HEARING AND COMMUNICATION",
+      "CENTER FOR HEARING AND COMMUNICATION",
+      "DEPARTMENT OF VETERANS AFFAIRS (VA)"
+    ]
+  },
+  "FPC-404": {
+    "locationId": "79b231cc-2c34-4ab2-b3ec-8e7e1309480f",
+    "orgName": "Our Lady of Lourdes Church",
+    "serviceId": "9b775532-fb95-4d55-8f82-c3f150bcf618",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-149": {
+    "locationId": "75354d64-423d-4426-b801-f99b999aab56",
+    "orgName": "Church of Christ the King Pantry",
+    "serviceId": "8799b47e-29cb-4d8b-a743-c4857f3f7ef6",
+    "serviceName": "Food Pantry"
+  },
+  "Plentiful-480": {
+    "locationId": "ca8fc061-f4f6-4d89-b221-9ba85485ca0c",
+    "orgName": "City Harvest Mobile Market, Dyckman",
+    "serviceId": "dc1572aa-3896-48a0-bf2d-ad6b76a4607a",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-1015": {
+    "locationId": "11c8ffc5-7def-4209-a9e6-60d9cbbceef0",
+    "orgName": "Christina Home Care",
+    "serviceId": "07e15e99-e84a-4621-9279-2d80af8e6648",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-431": {
+    "locationId": "fcc113f3-360d-4af1-b68f-fc8aa03c65bb",
+    "orgName": "Congregation Of Yeshiva Telshe Alumni",
+    "serviceId": "983cfade-2d0a-4a3a-a289-5f1277d0b4ca",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-287": {
+    "locationId": "6369f790-fb82-4dba-a5b2-acdb9adadb5b",
+    "orgName": "Billy Roberts House Of Hope Soul Saving Station",
+    "serviceId": "ffebed0b-8d11-42fb-96e6-7f837157212b",
+    "serviceName": "Soup kitchen"
+  },
+  "FPC-37": {
+    "locationId": "6e5086aa-e258-4a58-a640-18e1b861548e",
+    "orgName": "Our Lady of Grace Parish Ministries",
+    "serviceId": "3b0ad517-cb39-43db-816b-6bebfe57ff77",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-1522": {
+    "locationId": "1dad79d2-296d-417a-a38e-010563a8b9da",
+    "orgName": "New York City Relief, South Bronx",
+    "serviceId": "d1327a51-f40c-4ae4-b9d0-8f5114cf3027",
+    "serviceName": "Soup kitchen"
+  },
+  "FPC-163": {
+    "locationId": "d95cb654-6cb9-47d5-b475-c9ccb2d0f8d6",
+    "orgName": "St. Paul the Apostle",
+    "serviceId": "addbfe42-246d-45dd-a698-69784f5ee8c9",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-57": {
+    "locationId": "3f8f0455-8651-40f6-a1aa-792b93b224e5",
+    "orgName": "St. John's House",
+    "serviceId": "7c0047cd-ad68-4119-8a6f-64d199055337",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-253": {
+    "locationId": "455a2f66-a895-4fff-b326-9b32cc615742",
+    "orgName": "Momentum Project / Boom! Health",
+    "serviceId": "453c1c82-5403-4828-af2e-73b69705fc14",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-100": {
+    "locationId": "f89e5441-a491-4d65-8181-45ef43cbccc1",
+    "orgName": "Ebenezer French Seven Day Adventist French Church",
+    "serviceId": "5a7cd8e1-8899-4694-93b3-730e80cf3872",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-1107": {
+    "locationId": "75392adb-7415-458f-9292-aefc6ee55377",
+    "orgName": "Salvation Army, Tremont Corps",
+    "serviceId": "44ccd44d-ab17-42a5-b5ec-7f8730368361",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-77": {
+    "locationId": "374d623a-cbaa-42f9-a0b8-f7e6486e0c8c",
+    "orgName": "West End Presbyterian Church",
+    "serviceId": "674f50be-ebf8-4df8-a7bd-40a19b291ac2",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-284": {
+    "locationId": "0d97d784-6ebd-4d8a-9538-8c96d8fc31f1",
+    "orgName": "Steinway Child & Family Services",
+    "serviceId": "02527b85-a365-4b46-b603-35d73965b9be",
+    "serviceName": "Food Pantry"
+  },
+  "CH-R411": {
+    "locationId": "c67d2de1-9672-44d0-8e9d-27c6768c528a",
+    "orgName": "Upper Manhattan Mental Health Center Incorporated",
+    "serviceId": "70efb03b-dde8-42b9-960a-f0da15672114",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-360": {
+    "locationId": "17f3767e-7ba5-494c-85a7-7d5ba2634de7",
+    "orgName": "First Baptist Church of Brownsville",
+    "serviceId": "f1837b95-d562-4d32-9d33-06d8956a6dda",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-354": {
+    "nearbyButDifferentOrgs": [
+      "NEW YORK JUSTICE FOR OUR NEIGHBORS"
+    ],
+    "locationId": "8176588a-4466-4f35-b2e6-d6037d20d721",
+    "orgName": "MHNA",
+    "serviceId": "3df2d621-b4c6-46da-82b2-755b27be2dc5",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-281": {
+    "locationId": "9c710f03-7935-40e7-9a0f-a1d90c5dd69c",
+    "orgName": "Hispanic Federation/Southside United HDFC",
+    "serviceId": "84bb5f0d-60ac-4eac-9ca0-29104accfffa",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-306": {
+    "locationId": "6f0a94a5-778d-4293-a54d-b091c70479d5",
+    "orgName": "Our Lady of Grace Social Outreach",
+    "serviceId": "97579dc6-77be-4056-89e6-b4cc13c954ef",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-47": {
+    "locationId": "f3bffdc8-f420-4ba6-bca2-810e988ca557",
+    "orgName": "St. Thomas Aquinas Food Pantry",
+    "serviceId": "a2b16b54-c216-4acd-8c3e-1354688a1429",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-1123": {
+    "locationId": "a97976f9-c33c-457d-ada0-ad7e5598037f",
+    "orgName": "Salvation Army, Brownsville Corps",
+    "serviceId": "e1333ab9-ed9c-4444-a463-fc4a23810f2b",
+    "serviceName": "Food Pantry",
+    "nearbyButDifferentOrgs": [
+      "Riverdale Osborne"
+    ]
+  },
+  "FPC-99": {
+    "locationId": "8c8e97bc-6f9a-4356-bf79-92d1b68eb213",
+    "orgName": "Agape Food Rescue",
+    "serviceId": "3ccfd03d-3310-4d5e-add7-0d61c1f43880",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-1459": {
+    "locationId": "f3b469df-26ce-4389-b58d-5c48f117bfef",
+    "orgName": "Rutgers Thursday Nighters",
+    "serviceId": "72e2aa4d-2bae-4a32-8fc7-ce7cdd8dbb1f",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-1426": {
+    "locationId": "8d341b8f-9dec-4c9a-ab2d-c97c12c3d642",
+    "orgName": "St. Francis of Assisi",
+    "serviceId": "38bb8f40-5c01-458a-b8ae-f7c94004b8d7",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-338": {
+    "nearbyButDifferentOrgs": [
+      "NEW YORK CITY DEPARTMENT OF CONSUMER AFFAIRS",
+      "Food Bank for New York City - Main Office"
+    ],
+    "locationId": "d6b5da9e-8520-427f-9710-6ae2ee5ce55c",
+    "orgName": "Neighborhood Coalition For Shelter",
+    "serviceId": "4788fc78-9cba-4f7c-b210-b26ba09f8b3f",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-1378": {
+    "locationId": "fd607bec-b5d2-4bdb-8dbd-6d3295b440b6",
+    "orgName": "Union United Methodist Church",
+    "serviceId": "ec6526eb-d87c-48b6-9ac3-21024fc66304",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-80": {
+    "locationId": "7ddcdbc5-1af4-4b97-9fea-2a9cbe7084e1",
+    "orgName": "St. Matthew's - St. Timothy's Day Care",
+    "serviceId": "1de098f2-cf03-468a-bd74-baa60e7679a7",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-464": {
+    "locationId": "be641f67-6893-49d1-862c-2c6c70d7da72",
+    "orgName": "South Shore Food Pantry - St. Paul's",
+    "serviceId": "32856b68-d6d3-45df-83b4-0e4971a32909",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-1173": {
+    "locationId": "070ff94a-3205-410c-a28b-e3c6ac244ed5",
+    "orgName": "Emma L Bowen Community Service Center",
+    "serviceId": "35e30f6d-aba8-45ff-a7aa-71feab25fd2d",
+    "serviceName": "Food Pantry",
+    "nearbyButDifferentOrgs": [
+      "Upper Manhattan Mental Health Center Incorporated"
+    ]
+  },
+  "FPC-8": {
+    "locationId": "6b26aab4-fbd3-47a4-90ff-6ceb6da3273d",
+    "orgName": "Sacred Heart of Jesus Church",
+    "serviceId": "7877ae95-b79d-42de-994c-e5a2421a0e1c",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-2184": {
+    "locationId": "63c28133-f9f0-4e89-845f-4e06c9da84a3",
+    "orgName": "Sandra's Family Residence",
+    "serviceId": "2fd2028e-3eee-4747-a70e-c9012ad35fef",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-387": {
+    "locationId": "e4e55673-cb57-4734-98a0-86ec5d899053",
+    "orgName": "Washington Spanish Avenue SDA Church",
+    "serviceId": "70680c7c-e6a6-48eb-92cd-78dc1d8165a4",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-2174": {
+    "locationId": "8443a07d-8ebd-4394-bb9e-602c3f36124a",
+    "orgName": "Esther Ministry of Mount Moriah AME Church - Moriah City Community Food Pantry",
+    "serviceId": "7ddbc313-26e6-4bbc-a275-e6c86d7d6c4b",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-280": {
+    "locationId": "bb7da89e-a0f2-48d5-b13d-caf163a810d3",
+    "orgName": "Krakus Luncheon Club",
+    "serviceId": "2cf851fd-7002-4472-8cf4-cbfc21aca819",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-2176": {
+    "locationId": "cd2bc201-4956-4502-ae1a-6db083adec6e",
+    "orgName": "Hungry Monk Rescue",
+    "serviceId": "03189586-bc79-4147-817f-1d2448ea804a",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-214": {
+    "locationId": "da758b55-459c-4945-8bed-acc5240444fc",
+    "orgName": "Imani House Inc.",
+    "serviceId": "d376cfb4-c846-4b40-8827-6e0d20615228",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-160": {
+    "locationId": "f52b0d1a-04e0-43c7-8cf6-680afaa6c5b6",
+    "orgName": "ELMCOR YOUTH AND ADULT ACTIVITIES, INC.",
+    "serviceId": "1caab5c9-8e94-4e0e-bf74-cd749e68d96c",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-31": {
+    "locationId": "69059940-7a13-4d9a-b150-07ed827f3eff",
+    "orgName": "St. Peter's Church",
+    "serviceId": "965e81ea-3293-4927-bd48-087eb6cab85d",
+    "serviceName": "Food Pantry"
+  },
+  "DSNY-BRS-2179": {
+    "locationId": "e3788ddd-6c02-4c55-b447-8ce45192a83a",
+    "orgName": "RiseBoro Community Partnership - Wellness Rising",
+    "serviceId": "514af994-09d5-42c2-9011-157dc7471408",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-460": {
+    "locationId": "9f7909bf-979d-4bf6-ae26-4eb2f8c107f6",
+    "orgName": "Islamic Society of Bay Ridge",
+    "serviceId": "6ed77ef2-b98a-43aa-84c9-b49805909fa6",
+    "serviceName": "Food Pantry"
+  },
+  "FPC-415": {
+    "locationId": "aa79f5ad-d354-4368-8255-0c71dbf686c9",
+    "orgName": "BOOM!HEALTH",
+    "serviceId": "de451ec0-c138-4984-ab48-faa9336842b2",
     "serviceName": "Food Pantry"
   }
 }

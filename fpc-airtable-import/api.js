@@ -147,6 +147,14 @@ class Api {
     covidRelatedInfo,
     metadata,
   }) {
+    if (url) {
+      await this.client.request({
+        url: `${baseApi}/organizations/${location.Organization.id}`,
+        method: 'patch',
+        data: { url, metadata },
+      });
+    }
+
     await this.client.request({
       url: `${baseApi}/locations/${location.id}`,
       method: 'patch',
@@ -181,8 +189,8 @@ class Api {
         closed: true,
         occasion: covidOccasion,
       }];
-    } else if (hours) {
-      updateParams.irregularHours = hours.map(({ opensAt, closesAt, weekday }) => ({
+    } else if (hours || isClosed != null) {
+      updateParams.irregularHours = (hours || []).map(({ opensAt, closesAt, weekday }) => ({
         opensAt,
         closesAt,
         weekday,

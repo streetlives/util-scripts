@@ -11,7 +11,7 @@ const getRecordFields = record => ({
   zipcode: record.get('Zipcode'),
   neighborhood: record.get('Neighborhood'),
   hours: record.get('Hours FPC'),
-  lastUpdated: record.get('Last Updated FPC'),
+  lastUpdated: record.get('Last Internally Reviewed'),
   status: record.get('Status FPC'),
   facilityType: record.get('Facility Type'),
   additionalNotes: record.get('Additional Notes'),
@@ -32,6 +32,7 @@ export const fetchServices = async () => {
       'Neighborhood',
       'Hours FPC',
       'Last Updated FPC',
+      'Last Internally Reviewed',
       'Status FPC',
       'Facility Type',
       'Additional Notes',
@@ -45,9 +46,11 @@ export const fetchServices = async () => {
       DATETIME_DIFF(NOW(), {Last Updated FPC}, 'd') < ${config.maxDaysSinceLastUpdate},
       NOT({Status FPC} = ''),
       NOT({Status FPC} = 'unknown'),
+      OR({Status FPC} = 'closed', NOT({Hours FPC} = '')),
       NOT(lat = ''),
       NOT(lng = ''),
-      NOT(Address = '')
+      NOT(Address = ''),
+      NOT({Don't import})
     )`,
   }).all();
 
