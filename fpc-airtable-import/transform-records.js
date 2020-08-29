@@ -31,12 +31,16 @@ function parseIdRequired(idRequired) {
   }
 }
 
+function transformHyperlinks(text) {
+  return text
+    .replace(/\[([^\]]+)\]\((mailto:[^)]+)\)/g, '$1')
+    .replace(/\[here\]\(([^)]+)\)/gi, '$1')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1 ($2)');
+}
+
 function parseCovidInfo(info) {
   if (!info) return info;
-  return info
-    .replace(/^\s*-\s*/, '')
-    .replace(/\[Plentiful\]\[\d\]/, 'Plentiful (http://www.plentifulapp.com)')
-    .replace(/(\n|\s)*\[\d\]: http:\/\/www.plentifulapp.com/, '');
+  return transformHyperlinks(info.replace(/^\s*-\s*/, ''));
 }
 
 function parseAddress(address) {
@@ -53,7 +57,7 @@ function parseHours(hoursString) {
   const regex = /([A-Z]{2,5}(?:[,-][A-Z]{2,5})*):? *(\d{1,2}(?::\d{2})?(?:AM|PM)?) ?- ?(\d{1,2}(?::\d{2})?(?:AM|PM))[, ]*/ig;
 
   const parts = getAllRegexResults(
-    hoursString.toLowerCase(),
+    hoursString.toLowerCase().replace('\n', ' '),
     regex,
     result => ({ days: result[1], start: result[2], end: result[3] }),
   );
