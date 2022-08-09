@@ -72,12 +72,11 @@ async function exportData() {
   console.log('Successfully updated Airtable');
 }
 
-(async function main() {
-  try {
-    await exportData();
-    process.exit(0);
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
-  }
-})();
+export async function handler() {
+  await exportData();
+}
+
+const isLambda = !!process.env.LAMBDA_TASK_ROOT;
+if (!isLambda) {
+  exportData();
+}
